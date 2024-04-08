@@ -1,0 +1,36 @@
+// swift-tools-version: 5.10
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
+import PackageDescription
+
+let package = Package(
+    name: "FrontBackModels",
+    platforms: [
+        .iOS(.v13) // Specify minimum platform version for iOS
+    ],
+    products: [
+        .library(
+            name: "FrontBackModels",
+            targets: ["FrontBackModels"]),
+    ],
+    dependencies: [
+        // Existing EncryptDecryptKey package dependency
+        .package(url: "https://github.com/scott-lydon/EncryptDecryptKey.git", from: "1.0.2"),
+        // Add StrongContractClient package dependency
+        .package(url: "https://github.com/scott-lydon/StrongContractClient.git", from: "1.0.0"),
+
+    ],
+    targets: [
+        .target(
+            name: "FrontBackModels",
+            dependencies: [
+                // Specify EncryptDecryptKey and StrongContractClient as dependencies for your target
+                "EncryptDecryptKey",
+                "StrongContractClient",
+            ]),
+        .testTarget(
+            name: "FrontBackModelsTests",
+            dependencies: ["FrontBackModels"]),
+    ]
+)
