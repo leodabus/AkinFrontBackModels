@@ -11,12 +11,12 @@ import Foundation
 extension User {
     
     public struct SignUp: Codable, Hashable, Equatable {
-        var email: String
-        var password: String
-        var firstName: String
-        var lastName: String
-        var errors: String = ""
-        
+        public var email: String
+        public var password: String
+        public var firstName: String
+        public var lastName: String
+        public var errors: String = ""
+
         public init(email: String? = "", password: String? = "" , firstName: String? = "" , lastName: String? = "") {
             self.email = email ?? ""
             self.password = password ?? ""
@@ -25,7 +25,7 @@ extension User {
             self.findErrors()
         }
         
-        mutating func findErrors() {
+        public mutating func findErrors() {
             
             if email.isEmpty {
                 errors.append("  No email was provided.")
