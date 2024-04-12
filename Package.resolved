@@ -1,13 +1,13 @@
 {
-  "originHash" : "73bd0fec52b9c005c8a18f32abd6dcd9ef0fdae145fd05ac1c2a7833ecabeb21",
+  "originHash" : "ce2ba4dcb9b5a4bdd7e57e9f567c3eb7a1cbaed77502e13ebd627ae63a7d2359",
   "pins" : [
     {
       "identity" : "async-http-client",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swift-server/async-http-client.git",
       "state" : {
-        "revision" : "291438696abdd48d2a83b52465c176efbd94512b",
-        "version" : "1.20.1"
+        "revision" : "fb308ee72f3d4c082a507033f94afa7395963ef3",
+        "version" : "1.21.0"
       }
     },
     {
@@ -69,8 +69,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/scott-lydon/StrongContractClient.git",
       "state" : {
-        "revision" : "45dfc2847c0894d14a267cd7979c77d32ee6b6ba",
-        "version" : "1.0.4"
+        "revision" : "f3dc0a9952ccbbb6fd9010bd7431ead4e8f34e70",
+        "version" : "1.0.5"
       }
     },
     {
@@ -204,8 +204,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vapor/vapor.git",
       "state" : {
-        "revision" : "11cdb29614a5c7f8c5289f3c97b3398c3d89b395",
-        "version" : "4.92.5"
+        "revision" : "8409c3c296e7f8965df14e906dbcd44eb68f54a9",
+        "version" : "4.92.6"
       }
     },
     {
