@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Question {
+extension Question {
     
     enum Importance: Int, Equatable, Codable {
         

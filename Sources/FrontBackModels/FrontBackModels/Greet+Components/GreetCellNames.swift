@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Greet {
+extension Greet {
     
     enum CellName: String, Codable {
         case AlternateDecisionCell

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct PrivateDetails: Codable {
+struct PrivateDetails: Codable {
     var password: String
     var romanceOn: Bool
     var token: String

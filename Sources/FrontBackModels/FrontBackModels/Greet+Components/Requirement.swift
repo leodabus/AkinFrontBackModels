@@ -11,18 +11,18 @@ import CoreLocation
 
 typealias RequirementAction = (Requirement) -> Void
 
-public enum Requirement: Equatable, Codable {
+enum Requirement: Equatable, Codable {
 
     case birthday
     case location(Location)
     case profilePic
     case pushNotification(PushNotification)
     
-    public enum Location: Codable {
+    enum Location: Codable {
         case regular, requiresDeeplinkToSettings, shouldUpgradeToAlways
     }
     
-    public enum PushNotification: Codable {
+    enum PushNotification: Codable {
         case requiresDeeplinkToSettings, regular
     }
 

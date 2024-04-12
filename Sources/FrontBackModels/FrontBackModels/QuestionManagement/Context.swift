@@ -8,6 +8,6 @@
 
 import Foundation
 
-public enum Context: String, CaseIterable, Codable {
+enum Context: String, CaseIterable, Codable {
     case romance, social
 }

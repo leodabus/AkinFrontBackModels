@@ -10,9 +10,9 @@ import CoreLocation
 import StrongContractClient
 
 // Conversion examples integrated with request structures
-public extension StrongContractClient.Request {
+extension StrongContractClient.Request {
 
-    static var register: Request<User.SignUp, RegisterResponse> {
+    public static var register: Request<User.SignUp, RegisterResponse> {
         Request<User.SignUp, RegisterResponse>(path: "user/register", method: .post)
     }
 

@@ -8,9 +8,9 @@
 
 import Foundation
 
-public enum ViewSetting: Equatable, Codable {
+enum ViewSetting: Equatable, Codable {
 
-    public enum ConifirmationReason: String, Codable {
+    enum ConifirmationReason: String, Codable {
         case nearby, theyConfirmed
     }
     
@@ -21,7 +21,7 @@ public enum ViewSetting: Equatable, Codable {
     case start
     case thisUserAgreed
     
-    public static func == (lhs: ViewSetting, rhs: ViewSetting) -> Bool {
+    static func == (lhs: ViewSetting, rhs: ViewSetting) -> Bool {
         switch (lhs, rhs)  {
         case (.start, .start): return true
         case (.thisUserAgreed, .thisUserAgreed): return true

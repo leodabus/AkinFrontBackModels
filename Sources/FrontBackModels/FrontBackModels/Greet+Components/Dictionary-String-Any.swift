@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension Dictionary where Key == String, Value == Any {
+extension Dictionary where Key == String, Value == Any {
 
     var databaseTimeLapse: Float? {
         self["databaseTimeLapse"] as? Float

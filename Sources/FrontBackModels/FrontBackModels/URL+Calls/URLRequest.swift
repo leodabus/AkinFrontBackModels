@@ -14,7 +14,7 @@ import StrongContractClient
 typealias DictionaryAction = ([String: Any]) -> Void
 typealias HTTPStatusAction = (HTTPURLResponse.HTTPStatus?) -> Void
 
-public extension URLRequest {
+extension URLRequest {
 
     var post: Self {
         var buffer = self
@@ -196,7 +196,7 @@ public extension URLRequest {
 //    }
 //}
 /// A struct to make the naming convention a bit more explicit for this simple type.
-public typealias Row = Int
+typealias Row = Int
 
 ///
 struct TokenAndPayload<Payload: Codable>: Codable {
@@ -204,7 +204,7 @@ struct TokenAndPayload<Payload: Codable>: Codable {
     var payload: Payload
 }
 
-public struct TwoIDs: Codable {
+struct TwoIDs: Codable {
     var firstId: Int
     var otherID: Int
 }
@@ -214,7 +214,7 @@ struct PayloadResponse {
    // var path:
 }
 
-public extension URL {
+extension URL {
 
 //    static func metersWillingToTravel(_ metersWillingToTravel: Int) -> URL? {
 //        URLComponents.baseURLComponents

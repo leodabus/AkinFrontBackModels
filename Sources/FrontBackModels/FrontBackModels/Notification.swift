@@ -8,7 +8,7 @@
 
 import UserNotifications
 
-public extension Greet {
+extension Greet {
     
     enum Notification: Codable {
         case getRating(Greet.Notification.LocalModel)

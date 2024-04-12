@@ -9,11 +9,11 @@
 import Foundation
 import UserNotifications
 
-public extension Greet.Notification {
+extension Greet.Notification {
     
     struct LocalModel: Codable {
 
-        public enum Key: String, Codable {
+        enum Key: String, Codable {
             case getReviewTime, weClosedTheGreet
         }
         

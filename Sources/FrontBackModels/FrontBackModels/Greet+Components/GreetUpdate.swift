@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Greet {
+extension Greet {
     
     enum Update: Equatable, Codable {
         case errorMessage(String)
@@ -16,7 +16,7 @@ public extension Greet {
         case message(Message)
         case viewSetting(ViewSetting)
         
-        public static func == (lhs: Greet.Update, rhs: Greet.Update) -> Bool {
+        static func == (lhs: Greet.Update, rhs: Greet.Update) -> Bool {
             switch (lhs, rhs) {
             case (let .errorMessage(errorMessage1), let .errorMessage(errorMessage2)):
                 return errorMessage1 == errorMessage2

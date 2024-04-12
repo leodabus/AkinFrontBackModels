@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Greet.Update {
+extension Greet.Update {
     
     enum ExitReason: Equatable, Codable {
 
@@ -16,7 +16,7 @@ public extension Greet.Update {
         case rejected(Question.Response.Selections.MyTheir)
         case thisConfirmedMet
         
-        public static func == (lhs: ExitReason, rhs: ExitReason) -> Bool {
+        static func == (lhs: ExitReason, rhs: ExitReason) -> Bool {
             switch (lhs, rhs) {
             case (.exceededRange(let myTheir1), .exceededRange(let myTheir2)):
                 return myTheir1 == myTheir2

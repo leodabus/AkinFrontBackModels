@@ -8,7 +8,7 @@
 import Foundation
 
 // modular
-public enum AppConfiguration {
+enum AppConfiguration {
     case Debug
     case TestFlight
     case AppStore

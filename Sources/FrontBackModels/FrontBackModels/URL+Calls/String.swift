@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension String {
+extension String {
     static var generateBoundaryString: String {
         "Boundary-\(NSUUID().uuidString)"
     }

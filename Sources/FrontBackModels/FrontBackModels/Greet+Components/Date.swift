@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension Date {
+extension Date {
     var apiString: String {
         let df = DateFormatter()
         df.dateFormat = "YYYY-MM-dd HH:mm:ss"

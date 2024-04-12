@@ -8,11 +8,11 @@
 
 import Foundation
 
-public extension Greet {
+extension Greet {
     struct UserLocationCoordinate: Codable {
         // TODO: - Temporary implementation until we have a final User object ready
         // Should be replaced with the release build
-        public struct User: Codable {
+        struct User: Codable {
             let id: String
 //            let accessToken: String
         }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension Int {
+extension Int {
     
     var string: String {
         String(self)

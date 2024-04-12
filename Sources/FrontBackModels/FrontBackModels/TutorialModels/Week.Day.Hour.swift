@@ -18,16 +18,16 @@ typealias ImageType = NSImage
 // Define a placeholder type or import another graphic framework as needed
 #endif
 
-public extension Week.Day {
+extension Week.Day {
 
     struct Hour: Codable {
 
-        public enum AMPM: String, Codable {
+        enum AMPM: String, Codable {
             case am, pm
         }
 
         // Custom CodingKeys to exclude btn and img from Codable operations
-        public enum CodingKeys: String, CodingKey {
+        enum CodingKeys: String, CodingKey {
             case count
             case amPM
             case travelMethod

@@ -9,7 +9,7 @@
 import Foundation
 
 
-public extension Question.Response.Selections {
+extension Question.Response.Selections {
     
     enum MyTheir: String, CaseIterable, Codable {
         case my, their

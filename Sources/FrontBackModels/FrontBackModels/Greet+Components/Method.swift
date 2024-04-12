@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Greet {
+extension Greet {
     
     enum Method: String, Codable, CaseIterable {
         case handShake = "Hand shake"

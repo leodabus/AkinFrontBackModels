@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-public typealias UsersAction = ([Greet.User]) -> Void
+typealias UsersAction = ([Greet.User]) -> Void
 
 public struct User: Codable {
 

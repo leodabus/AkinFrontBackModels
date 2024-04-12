@@ -8,14 +8,14 @@
 
 import Foundation
 
-public extension Greet.Update {
+extension Greet.Update {
     
     enum Message: Equatable, Codable {
         case cant(Int)
         case theySayTheyMet(String)
         case youAreCloseTo(String)
         
-        public static func == (lhs: Message, rhs: Message) -> Bool {
+        static func == (lhs: Message, rhs: Message) -> Bool {
             switch (lhs, rhs) {
             case (let .cant(minutes1), let .cant(minutes2)):
                 return minutes1 == minutes2

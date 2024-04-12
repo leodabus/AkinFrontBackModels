@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Greet {
+extension Greet {
 
     struct User: Codable {
         var id: Int

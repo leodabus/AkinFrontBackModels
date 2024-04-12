@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct EnvConfig {
+struct EnvConfig {
     // This is private because the use of 'appConfiguration' is preferred.
     private static let isTestFlight = Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
     

@@ -8,7 +8,7 @@
 
 import CoreLocation
 
-public extension Greet {
+extension Greet {
     
     struct MeetingEvent: Codable {
 

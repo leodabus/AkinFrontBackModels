@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Question.Response {
+extension Question.Response {
     
     struct Selections: Codable {
         var my: MyTheir.Choice, their: MyTheir.Choice

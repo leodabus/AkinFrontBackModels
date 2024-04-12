@@ -5,14 +5,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "FrontBackModels",
+    name: "AkinFrontBackModels",
     platforms: [
         .iOS(.v13) // Specify minimum platform version for iOS
     ],
     products: [
         .library(
-            name: "FrontBackModels",
-            targets: ["FrontBackModels"]),
+            name: "AkinFrontBackModels",
+            targets: ["AkinFrontBackModels"]),
     ],
     dependencies: [
         // Existing EncryptDecryptKey package dependency
@@ -23,7 +23,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "FrontBackModels",
+            name: "AkinFrontBackModels",
             dependencies: [
                 // Specify EncryptDecryptKey and StrongContractClient as dependencies for your target
                 "EncryptDecryptKey",
@@ -31,6 +31,6 @@ let package = Package(
             ]),
         .testTarget(
             name: "FrontBackModelsTests",
-            dependencies: ["FrontBackModels"]),
+            dependencies: ["AkinFrontBackModels"]),
     ]
 )

@@ -8,9 +8,9 @@
 
 import Foundation
 
-// MARK - TODO after figuring out the user public structure, put settings nested in this user/viewing user.
+// MARK - TODO after figuring out the user structure, put settings nested in this user/viewing user.
 
-public struct Settings: Codable {
+struct Settings: Codable {
 
     /// Set this 
     static var shared: Self?
@@ -90,7 +90,7 @@ public struct Settings: Codable {
     }
 }
 
-public extension Array where Element == Greet.Method {
+extension Array where Element == Greet.Method {
     mutating func update(with greetingMethod: Greet.Method) {
         if contains(greetingMethod) {
             remove(greetingMethod: greetingMethod)

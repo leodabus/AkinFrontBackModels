@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension Data {
+extension Data {
 
     init?(
         parameters: [String: String]?,
