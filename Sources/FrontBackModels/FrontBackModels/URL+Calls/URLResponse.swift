@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension HTTPURLResponse {
+extension HTTPURLResponse {
     enum HTTPStatus: Int {
         /// 1xx informational reponses
         case cont                           = 100

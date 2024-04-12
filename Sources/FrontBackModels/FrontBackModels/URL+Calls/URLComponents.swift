@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension URLComponents {
+extension URLComponents {
 
     /// "http://127.0.0.1:8080/api/"
     static var debug: Self {

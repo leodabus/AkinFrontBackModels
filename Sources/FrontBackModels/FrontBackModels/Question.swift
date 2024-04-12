@@ -10,15 +10,15 @@ import Foundation
 
 typealias QuestionAction = ((Question) -> Void)
 
-public struct Question: Codable, Equatable, Hashable {
+struct Question: Codable, Equatable, Hashable {
     
     // MARK - Types
     
-    public enum Category: String, CaseIterable {
+    enum Category: String, CaseIterable {
         case not_answered, answered, all, created
     }
     
-    public static func == (lhs: Question, rhs: Question) -> Bool {
+    static func == (lhs: Question, rhs: Question) -> Bool {
         lhs.id == rhs.id
     }
     
@@ -40,7 +40,7 @@ public struct Question: Codable, Equatable, Hashable {
         id ?? -53
     }
     
-    public func hash(into hasher: inout Hasher) {
+    func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
 

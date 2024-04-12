@@ -12,11 +12,11 @@ typealias ContextID = String
 typealias PopularityScore = Int
 typealias ContextAction = (Context) -> Void
 
-public extension Question {
+extension Question {
     
     struct Response: Equatable, Codable {
 
-        public static func == (lhs: Response, rhs: Response) -> Bool {
+        static func == (lhs: Response, rhs: Response) -> Bool {
             lhs.id == rhs.id
         }
         

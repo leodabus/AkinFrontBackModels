@@ -11,7 +11,7 @@ import os.log
 
 let log = OSLog(subsystem: "com.ElevatedUnderdogs.akin1", category: "networking")
 
-public extension URLQueryItem {
+extension URLQueryItem {
 
     static func row(_ value: Int) -> Self {
         URLQueryItem(.row, String(value))

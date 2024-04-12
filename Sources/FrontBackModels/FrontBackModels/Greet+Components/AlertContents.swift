@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-public struct Contents: Codable {
+struct Contents: Codable {
 
     var title: String
     var message: String

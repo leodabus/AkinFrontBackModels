@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum TypeAlternator<Preferred: Codable, Secondary: Codable>: Codable {
+enum TypeAlternator<Preferred: Codable, Secondary: Codable>: Codable {
 
     case preferred(Preferred)
     case secondary(Secondary)

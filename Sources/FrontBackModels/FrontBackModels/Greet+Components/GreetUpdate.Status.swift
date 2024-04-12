@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Greet.Update {
+extension Greet.Update {
     
     enum Status: String, Codable {
         case confirmedMet, enroute, exceededRange, rejectedOther, viewed

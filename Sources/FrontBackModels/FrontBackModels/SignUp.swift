@@ -8,9 +8,9 @@
 
 import Foundation
 
-public extension User {
+extension User {
     
-    struct SignUp: Codable, Hashable, Equatable {
+    public struct SignUp: Codable, Hashable, Equatable {
         var email: String
         var password: String
         var firstName: String
@@ -56,7 +56,7 @@ public extension User {
     }
 }
 
-public extension String {
+extension String {
     var isNotValidEmail: Bool {
         !isValidEmail
     }

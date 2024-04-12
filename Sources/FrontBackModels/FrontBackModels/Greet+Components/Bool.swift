@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension Bool {
+extension Bool {
     var strInt: String {
         "\(int)"
     }

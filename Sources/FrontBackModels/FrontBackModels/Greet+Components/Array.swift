@@ -7,13 +7,13 @@
 
 import Foundation
 
-public extension Array {
+extension Array {
     var data: Data {
         withUnsafeBufferPointer { Data(buffer: $0) }
     }
 }
 
-public extension Array where Element == Question.Response {
+extension Array where Element == Question.Response {
 
     func hasSelection(
         context: Context/* = UserDefaults.questionContext*/,
@@ -23,13 +23,13 @@ public extension Array where Element == Question.Response {
     }
 }
 
-public extension Array where Element == Greet.Method  {
+extension Array where Element == Greet.Method  {
     mutating func remove(greetingMethod: Greet.Method) {
         removeAll { $0 == greetingMethod }
     }
 }
 
-public extension Array where Element == Greet.User {
+extension Array where Element == Greet.User {
     func index(of id: Int) -> Int? {
         firstIndex { Int($0.id) == id }
     }

@@ -8,6 +8,6 @@
 
 import Foundation
 
-public enum TravelMethod: String, Codable {
+enum TravelMethod: String, Codable {
     case bike, car, none, walk
 }

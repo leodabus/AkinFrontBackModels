@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Question.SaveAttemptServerResponse {
+extension Question.SaveAttemptServerResponse {
     
     enum ServerError: String, Error, Codable {
         case incorrectFormatServerError, repeatQuestion, unknownError

@@ -8,11 +8,11 @@
 
 import Foundation
 
-public extension Week {
+extension Week {
 
     struct Day: Codable {
 
-        public enum Name: String, Codable {
+        enum Name: String, Codable {
             case Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
         }
 

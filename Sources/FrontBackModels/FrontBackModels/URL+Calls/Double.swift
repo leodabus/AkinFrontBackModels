@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension Double {
+extension Double {
     var string: String {
          String(self)
     }

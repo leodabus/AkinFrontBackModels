@@ -10,7 +10,7 @@
 import Foundation
 import CoreLocation
 
-public extension URLRequest {
+extension URLRequest {
     
     static func update(schedule: [Week.Day]) -> URLRequest? {
         do {
