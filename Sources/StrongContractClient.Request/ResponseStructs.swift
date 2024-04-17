@@ -13,6 +13,12 @@ public struct RegisterResponse: Codable {
     public var success: Bool
     public var message: String?
     public var userId: String?
+
+    public init(success: Bool, message: String?, userId: String?) {
+        self.success = success
+        self.message = message
+        self.userId = userId
+    }
 }
 
 struct GeneralUser: Codable {
