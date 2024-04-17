@@ -10,9 +10,9 @@ import Foundation
 
 // Response model for `register(basicInfo:)` API call
 public struct RegisterResponse: Codable {
-    var success: Bool
-    var message: String?
-    var userId: String?
+    public var success: Bool
+    public var message: String?
+    public var userId: String?
 }
 
 struct GeneralUser: Codable {
