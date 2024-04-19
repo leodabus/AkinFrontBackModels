@@ -11,8 +11,8 @@ import CoreLocation
 import StrongContractClient
 
 
-typealias DictionaryAction = ([String: Any]) -> Void
-typealias HTTPStatusAction = (HTTPURLResponse.HTTPStatus?) -> Void
+public typealias DictionaryAction = ([String: Any]) -> Void
+public typealias HTTPStatusAction = (HTTPURLResponse.HTTPStatus?) -> Void
 
 extension URLRequest {
 
