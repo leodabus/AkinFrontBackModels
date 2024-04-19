@@ -9,15 +9,15 @@ import Foundation
 
 extension Dictionary where Key == String, Value == Any {
 
-    var databaseTimeLapse: Float? {
+    public var databaseTimeLapse: Float? {
         self["databaseTimeLapse"] as? Float
     }
 
-    var serversideOnlyTimeLapse: Float? {
+    public var serversideOnlyTimeLapse: Float? {
         self["serversideOnlyTimeLapse"] as? Float
     }
 
-    func value<T>(for key: String) -> T? {
+    public func value<T>(for key: String) -> T? {
         if let value = self[key] as? T {
             return value
         } else {

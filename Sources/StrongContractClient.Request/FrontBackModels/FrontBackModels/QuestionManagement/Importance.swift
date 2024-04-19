@@ -10,7 +10,7 @@ import Foundation
 
 extension Question {
     
-    enum Importance: Int, Equatable, Codable {
+    public enum Importance: Int, Equatable, Codable {
         
         case irrelevant = 1
         case somewhat = 3

@@ -20,14 +20,14 @@ typealias ImageType = NSImage
 
 extension Week.Day {
 
-    struct Hour: Codable {
+    public struct Hour: Codable {
 
-        enum AMPM: String, Codable {
+        public enum AMPM: String, Codable {
             case am, pm
         }
 
         // Custom CodingKeys to exclude btn and img from Codable operations
-        enum CodingKeys: String, CodingKey {
+        public enum CodingKeys: String, CodingKey {
             case count
             case amPM
             case travelMethod
@@ -36,8 +36,8 @@ extension Week.Day {
         let count: Int
         let amPM: AMPM // Codable
 #if canImport(UIKit)
-        var btn: UIButton?
+        public var btn: UIButton?
 #endif
-        var travelMethod: TravelMethod // Codable
+        public var travelMethod: TravelMethod // Codable
     }
 }

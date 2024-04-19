@@ -2,7 +2,7 @@ import XCTest
 @testable import FrontBackModels
 
 final class FrontBackModelsTests: XCTestCase {
-    func testExample() throws {
+    public func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
 

@@ -31,17 +31,17 @@ extension URLComponents {
         EnvConfig.isDebug ? debug : notDebug
     }
 
-    func with(queryItems: URLQueryItem...) -> Self {
+    public func with(queryItems: URLQueryItem...) -> Self {
         with(array: queryItems)
     }
 
-    func with(array: [URLQueryItem]) -> Self {
+    public func with(array: [URLQueryItem]) -> Self {
         var buffer = self
         buffer.queryItems = buffer.queryItems ?? [] + array
         return buffer
     }
 
-    func with(path: String) -> Self {
+    public func with(path: String) -> Self {
         var buffer = self
         buffer.path = "/api/" + path
         return buffer

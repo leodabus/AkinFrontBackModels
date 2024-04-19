@@ -12,7 +12,7 @@ extension String {
         "Boundary-\(NSUUID().uuidString)"
     }
 
-    var scaped: String? {
+    public var scaped: String? {
         addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
     }
 

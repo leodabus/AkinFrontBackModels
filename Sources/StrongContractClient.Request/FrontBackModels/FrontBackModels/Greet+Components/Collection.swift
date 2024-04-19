@@ -8,7 +8,7 @@
 import Foundation
 
 extension Collection {
-    var hasExactlyOne: Bool {
+    public var hasExactlyOne: Bool {
         count == 1
     }
 }

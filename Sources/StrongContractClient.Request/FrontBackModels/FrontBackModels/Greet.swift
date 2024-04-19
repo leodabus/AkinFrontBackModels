@@ -8,61 +8,61 @@
 
 import Foundation
 
-typealias CompatibilityContext = String
-typealias CompatibilityScore = Double
+public typealias CompatibilityContext = String
+public typealias CompatibilityScore = Double
 
-struct Greet: Codable {
+public struct Greet: Codable {
 
     // MARK - properties
     
-    var otherUser: Greet.User
-    var greetID: String
+    public var otherUser: Greet.User
+    public var greetID: String
     
-    var method: Greet.Method = .wave
-    var compatitibility: [CompatibilityContext: CompatibilityScore] = [:]
-    var openers: [String] = []
-    var meetingEvent: MeetingEvent? = nil
-    var isMrPractice: Bool = false
-    var thisSettings = Settings(status: .viewed)
-    var percentThisTravelled: Double = 0
-    var minutesAway: Int? = nil
-    var travelMethod: TravelMethod? = nil
-    var withinRangeOfEachOtherAndMeetPlace: Int? = nil
-    var matchMakingMethodVersion: Double? = nil
-    var estimatedTravelTimeInMinutes: Int? = nil
+    public var method: Greet.Method = .wave
+    public var compatitibility: [CompatibilityContext: CompatibilityScore] = [:]
+    public var openers: [String] = []
+    public var meetingEvent: MeetingEvent? = nil
+    public var isMrPractice: Bool = false
+    public var thisSettings = Settings(status: .viewed)
+    public var percentThisTravelled: Double = 0
+    public var minutesAway: Int? = nil
+    public var travelMethod: TravelMethod? = nil
+    public var withinRangeOfEachOtherAndMeetPlace: Int? = nil
+    public var matchMakingMethodVersion: Double? = nil
+    public var estimatedTravelTimeInMinutes: Int? = nil
     
-    var meetInXMinutes: Int? {
+    public var meetInXMinutes: Int? {
         guard let estimatedTravelTime = estimatedTravelTimeInMinutes else { return nil }
         return estimatedTravelTime + (agreedTime ?? 0)
     }
     
-    var agreedTime: Int? {
+    public var agreedTime: Int? {
         guard let otherUserSettings = otherUser.settings else { return nil }
         return thisSettings.agreedTimeProposals.filter({ !otherUserSettings.rejectedTimeProposals.contains($0) && otherUserSettings.agreedTimeProposals.contains($0) }).first
     }
     
-    var rangeThreshold: Int = 0
+    public var rangeThreshold: Int = 0
     
-    var isWaiting: Bool {
+    public var isWaiting: Bool {
         let proposals = thisSettings.agreedTimeProposals
         guard let rejectedProposals = otherUser.settings?.rejectedTimeProposals else { return false }
         return !proposals.filter { !rejectedProposals.contains($0) }.isEmpty
     }
     
-    var viewForProposal: ViewSetting {
+    public var viewForProposal: ViewSetting {
         guard let newProposals = otherUser.settings?.agreedTimeProposals.filter({ !thisSettings.rejectedTimeProposals.contains($0) && $0 != 0 }),
             let firstNewProposal = newProposals.first else { return .start }
         return .otherAskedIfCanMeetLater(firstNewProposal)
     }
     
-    var withinRange: Bool {
+    public var withinRange: Bool {
         if let withinRange = withinRangeOfEachOtherAndMeetPlace {
             return withinRange < rangeThreshold
         }
         return false
     }
     
-    var otherUserIsEligibleToMeet: Bool {
+    public var otherUserIsEligibleToMeet: Bool {
         if let otherStatus = otherUser.settings?.status {
             return otherStatus != .rejectedOther
                 && otherStatus != .exceededRange
@@ -96,7 +96,7 @@ struct Greet: Codable {
     
     // Reject
     
-    func rejectedProposal(from new: Greet) -> Int? {
+    public func rejectedProposal(from new: Greet) -> Int? {
         if let oldRejectedTimeProposals = otherUser.settings?.rejectedTimeProposals,
             let newRejectedTimeProposals =  new.otherUser.settings?.rejectedTimeProposals {
             let differentProposals = newRejectedTimeProposals.filter { !oldRejectedTimeProposals.contains($0) }

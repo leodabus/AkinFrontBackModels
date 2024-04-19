@@ -9,7 +9,7 @@ import Foundation
 
 extension NSMutableURLRequest {
 
-    var urlRequest: URLRequest {
+    public var urlRequest: URLRequest {
         self as URLRequest
     }
 

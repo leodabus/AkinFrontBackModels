@@ -9,10 +9,10 @@
 import Foundation
 
 extension Greet {
-    struct UserLocationCoordinate: Codable {
+    public struct UserLocationCoordinate: Codable {
         // TODO: - Temporary implementation until we have a final User object ready
         // Should be replaced with the release build
-        struct User: Codable {
+        public struct User: Codable {
             let id: String
 //            let accessToken: String
         }

@@ -87,11 +87,11 @@ enum QueryItemName: String {
     case wet_willy
     case zip
 
-    func queryItem(from value: String?) -> URLQueryItem {
+    public func queryItem(from value: String?) -> URLQueryItem {
         URLQueryItem(name: rawValue.scaped ?? "", value: value)
     }
 
-    func string(from value: String) -> String {
+    public func string(from value: String) -> String {
         "\(rawValue.scaped ?? "")=\(value.scaped ?? "")&"
     }
 }

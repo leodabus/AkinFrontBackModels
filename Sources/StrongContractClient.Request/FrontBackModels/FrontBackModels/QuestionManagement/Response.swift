@@ -8,34 +8,34 @@
 
 import Foundation
 
-typealias ContextID = String
-typealias PopularityScore = Int
-typealias ContextAction = (Context) -> Void
+public typealias ContextID = String
+public typealias PopularityScore = Int
+public typealias ContextAction = (Context) -> Void
 
 extension Question {
     
-    struct Response: Equatable, Codable {
+    public struct Response: Equatable, Codable {
 
-        static func == (lhs: Response, rhs: Response) -> Bool {
+        public static func == (lhs: Response, rhs: Response) -> Bool {
             lhs.id == rhs.id
         }
         
-        var text: String = ""
-        var rating: Int
-        var id: Int
-        var timeStamp: String
-        var creatorID: Int
-        var contextID: Int
-        var answer_id: Int
-        var userID: Int
-        var displayPicURL: String
-        var responseID: Int
-        var questionText: String
-        var questionID: Int
+        public var text: String = ""
+        public var rating: Int
+        public var id: Int
+        public var timeStamp: String
+        public var creatorID: Int
+        public var contextID: Int
+        public var answer_id: Int
+        public var userID: Int
+        public var displayPicURL: String
+        public var responseID: Int
+        public var questionText: String
+        public var questionID: Int
         
-        var myChoice: [ContextID: Selections.MyTheir.Choice] = [:]
-        var theirChoices: [ContextID: Selections.MyTheir.Choice] = [:]
-        var popularity: [ContextID: PopularityScore] = [:]
+        public var myChoice: [ContextID: Selections.MyTheir.Choice] = [:]
+        public var theirChoices: [ContextID: Selections.MyTheir.Choice] = [:]
+        public var popularity: [ContextID: PopularityScore] = [:]
         
         init(
             text: String,
@@ -65,7 +65,7 @@ extension Question {
             self.questionID = questionID
         }
         
-        func has(_ myTheir: Selections.MyTheir, for contextID: String) -> Bool {
+        public func has(_ myTheir: Selections.MyTheir, for contextID: String) -> Bool {
             switch myTheir {
             case .my:
                 return myChoice[contextID] == .YES || myChoice[contextID] == .NO
@@ -81,7 +81,7 @@ extension Question {
             }
         }
         
-        func choice(for myTheir: Selections.MyTheir, _ context: Context) -> Selections.MyTheir.Choice? {
+        public func choice(for myTheir: Selections.MyTheir, _ context: Context) -> Selections.MyTheir.Choice? {
             switch myTheir {
             case .my: return myChoice[context.rawValue]
             case .their: return theirChoices[context.rawValue]

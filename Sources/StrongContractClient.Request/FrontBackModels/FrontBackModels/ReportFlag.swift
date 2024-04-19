@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ReportFlag: String, Codable, CaseIterable {
+public enum ReportFlag: String, Codable, CaseIterable {
     case childAbuse = "Child Abuse"
     case harmfulDangerousActs = "Harmful dangerous acts"
     case hatefulOrAbusive = "Hateful or abusive content"
@@ -18,7 +18,7 @@ enum ReportFlag: String, Codable, CaseIterable {
     case spamOrMisleading = "Spam or misleading"
     case violentOrRepulsive = "Violent or repulsive content"
     
-    var int: Int {
+    public var int: Int {
         switch self {
         case .sexualContent: return 0
         case .violentOrRepulsive: return 1
@@ -33,5 +33,5 @@ enum ReportFlag: String, Codable, CaseIterable {
 }
 
 extension Array where Element == ReportFlag {
-    var ints: [Int] { map { $0.int } }
+    public var ints: [Int] { map { $0.int } }
 }

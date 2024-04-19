@@ -10,13 +10,13 @@ import Foundation
 
 extension Greet.Update {
     
-    enum ExitReason: Equatable, Codable {
+    public enum ExitReason: Equatable, Codable {
 
         case exceededRange(Question.Response.Selections.MyTheir)
         case rejected(Question.Response.Selections.MyTheir)
         case thisConfirmedMet
         
-        static func == (lhs: ExitReason, rhs: ExitReason) -> Bool {
+        public static func == (lhs: ExitReason, rhs: ExitReason) -> Bool {
             switch (lhs, rhs) {
             case (.exceededRange(let myTheir1), .exceededRange(let myTheir2)):
                 return myTheir1 == myTheir2

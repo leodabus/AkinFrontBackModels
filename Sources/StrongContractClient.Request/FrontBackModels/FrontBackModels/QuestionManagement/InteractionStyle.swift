@@ -10,7 +10,7 @@ import Foundation
 
 extension Question {
 
-    enum InteractionStyle: String, Codable {
+    public enum InteractionStyle: String, Codable {
         case binary, none, normal
     }
 }

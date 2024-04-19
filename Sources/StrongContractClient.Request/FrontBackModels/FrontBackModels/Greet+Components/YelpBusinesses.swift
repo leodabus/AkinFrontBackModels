@@ -9,12 +9,10 @@
 import Foundation
 import CoreLocation
 
-enum Yelp {}
-
-import CoreLocation
+public enum Yelp {}
 
 extension CLLocationCoordinate2D: Codable {
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case latitude
         case longitude
     }
@@ -36,23 +34,23 @@ extension CLLocationCoordinate2D: Codable {
 
 extension Yelp {
         
-    struct Business: Codable {
+    public struct Business: Codable {
 
-        struct Category {
+        public struct Category {
             let alias: String
             let title: String
         }
         
-        var alias: String? = nil
-        var coordinate: CLLocationCoordinate2D? = nil
-        var location: Location? = nil
-        var name: String? = nil
+        public var alias: String? = nil
+        public var coordinate: CLLocationCoordinate2D? = nil
+        public var location: Location? = nil
+        public var name: String? = nil
     }
 }
 
 extension Yelp.Business {
     
-    struct Location: Codable {
-        var displayAddress: [String]
+    public struct Location: Codable {
+        public var displayAddress: [String]
     }
 }

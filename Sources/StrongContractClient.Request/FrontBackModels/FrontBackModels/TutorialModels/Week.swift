@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Week: Codable {
-    var monday, tuesday, wednesday, thursday, friday, saturday, sunday: Day
+public struct Week: Codable {
+    public var monday, tuesday, wednesday, thursday, friday, saturday, sunday: Day
 }

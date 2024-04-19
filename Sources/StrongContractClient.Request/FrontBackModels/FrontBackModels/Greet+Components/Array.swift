@@ -8,14 +8,14 @@
 import Foundation
 
 extension Array {
-    var data: Data {
+    public var data: Data {
         withUnsafeBufferPointer { Data(buffer: $0) }
     }
 }
 
 extension Array where Element == Question.Response {
 
-    func hasSelection(
+    public func hasSelection(
         context: Context/* = UserDefaults.questionContext*/,
         for myTheir: Question.Response.Selections.MyTheir
     ) -> Bool {

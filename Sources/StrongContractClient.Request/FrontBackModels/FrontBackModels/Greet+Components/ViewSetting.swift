@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum ViewSetting: Equatable, Codable {
+public enum ViewSetting: Equatable, Codable {
 
-    enum ConifirmationReason: String, Codable {
+    public enum ConifirmationReason: String, Codable {
         case nearby, theyConfirmed
     }
     
@@ -21,7 +21,7 @@ enum ViewSetting: Equatable, Codable {
     case start
     case thisUserAgreed
     
-    static func == (lhs: ViewSetting, rhs: ViewSetting) -> Bool {
+    public static func == (lhs: ViewSetting, rhs: ViewSetting) -> Bool {
         switch (lhs, rhs)  {
         case (.start, .start): return true
         case (.thisUserAgreed, .thisUserAgreed): return true
@@ -32,7 +32,7 @@ enum ViewSetting: Equatable, Codable {
         }
     }
     
-    var cellTypes: [Greet.CellName] {
+    public var cellTypes: [Greet.CellName] {
         switch self {
         case .start:
             return [

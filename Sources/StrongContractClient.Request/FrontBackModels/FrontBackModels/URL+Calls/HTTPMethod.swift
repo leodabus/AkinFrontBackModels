@@ -8,7 +8,7 @@
 import Foundation
 
 /// Represents the HTTP methods, providing a guide on when to use each.
-enum HTTPMethod: String {
+public enum HTTPMethod: String {
     /// The `GET` method requests a representation of the specified resource. Requests using GET should only retrieve data.
     case get = "GET"
 

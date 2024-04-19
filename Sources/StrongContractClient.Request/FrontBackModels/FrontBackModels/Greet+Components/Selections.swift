@@ -10,8 +10,8 @@ import Foundation
 
 extension Question.Response {
     
-    struct Selections: Codable {
-        var my: MyTheir.Choice, their: MyTheir.Choice
+    public struct Selections: Codable {
+        public var my: MyTheir.Choice, their: MyTheir.Choice
         
         init(my: MyTheir.Choice = .empty, their: MyTheir.Choice = .empty) {
             self.my = my

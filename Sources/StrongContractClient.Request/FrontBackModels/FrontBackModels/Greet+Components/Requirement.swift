@@ -18,11 +18,11 @@ enum Requirement: Equatable, Codable {
     case profilePic
     case pushNotification(PushNotification)
     
-    enum Location: Codable {
+    public enum Location: Codable {
         case regular, requiresDeeplinkToSettings, shouldUpgradeToAlways
     }
     
-    enum PushNotification: Codable {
+    public enum PushNotification: Codable {
         case requiresDeeplinkToSettings, regular
     }
 

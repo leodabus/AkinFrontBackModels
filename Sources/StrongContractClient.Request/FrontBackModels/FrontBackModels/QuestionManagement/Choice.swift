@@ -10,13 +10,13 @@ import Foundation
 
 extension Question.Response.Selections.MyTheir {
 
-    enum Choice: String, CaseIterable, Codable {
+    public enum Choice: String, CaseIterable, Codable {
         case YES
         case NO
         case empty = " "
         case NEUTRAL
 
-        var weightMultiplier: Int {
+        public var weightMultiplier: Int {
             switch self {
             case .YES: return 1
             case .empty: return 0
