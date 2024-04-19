@@ -199,17 +199,17 @@ extension URLRequest {
 typealias Row = Int
 
 ///
-struct TokenAndPayload<Payload: Codable>: Codable {
+public struct TokenAndPayload<Payload: Codable>: Codable {
     public var accessToken: URLQueryItem = .access_token_and_user_id
     public var payload: Payload
 }
 
-struct TwoIDs: Codable {
+public struct TwoIDs: Codable {
     public var firstId: Int
     public var otherID: Int
 }
 
-struct PayloadResponse {
+public struct PayloadResponse {
 
    // var path:
 }

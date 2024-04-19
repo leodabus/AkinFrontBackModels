@@ -21,7 +21,7 @@ public struct RegisterResponse: Codable {
     }
 }
 
-struct GeneralUser: Codable {
+public struct GeneralUser: Codable {
     public var id: Int
     public var name: String
     public var profileImages: [String] = []
@@ -29,29 +29,29 @@ struct GeneralUser: Codable {
     
 }
 
-struct StandardPostResponse: Codable {
+public struct StandardPostResponse: Codable {
     public var success: Bool
     public var message: String?
 }
 
 // Response model for `triggerTwoPersonGreet(twoIDs:)` API call
-struct TwoPersonGreetResponse: Codable {
+public struct TwoPersonGreetResponse: Codable {
     public var success: Bool
     public var message: String?
 }
 
 // Response model for `reportFlags(_:question:)`, `reportFlags(_:response:for:)`, `reportFlags(_:picURL:userID:)` API calls
-struct ReportFlagsResponse: Codable {
+public struct ReportFlagsResponse: Codable {
     public var success: Bool
     public var flaggedCount: Int?
 }
 
 // Response model for `getUserInformation` API call
-struct GetUserInformationResponse: Codable {
+public struct GetUserInformationResponse: Codable {
     public var user: UserInformation
 }
 
-struct UserInformation: Codable {
+public struct UserInformation: Codable {
     public var id: String
     public var name: String
     public var email: String
@@ -60,7 +60,7 @@ struct UserInformation: Codable {
 }
 
 // Response model for `rate(greetid:otherUser:rating:)` API call
-struct RateResponse: Codable {
+public struct RateResponse: Codable {
     public var success: Bool
     public var newRating: Double?
 }
@@ -68,7 +68,7 @@ struct RateResponse: Codable {
 // No specific response model needed for `updateSchedule`, `updateGreet`, `updateGreetSettings` as they might just return a success status
 
 // Response model for `updateUserLocation(userId:contextId:)`, `silentPushLocationUpdates(alwaysOn:)`, `updateLocation(token:userID:lat:lon:)` API calls
-struct LocationUpdateResponse: Codable {
+public struct LocationUpdateResponse: Codable {
     public var success: Bool
     public var message: String?
 }
@@ -76,98 +76,98 @@ struct LocationUpdateResponse: Codable {
 // Assume no response body for `assert(_:message:file:line:)` or handle as needed
 
 // Response model for `update(importance:for:questionID:)` API call
-struct UpdateImportanceResponse: Codable {
+public struct UpdateImportanceResponse: Codable {
     public var success: Bool
     public var updatedImportance: Question.Importance?
 }
 
 // Response model for `track(events:)` API call
-struct TrackEventsResponse: Codable {
+public struct TrackEventsResponse: Codable {
     public var success: Bool
     public var trackedEventsCount: Int?
 }
 
 // Response model for `updateEmail(new:password:)`, `updateCourtesyCallSetting(allows:)`, `update(oldPassword:newPassword:savedEmail:)` API calls
-struct UpdateEmailResponse: Codable {
+public struct UpdateEmailResponse: Codable {
     public var success: Bool
     public var message: String?
 }
 
 // Response model for `add(question:)` API call
-struct AddQuestionResponse: Codable {
+public struct AddQuestionResponse: Codable {
     public var success: Bool
     public var questionId: Int?
 }
 
 // Response model for `manualGreet(otherID:)` API call
-struct ManualGreetResponse: Codable {
+public struct ManualGreetResponse: Codable {
     public var success: Bool
     public var greetId: Int?
 }
 
 // Response model for `resetPassword(email:)` API call
-struct ResetPasswordResponse: Codable {
+public struct ResetPasswordResponse: Codable {
     public var success: Bool
     public var message: String?
 }
 
 // Response model for `change(email:to:)` API call
-struct ChangeEmailResponse: Codable {
+public struct ChangeEmailResponse: Codable {
     public var success: Bool
     public var message: String?
 }
 
 // Response model for `registerDeviceToken(error:)` and `register(deviceToken:)` API calls
-struct RegisterDeviceTokenResponse: Codable {
+public struct RegisterDeviceTokenResponse: Codable {
     public var success: Bool
     public var message: String?
 }
 
 // Response model for `hide(me:)` API call
-struct HideMeResponse: Codable {
+public struct HideMeResponse: Codable {
     public var success: Bool
     public var message: String?
 }
 
 // Response model for `register(pushKitDeviceToken:)` API call
-struct RegisterPushKitDeviceTokenResponse: Codable {
+public struct RegisterPushKitDeviceTokenResponse: Codable {
     public var success: Bool
     public var message: String?
 }
 
 // Response model for `block(user:)` and `block(otherID:shouldBlock:)` API calls
-struct BlockUserResponse: Codable {
+public struct BlockUserResponse: Codable {
     public var success: Bool
     public var blockedUserId: Int?
 }
 
 // Response model for `login(email:password:)` API call
-struct LoginResponse: Codable {
+public struct LoginResponse: Codable {
     public var success: Bool
     public var userId: String?
     public var authToken: String?
 }
 
 // Response model for `add(response:questionID:)` API call
-struct AddResponseResponse: Codable {
+public struct AddResponseResponse: Codable {
     public var success: Bool
     public var responseId: Int?
 }
 
 // Response model for `nearbyUsers(location:)` API call
-struct NearbyUsersResponse: Codable {
+public struct NearbyUsersResponse: Codable {
     public var success: Bool
-    public var users: [UserInformation] // Reusing UserInformation struct from earlier
+    public var users: [UserInformation] // Reusing UserInformation public struct from earlier
 }
 
 // Response model for `make(my:their:for:for:forContext:)` API call
-struct MakeResponseResponse: Codable {
+public struct MakeResponseResponse: Codable {
     public var success: Bool
     public var message: String?
 }
 
 // Response model for `responses(question:context:)` and `responses(search:question:context:)` API calls
-struct QuestionResponsesResponse: Codable {
+public struct QuestionResponsesResponse: Codable {
     public var success: Bool
     public var responses: [QuestionResponse]
 
@@ -179,46 +179,46 @@ struct QuestionResponsesResponse: Codable {
 }
 
 // Response model for `questions(search:type:page:context:required:)` API call
-struct QuestionsResponse: Codable {
+public struct QuestionsResponse: Codable {
     public var success: Bool
     public var questions: [Question]
 
-    // Reusing Question struct from earlier
+    // Reusing Question public struct from earlier
 }
 
 // Response model for `logout` API call
-struct LogoutResponse: Codable {
+public struct LogoutResponse: Codable {
     public var success: Bool
     public var message: String?
 }
 
 // Response model for `update(settings:)` API call
-struct UpdateSettingsResponse: Codable {
+public struct UpdateSettingsResponse: Codable {
     public var success: Bool
     public var message: String?
 }
 
 // Response model for `addDisplay()` and `uploadPic` API calls
-struct AddDisplayPictureResponse: Codable {
+public struct AddDisplayPictureResponse: Codable {
     public var success: Bool
     public var imageUrl: String?
 }
 
 // Response model for the `uploadPic` API call
-struct UploadPicResponse: Codable {
+public struct UploadPicResponse: Codable {
     public var success: Bool
     public var imageUrl: String?
 }
 
 // Assuming a response model for the commented-out `register(basicInfo:)` URL creation function
-struct RegisterBasicInfoResponse: Codable {
+public struct RegisterBasicInfoResponse: Codable {
     public var success: Bool
     public var userId: String?
     public var message: String?
 }
 
 // Assuming a response model for the commented-out `prefetchUser(for:)` URL creation function
-struct PrefetchUserForResponse: Codable {
+public struct PrefetchUserForResponse: Codable {
     public var success: Bool
     public var users: [UserDetail]
 
@@ -230,7 +230,7 @@ struct PrefetchUserForResponse: Codable {
 }
 
 // Assuming a response model for the commented-out `triggerTwoPersonGreet(with:and:)` URL creation function
-struct TriggerTwoPersonGreetResponse: Codable {
+public struct TriggerTwoPersonGreetResponse: Codable {
     public var success: Bool
     public var message: String?
 }

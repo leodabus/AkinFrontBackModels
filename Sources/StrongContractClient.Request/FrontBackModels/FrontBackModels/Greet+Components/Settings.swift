@@ -10,7 +10,7 @@ import Foundation
 
 // MARK - TODO after figuring out the user structure, put settings nested in this user/viewing user.
 
-struct Settings: Codable {
+public struct Settings: Codable {
 
     /// Set this 
     static var shared: Self?
