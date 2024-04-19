@@ -10,10 +10,10 @@ import Foundation
 
 extension Question.SaveAttemptServerResponse {
     
-    enum ServerError: String, Error, Codable {
+    public enum ServerError: String, Error, Codable {
         case incorrectFormatServerError, repeatQuestion, unknownError
         
-        var explanation: String {
+        public var explanation: String {
             switch self {
             case .incorrectFormatServerError:
                 return "Either the json came in the wrong format, or it was parsed incorrectly."

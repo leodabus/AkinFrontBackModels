@@ -11,18 +11,18 @@ import UserNotifications
 
 extension Greet.Notification {
     
-    struct LocalModel: Codable {
+    public struct LocalModel: Codable {
 
-        enum Key: String, Codable {
+        public enum Key: String, Codable {
             case getReviewTime, weClosedTheGreet
         }
         
-        var greetIdentifier: String
-        var otherUserID: Int
-        var profileURL: String?
-        var name: String
-        var timeMet: String
-        var notificationKey: LocalModel.Key
+        public var greetIdentifier: String
+        public var otherUserID: Int
+        public var profileURL: String?
+        public var name: String
+        public var timeMet: String
+        public var notificationKey: LocalModel.Key
 
         init(
             identifier: String,

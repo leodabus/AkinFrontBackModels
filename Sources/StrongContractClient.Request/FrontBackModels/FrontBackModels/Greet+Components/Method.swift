@@ -10,7 +10,7 @@ import Foundation
 
 extension Greet {
     
-    enum Method: String, Codable, CaseIterable {
+    public enum Method: String, Codable, CaseIterable {
         case handShake = "Hand shake"
         case hug
         case kiss
@@ -18,7 +18,7 @@ extension Greet {
         case wave, hook_up = "Hook up"
         case wetWilly = "Wet Willy"
         
-        var displayStr: String {
+        public var displayStr: String {
             switch self {
             case .hug: return "Hug"
             case .kiss: return "Kiss"

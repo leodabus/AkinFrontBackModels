@@ -10,7 +10,7 @@ import Foundation
 
 extension Question {
     
-    enum SaveAttemptServerResponse {
+    public enum SaveAttemptServerResponse {
         
         case error(ServerError)
         case question(Question)

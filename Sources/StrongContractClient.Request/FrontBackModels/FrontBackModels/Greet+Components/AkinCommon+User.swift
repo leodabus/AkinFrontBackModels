@@ -15,19 +15,19 @@ public struct User: Codable {
 
     // MARK - properties
 
-    var privacy: PrivateDetails? // Codable
-    var imgData: Data?
-    var imgLocation: String?
-    var name: String
-    var id: Int
-    var email: String
-    var zip: Int?
-    var phoneNumber: Int? = nil
-    var requiredQuestions: [Question] = [] // Codable
-    var birthDate: Date? = nil
-    var profilePicData: Data? = nil
-    var meetingSchedule: [Week.Day] = []
-    var dobString: String?
+    public var privacy: PrivateDetails? // Codable
+    public var imgData: Data?
+    public var imgLocation: String?
+    public var name: String
+    public var id: Int
+    public var email: String
+    public var zip: Int?
+    public var phoneNumber: Int? = nil
+    public var requiredQuestions: [Question] = [] // Codable
+    public var birthDate: Date? = nil
+    public var profilePicData: Data? = nil
+    public var meetingSchedule: [Week.Day] = []
+    public var dobString: String?
 
     // MARk - inits
 

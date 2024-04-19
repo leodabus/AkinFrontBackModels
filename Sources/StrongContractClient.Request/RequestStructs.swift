@@ -8,7 +8,7 @@
 import Foundation
 
 struct UpdateMidGreetSettingsRequest: Codable {
-    var midGreetSettings: Greet.Settings
+    public var midGreetSettings: Greet.Settings
 }
 
 struct UpdateScheduleRequest: Codable {
@@ -23,59 +23,59 @@ struct UpdateGreetSettingsRequest: Codable {
 }
 
 struct AssertRequest: Codable {
-    var assertion: Bool
-    var message: String
-    var file: String
-    var line: Int
+    public var assertion: Bool
+    public var message: String
+    public var file: String
+    public var line: Int
 }
 
 // Argument structs
 struct UpdateCourtesyCallSettingRequest: Codable {
-    var allows: Bool
+    public var allows: Bool
 }
 
 struct UpdatePasswordRequest: Codable {
-    var oldPassword: String
-    var newPassword: String
-    var savedEmail: String
+    public var oldPassword: String
+    public var newPassword: String
+    public var savedEmail: String
 }
 
 struct SendMakeRequest: Codable {
-    var deviceString: String
+    public var deviceString: String
 }
 
 struct AddQuestionRequest: Codable {
-    var questionText: String // Assuming 'Question' has a 'text' property
+    public var questionText: String // Assuming 'Question' has a 'text' property
     // The date might be generated at the time of the request, so it's not included here.
 }
 
 struct ManualGreetRequest: Codable {
-    var otherID: Int
+    public var otherID: Int
 }
 
 struct TrackEventsRequest: Codable {
-    var events: [Int: String]
+    public var events: [Int: String]
 }
 
 struct UpdateEmailRequest: Codable {
-    var newEmail: String
-    var password: String
+    public var newEmail: String
+    public var password: String
 }
 
 struct UpdateImportanceRequest: Codable {
-    var importance: Question.Importance
-    var context: Context
-    var questionID: Int
+    public var importance: Question.Importance
+    public var context: Context
+    public var questionID: Int
 }
 
 struct GetUserInformationRequest: Codable {
-    var accessToken: String // Added accessToken to match the provided description
+    public var accessToken: String // Added accessToken to match the provided description
 }
 
 // Define the argument structs
 struct ReportFlagsQuestion: Codable {
-    var flags: [Int]
-    var questionID: Int
+    public var flags: [Int]
+    public var questionID: Int
 }
 
 // Request structure for `reportFlags` with question ID
@@ -127,34 +127,34 @@ struct UpdateLocationRequest: Codable {
 
 // Define Argument structs
 struct ResetPasswordRequest: Codable {
-    var email: String
+    public var email: String
 }
 
 struct ChangeEmailRequest: Codable {
-    var currentEmail: String
-    var newEmail: String
+    public var currentEmail: String
+    public var newEmail: String
 }
 
 struct RegisterDeviceTokenErrorRequest: Codable {
-    var error: String
+    public var error: String
 }
 
 struct RegisterDeviceTokenRequest: Codable {
-    var deviceToken: String
+    public var deviceToken: String
 }
 
 struct HideMeRequest: Codable {
-    var hide: Bool
+    public var hide: Bool
 }
 
 struct RegisterPushKitDeviceTokenRequest: Codable {
-    var pushKitDeviceToken: String
+    public var pushKitDeviceToken: String
 }
 
 // Define Argument structs
 struct BlockUserRequest: Codable {
-    var otherUser: Int
-    var shouldBlock: Bool? // Optional to accommodate both block user functions
+    public var otherUser: Int
+    public var shouldBlock: Bool? // Optional to accommodate both block user functions
 }
 
 struct BlockedUsersRequest: Codable {
@@ -162,40 +162,40 @@ struct BlockedUsersRequest: Codable {
 }
 
 struct LoginRequest: Codable {
-    var email: String
-    var password: String
+    public var email: String
+    public var password: String
 }
 
 struct AddResponseRequest: Codable {
-    var responseText: String
-    var questionID: String
+    public var responseText: String
+    public var questionID: String
 }
 
 struct NearbyUsersRequest: Codable {
-    var latitude: String
-    var longitude: String
+    public var latitude: String
+    public var longitude: String
 }
 
 struct MakeUserResponseRequest: Codable {
-    var myChoiceWeightMultiplier: Double?
-    var theirChoiceWeightMultiplier: Double?
-    var responseID: Int
-    var questionID: Int
-    var context: Context.RawValue
+    public var myChoiceWeightMultiplier: Double?
+    public var theirChoiceWeightMultiplier: Double?
+    public var responseID: Int
+    public var questionID: Int
+    public var context: Context.RawValue
 }
 
 struct GetResponsesRequest: Codable {
-    var questionID: Int
-    var context: Context.RawValue
-    var searchText: String?
+    public var questionID: Int
+    public var context: Context.RawValue
+    public var searchText: String?
 }
 
 struct GetQuestionsRequest: Codable {
-    var searchText: String?
-    var type: Question.Category.RawValue
-    var page: Int?
-    var context: Context.RawValue
-    var required: Bool
+    public var searchText: String?
+    public var type: Question.Category.RawValue
+    public var page: Int?
+    public var context: Context.RawValue
+    public var required: Bool
 }
 
 struct AddDisplayRequest: Codable {

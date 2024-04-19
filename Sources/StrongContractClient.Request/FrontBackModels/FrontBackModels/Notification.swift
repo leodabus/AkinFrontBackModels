@@ -10,7 +10,7 @@ import UserNotifications
 
 extension Greet {
     
-    enum Notification: Codable {
+    public enum Notification: Codable {
         case getRating(Greet.Notification.LocalModel)
         case greet(Greet)
         case silentLocationUpdate

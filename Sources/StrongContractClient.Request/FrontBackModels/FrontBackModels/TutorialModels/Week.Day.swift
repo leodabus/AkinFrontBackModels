@@ -10,14 +10,14 @@ import Foundation
 
 extension Week {
 
-    struct Day: Codable {
+    public struct Day: Codable {
 
-        enum Name: String, Codable {
+        public enum Name: String, Codable {
             case Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
         }
 
-        var name: Name
-        var timeBlocks: [Hour]
+        public var name: Name
+        public var timeBlocks: [Hour]
 
         init(name: Name, timeBlocks: [Hour] = []) {
             self.name = name

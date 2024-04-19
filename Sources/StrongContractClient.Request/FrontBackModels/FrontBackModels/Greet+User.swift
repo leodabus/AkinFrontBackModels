@@ -10,15 +10,15 @@ import Foundation
 
 extension Greet {
 
-    struct User: Codable {
-        var id: Int
-        var name: String
-        var profileImages: [String] = []
-        var percentTravelled: Double? = nil
-        var image: Data? = nil
-        var minutesFromPoint: Int? = nil
-        var settings: Greet.Settings? = nil
-        var verified: Bool = false
+    public struct User: Codable {
+        public var id: Int
+        public var name: String
+        public var profileImages: [String] = []
+        public var percentTravelled: Double? = nil
+        public var image: Data? = nil
+        public var minutesFromPoint: Int? = nil
+        public var settings: Greet.Settings? = nil
+        public var verified: Bool = false
         // var imageUpdatedTo: ImageAction? = nil
     }
 }

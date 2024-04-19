@@ -10,11 +10,11 @@ import CoreLocation
 
 extension Greet {
     
-    struct MeetingEvent: Codable {
+    public struct MeetingEvent: Codable {
 
-        var meetInXMinutes: Int = 0
-        var halfwayPoint: CLLocationCoordinate2D
-        var business: Yelp.Business? = nil
+        public var meetInXMinutes: Int = 0
+        public var halfwayPoint: CLLocationCoordinate2D
+        public var business: Yelp.Business? = nil
 
         init(halfway: CLLocationCoordinate2D) {
             self.halfwayPoint = halfway

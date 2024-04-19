@@ -10,13 +10,13 @@ import Foundation
 
 extension Greet {
     
-    enum Update: Equatable, Codable {
+    public enum Update: Equatable, Codable {
         case errorMessage(String)
         case exitReason(ExitReason)
         case message(Message)
         case viewSetting(ViewSetting)
         
-        static func == (lhs: Greet.Update, rhs: Greet.Update) -> Bool {
+        public static func == (lhs: Greet.Update, rhs: Greet.Update) -> Bool {
             switch (lhs, rhs) {
             case (let .errorMessage(errorMessage1), let .errorMessage(errorMessage2)):
                 return errorMessage1 == errorMessage2

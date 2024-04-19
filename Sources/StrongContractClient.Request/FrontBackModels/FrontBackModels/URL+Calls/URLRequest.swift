@@ -16,7 +16,7 @@ typealias HTTPStatusAction = (HTTPURLResponse.HTTPStatus?) -> Void
 
 extension URLRequest {
 
-    var post: Self {
+    public var post: Self {
         var buffer = self
         buffer.httpMethod = "POST"
         return buffer
@@ -69,7 +69,7 @@ extension URLRequest {
         }
     }
 
-    var method: HTTPMethod? {
+    public var method: HTTPMethod? {
         httpMethod.flatMap { HTTPMethod(rawValue: $0) }
     }
 
@@ -163,8 +163,8 @@ extension URLRequest {
 
 
 //struct Request<Payload: Codable, Response: Codable> {
-//    var path: String
-//    var method: HTTPMethod
+//    public var path: String
+//    public var method: HTTPMethod
 //}
 
 
@@ -173,7 +173,7 @@ extension URLRequest {
 //
 //    typealias PassResponse = (Response) -> Void
 //
-//    func task(payload: Payload, passResponse: PassResponse) {
+//    public func task(payload: Payload, passResponse: PassResponse) {
 //
 //        // so that calling this function looks like:
 //        /*
@@ -186,7 +186,7 @@ extension URLRequest {
 //  //   typealias Handle
 //
 //   //  @if can import vapor
-//    func handle(api: any RouteBui) {
+//    public func handle(api: any RouteBui) {
 //        // VaporMethod.path
 //
 //        // so that usage looks like this:
@@ -200,13 +200,13 @@ typealias Row = Int
 
 ///
 struct TokenAndPayload<Payload: Codable>: Codable {
-    var accessToken: URLQueryItem = .access_token_and_user_id
-    var payload: Payload
+    public var accessToken: URLQueryItem = .access_token_and_user_id
+    public var payload: Payload
 }
 
 struct TwoIDs: Codable {
-    var firstId: Int
-    var otherID: Int
+    public var firstId: Int
+    public var otherID: Int
 }
 
 struct PayloadResponse {

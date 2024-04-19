@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct PrivateDetails: Codable {
-    var password: String
-    var romanceOn: Bool
-    var token: String
+public struct PrivateDetails: Codable {
+    public var password: String
+    public var romanceOn: Bool
+    public var token: String
 
     init(password: String, romanceOn: Bool, accessToken: String) {
         self.password = password

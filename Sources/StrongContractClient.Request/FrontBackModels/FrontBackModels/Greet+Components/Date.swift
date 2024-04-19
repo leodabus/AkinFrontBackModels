@@ -8,7 +8,7 @@
 import Foundation
 
 extension Date {
-    var apiString: String {
+    public var apiString: String {
         let df = DateFormatter()
         df.dateFormat = "YYYY-MM-dd HH:mm:ss"
         df.timeZone = TimeZone(identifier: "GMT")

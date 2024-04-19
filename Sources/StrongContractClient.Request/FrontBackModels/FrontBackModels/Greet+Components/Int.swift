@@ -9,9 +9,9 @@ import Foundation
 
 extension Int {
     
-    var string: String {
+    public var string: String {
         String(self)
     }
 
-    var boolValue: Bool { self != 0 }
+    public var boolValue: Bool { self != 0 }
 }

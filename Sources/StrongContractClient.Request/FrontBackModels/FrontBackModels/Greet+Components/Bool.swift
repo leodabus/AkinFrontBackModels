@@ -8,12 +8,12 @@
 import Foundation
 
 extension Bool {
-    var strInt: String {
+    public var strInt: String {
         "\(int)"
     }
 
     ///Returns 1 if true, 0 if false
-    var int: Int {
+    public var int: Int {
         self ? 1 : 0
     }
 

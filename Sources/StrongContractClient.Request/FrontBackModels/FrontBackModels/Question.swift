@@ -10,41 +10,41 @@ import Foundation
 
 typealias QuestionAction = ((Question) -> Void)
 
-struct Question: Codable, Equatable, Hashable {
-    
+public struct Question: Codable, Equatable, Hashable {
+
     // MARK - Types
     
-    enum Category: String, CaseIterable {
+    public enum Category: String, CaseIterable {
         case not_answered, answered, all, created
     }
     
-    static func == (lhs: Question, rhs: Question) -> Bool {
+    public static func == (lhs: Question, rhs: Question) -> Bool {
         lhs.id == rhs.id
     }
     
     // MARK - stored properties
     
-    var requirementsFor: [Context: [Response.Selections.MyTheir]] = [:] // codable
-    var text: String = ""
-    var responses: [Response] = [] // Codable
-    var id: Int?
-    var type: String
-    var creatorID: Int
-    var importanceFor: [ContextID: Importance] = [:] // Codable
-    var contextPopularity: [ContextID: PopularityScore] = [:] // Codable
+    public var requirementsFor: [Context: [Response.Selections.MyTheir]] = [:] // codable
+    public var text: String = ""
+    public var responses: [Response] = [] // Codable
+    public var id: Int?
+    public var type: String
+    public var creatorID: Int
+    public var importanceFor: [ContextID: Importance] = [:] // Codable
+    public var contextPopularity: [ContextID: PopularityScore] = [:] // Codable
 
     
     // MARK - computed properties
     
-    var currentID: Int {
+    public var currentID: Int {
         id ?? -53
     }
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
 
-    func responses(containing searchText: String) -> [Response] {
+    public func responses(containing searchText: String) -> [Response] {
         responses.filter {  $0.text.lowercased().contains(searchText.lowercased()) }
     }
     

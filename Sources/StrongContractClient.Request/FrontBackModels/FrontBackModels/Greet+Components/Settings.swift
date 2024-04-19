@@ -17,28 +17,28 @@ struct Settings: Codable {
 
     // MARK - properties
     
-    var vibrate: Bool = false
-    var ring: Bool = false
-    var displayPic: String?
-    var emailPrimary: String?
-    var userID: Int = -1
-    var phone: String?
-    var contexts: [Context] = []
-    var username: String? = nil
-    var allowedGreetingMethods: [Greet.Method] = [.wave]
-    var profileImg: Data? = nil
-    var metersWillingToTravel: Int = 150
-    var dob: String?
+    public var vibrate: Bool = false
+    public var ring: Bool = false
+    public var displayPic: String?
+    public var emailPrimary: String?
+    public var userID: Int = -1
+    public var phone: String?
+    public var contexts: [Context] = []
+    public var username: String? = nil
+    public var allowedGreetingMethods: [Greet.Method] = [.wave]
+    public var profileImg: Data? = nil
+    public var metersWillingToTravel: Int = 150
+    public var dob: String?
 
-    var profilePicAlternator: TypeAlternator<Data, String>? {
+    public var profilePicAlternator: TypeAlternator<Data, String>? {
         TypeAlternator(profileImg, displayPic)
     }
     
-    var isOnSocial: Bool {
+    public var isOnSocial: Bool {
         contexts.contains(.social)
     }
     
-    var isOnRomance: Bool {
+    public var isOnRomance: Bool {
         contexts.contains(.romance)
     }
     
@@ -47,7 +47,7 @@ struct Settings: Codable {
         allowedGreetingMethods.append(greetingMethod)
     }
     
-    var greetingMethodText: String {
+    public var greetingMethodText: String {
         if allowedGreetingMethods.isEmpty {
             return "wave"
         }
@@ -57,19 +57,19 @@ struct Settings: Codable {
         return "Multiple"
     }
     
-    func has(_ context: Context) -> Bool {
+    public func has(_ context: Context) -> Bool {
         contexts.contains(context)
     }
     
-    func has(method greetingMethod: Greet.Method) -> Bool {
+    public func has(method greetingMethod: Greet.Method) -> Bool {
         allowedGreetingMethods.contains(greetingMethod)
     }
     
-    func has(_ greetingMethod: Greet.Method) -> String {
+    public func has(_ greetingMethod: Greet.Method) -> String {
         has(method: greetingMethod).strInt
     }
     
-    var contextText: String {
+    public var contextText: String {
         contexts.count == 2 ? "Both on" :
         contexts.first.map { "\($0.rawValue) on" } ?? "Both off"
     }

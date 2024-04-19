@@ -10,7 +10,7 @@ import Foundation
 
 extension Greet {
     
-    enum CellName: String, Codable {
+    public enum CellName: String, Codable {
         case AlternateDecisionCell
         case BackToTopCell
         case DismissCell

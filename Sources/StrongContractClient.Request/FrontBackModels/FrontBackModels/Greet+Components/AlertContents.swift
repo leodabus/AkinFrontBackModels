@@ -9,13 +9,13 @@
 import Foundation
 import CoreLocation
 
-struct Contents: Codable {
+public struct Contents: Codable {
 
-    var title: String
-    var message: String
-    var confirmationButtonText: String
-    var doNothing: String?
-    var alreadyConfirmed: Bool?
+    public var title: String
+    public var message: String
+    public var confirmationButtonText: String
+    public var doNothing: String?
+    public var alreadyConfirmed: Bool?
 
 
     /// Initializes content to be used in an alert.

@@ -10,10 +10,10 @@ import Foundation
 
 extension Greet {
     
-    struct Settings: Codable {
-        var rejectedTimeProposals: [Int] = []
-        var agreedTimeProposals: [Int] = []
-        var status: Greet.Update.Status
+    public struct Settings: Codable {
+        public var rejectedTimeProposals: [Int] = []
+        public var agreedTimeProposals: [Int] = []
+        public var status: Greet.Update.Status
 
         mutating func updateSettings(with otherUserSettings: Settings?) {
             guard let otherUserSettings = otherUserSettings else { return }
