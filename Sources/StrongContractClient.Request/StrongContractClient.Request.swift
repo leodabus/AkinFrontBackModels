@@ -17,7 +17,7 @@ public extension StrongContractClient.Request where Payload == User.SignUp, Resp
 }
 
 public extension StrongContractClient.Request where Payload == AccessTokenRequest, Response == TermsOfService {
-     var terms: Request {
+     static var terms: Request {
         Request(path: "getTerms", method: .get)
     }
 }
@@ -92,63 +92,63 @@ public extension StrongContractClient.Request where Payload == AssertRequest, Re
 }
 
 public extension StrongContractClient.Request where Payload == UpdateImportanceRequest, Response == StandardPostResponse {
-     var updateImportance: Request {
+     static var updateImportance: Request {
         Request(path: "updateImportance", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == TrackEventsRequest, Response == StandardPostResponse {
-     var trackEvents: Request {
+     static var trackEvents: Request {
         Request(path: "trackEvents", method: .post)
     }
 }
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == UpdateEmailRequest, Response == StandardPostResponse {
-     var updateEmail: Request {
+     static var updateEmail: Request {
         Request(path: "updateEmail", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == UpdateCourtesyCallSettingRequest, Response == StandardPostResponse {
-     var updateCourtesyCallSetting: Request {
+     static var updateCourtesyCallSetting: Request {
         Request(path: "allowsCourtesyCall", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == UpdatePasswordRequest, Response == StandardPostResponse {
-     var updatePassword: Request {
+     static var updatePassword: Request {
         Request(path: "updatePassByOldPass", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == SendMakeRequest, Response == StandardPostResponse {
-     var sendMake: Request {
+     static var sendMake: Request {
         Request(path: "make", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == Question, Response == StandardPostResponse {
-     var addQuestion: Request {
+     static var addQuestion: Request {
         Request(path: "addQuestion", method: .post)
     }
 }
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == ManualGreetRequest, Response == StandardPostResponse {
-     var manualGreet: Request {
+     static var manualGreet: Request {
         Request(path: "manualGreet", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == ResetPasswordRequest, Response == StandardPostResponse {
-     var resetPassword: Request {
+     static var resetPassword: Request {
         Request(path: "resetPassword", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == ChangeEmailRequest, Response == StandardPostResponse {
-     var changeEmail: Request {
+     static var changeEmail: Request {
         Request(path: "changeEmail", method: .post)
     }
 }
@@ -156,21 +156,21 @@ public extension StrongContractClient.Request where Payload == ChangeEmailReques
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == RegisterDeviceTokenErrorRequest, Response == StandardPostResponse {
 
-     var registerDeviceTokenError: Request {
+     static var registerDeviceTokenError: Request {
         Request(path: "registerDeviceTokenError", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == RegisterDeviceTokenRequest, Response == StandardPostResponse {
 
-     var registerDeviceToken: Request {
+     static var registerDeviceToken: Request {
         Request(path: "registerDeviceToken", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == HideMeRequest, Response == StandardPostResponse {
 
-     var hideMe: Request {
+     static var hideMe: Request {
         Request(path: "HideFromNearByList", method: .post)
     }
 }
@@ -178,103 +178,103 @@ public extension StrongContractClient.Request where Payload == HideMeRequest, Re
 // Conversion examples integrated with request structures
 
 public extension StrongContractClient.Request where Payload == RegisterPushKitDeviceTokenRequest, Response == StandardPostResponse {
-     var registerPushKitDeviceToken: Request {
+     static var registerPushKitDeviceToken: Request {
         Request(path: "registerPushKitDeviceToken", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == BlockUserRequest, Response == StandardPostResponse {
-     var blockUser: Request {
+     static var blockUser: Request {
         Request(path: "blockUser", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == BlockedUsersRequest, Response == [GeneralUser] {
-     var getBlockedUsers: Request {
+     static var getBlockedUsers: Request {
         Request(path: "getBlockedUsersList", method: .get)
     }
 }
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == LoginRequest, Response == User {
-     var login: Request {
+     static var login: Request {
         Request(path: "login", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == AddResponseRequest, Response == StandardPostResponse {
-     var addOption: Request {
+     static var addOption: Request {
         Request(path: "addOption", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == NearbyUsersRequest, Response == Greet.User {
-     var nearbyUsers: Request {
+     static var nearbyUsers: Request {
         Request(path: "GetNearByUserList", method: .get)
     }
 }
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == MakeUserResponseRequest, Response == StandardPostResponse {
-     var makeUserResponse: Request {
+     static var makeUserResponse: Request {
         Request(path: "addUserResponse", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == GetResponsesRequest, Response == [Question.Response] {
-     var getResponses: Request {
+     static var getResponses: Request {
         Request(path: "getOptions", method: .get)
     }
 }
 
 public extension StrongContractClient.Request where Payload == GetQuestionsRequest, Response == [Question] {
-     var getQuestions: Request {
+     static var getQuestions: Request {
         Request(path: "getQuestions", method: .get)
     }
 }
 
 
 public extension StrongContractClient.Request where Payload == Settings, Response == StandardPostResponse {
-     var updateSettings: Request {
+     static var updateSettings: Request {
         Request(path: "updateUserSettings", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == AddDisplayRequest, Response == StandardPostResponse {
-     var addDisplay: Request {
+     static var addDisplay: Request {
         Request(path: "addDisplayPicture", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == UploadPicRequest, Response == StandardPostResponse {
 
-     var uploadPic: Request {
+     static var uploadPic: Request {
         Request(path: "addDisplayPicture", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == UpdateMidGreetSettingsRequest, Response == StandardPostResponse {
 
-     var updateMidGreetSettings: Request {
+     static var updateMidGreetSettings: Request {
         Request(path: "updateGreetSettings", method: .post)
     }
 }
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == UpdateScheduleRequest, Response == StandardPostResponse {
-     var updateSchedule: Request {
+     static var updateSchedule: Request {
         Request(path: "updateSchedule", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == UpdateGreetRequest, Response == StandardPostResponse {
-     var updateGreet: Request {
+     static var updateGreet: Request {
         Request(path: "updateGreet", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == UpdateGreetSettingsRequest, Response == StandardPostResponse {
-     var updateGreetSettings: Request {
+     static var updateGreetSettings: Request {
         Request(path: "updateGreetSettings", method: .post)
     }
 }
@@ -282,33 +282,33 @@ public extension StrongContractClient.Request where Payload == UpdateGreetSettin
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == UpdateUserLocationRequest, Response == StandardPostResponse {
 
-     var updateUserLocation: Request {
+     static var updateUserLocation: Request {
         Request(path: "user/location/context", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == SilentPushLocationUpdatesRequest, Response == StandardPostResponse {
 
-     var silentPushLocationUpdates: Request {
+     static var silentPushLocationUpdates: Request {
         Request(path: "shouldUpdateLocation", method: .post)
     }
 }
 
 //// Conversion examples integrated with request structures
 //public extension StrongContractClient.Request where Payload == TrackEventsRequest, Response == StandardPostResponse {
-//     var trackEvents: Request {
+//     static var trackEvents: Request {
 //        Request(path: "trackEvents", method: .post)
 //    }
 //}
 //
 //public extension StrongContractClient.Request where Payload == Settings, Response == StandardPostResponse {
-//     var updateSettings: Request {
+//     static var updateSettings: Request {
 //        Request(path: "updateUserSettings", method: .post)
 //    }
 //}
 //
 //public extension StrongContractClient.Request where Payload == AddDisplayRequest, Response == StandardPostResponse {
-//     var addDisplay: Request {
+//     static var addDisplay: Request {
 //        Request(path: "addDisplayPicture", method: .post)
 //    }
 //}
