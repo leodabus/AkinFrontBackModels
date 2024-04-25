@@ -78,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/scott-lydon/StrongContractClient.git",
       "state" : {
-        "revision" : "eefba34d204418030ab43d7e66ac828a85bed93b",
-        "version" : "2.0.1"
+        "revision" : "0d20c39b2986e639a24e85d33741895da343486c",
+        "version" : "2.1.0"
       }
     },
     {
