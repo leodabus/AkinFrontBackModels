@@ -27,7 +27,7 @@ public struct GeneralUser: Codable {
     public var profileImages: [String] = []
     public var verified: Bool = false
     
-    init(id: Int, name: String, profileImages: [String], verified: Bool) {
+    public init(id: Int, name: String, profileImages: [String], verified: Bool) {
         self.id = id
         self.name = name
         self.profileImages = profileImages
@@ -39,7 +39,7 @@ public struct StandardPostResponse: Codable {
     public var success: Bool
     public var message: String?
 
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }
@@ -50,7 +50,7 @@ public struct TwoPersonGreetResponse: Codable {
     public var success: Bool
     public var message: String?
 
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }
@@ -61,7 +61,7 @@ public struct ReportFlagsResponse: Codable {
     public var success: Bool
     public var flaggedCount: Int?
 
-    init(success: Bool, flaggedCount: Int? = nil) {
+    public init(success: Bool, flaggedCount: Int? = nil) {
         self.success = success
         self.flaggedCount = flaggedCount
     }
@@ -71,7 +71,7 @@ public struct ReportFlagsResponse: Codable {
 public struct GetUserInformationResponse: Codable {
     public var user: UserInformation
 
-    init(user: UserInformation) {
+    public init(user: UserInformation) {
         self.user = user
     }
 }
@@ -83,7 +83,7 @@ public struct UserInformation: Codable {
     public var profileImageUrl: String?
     public var bio: String?
 
-    init(id: String, name: String, email: String, profileImageUrl: String? = nil, bio: String? = nil) {
+    public init(id: String, name: String, email: String, profileImageUrl: String? = nil, bio: String? = nil) {
         self.id = id
         self.name = name
         self.email = email
@@ -97,7 +97,7 @@ public struct RateResponse: Codable {
     public var success: Bool
     public var newRating: Double?
 
-    init(success: Bool, newRating: Double? = nil) {
+    public init(success: Bool, newRating: Double? = nil) {
         self.success = success
         self.newRating = newRating
     }
@@ -110,7 +110,7 @@ public struct LocationUpdateResponse: Codable {
     public var success: Bool
     public var message: String?
 
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }
@@ -123,7 +123,7 @@ public struct UpdateImportanceResponse: Codable {
     public var success: Bool
     public var updatedImportance: Question.Importance?
 
-    init(success: Bool, updatedImportance: Question.Importance? = nil) {
+    public init(success: Bool, updatedImportance: Question.Importance? = nil) {
         self.success = success
         self.updatedImportance = updatedImportance
     }
@@ -134,7 +134,7 @@ public struct TrackEventsResponse: Codable {
     public var success: Bool
     public var trackedEventsCount: Int?
 
-    init(success: Bool, trackedEventsCount: Int? = nil) {
+    public init(success: Bool, trackedEventsCount: Int? = nil) {
         self.success = success
         self.trackedEventsCount = trackedEventsCount
     }
@@ -145,7 +145,7 @@ public struct UpdateEmailResponse: Codable {
     public var success: Bool
     public var message: String?
 
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }
@@ -156,7 +156,7 @@ public struct AddQuestionResponse: Codable {
     public var success: Bool
     public var questionId: Int?
 
-    init(success: Bool, questionId: Int? = nil) {
+    public init(success: Bool, questionId: Int? = nil) {
         self.success = success
         self.questionId = questionId
     }
@@ -167,7 +167,7 @@ public struct ManualGreetResponse: Codable {
     public var success: Bool
     public var greetId: Int?
 
-    init(success: Bool, greetId: Int? = nil) {
+    public init(success: Bool, greetId: Int? = nil) {
         self.success = success
         self.greetId = greetId
     }
@@ -178,7 +178,7 @@ public struct ResetPasswordResponse: Codable {
     public var success: Bool
     public var message: String?
 
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }
@@ -189,7 +189,7 @@ public struct ChangeEmailResponse: Codable {
     public var success: Bool
     public var message: String?
 
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }
@@ -200,7 +200,7 @@ public struct RegisterDeviceTokenResponse: Codable {
     public var success: Bool
     public var message: String?
 
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }
@@ -211,7 +211,7 @@ public struct HideMeResponse: Codable {
     public var success: Bool
     public var message: String?
 
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }
@@ -222,7 +222,7 @@ public struct RegisterPushKitDeviceTokenResponse: Codable {
     public var success: Bool
     public var message: String?
 
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }
@@ -233,7 +233,7 @@ public struct BlockUserResponse: Codable {
     public var success: Bool
     public var blockedUserId: Int?
 
-    init(success: Bool, blockedUserId: Int? = nil) {
+    public init(success: Bool, blockedUserId: Int? = nil) {
         self.success = success
         self.blockedUserId = blockedUserId
     }
@@ -245,7 +245,7 @@ public struct LoginResponse: Codable {
     public var userId: String?
     public var authToken: String?
 
-    init(success: Bool, userId: String? = nil, authToken: String? = nil) {
+    public init(success: Bool, userId: String? = nil, authToken: String? = nil) {
         self.success = success
         self.userId = userId
         self.authToken = authToken
@@ -257,7 +257,7 @@ public struct AddResponseResponse: Codable {
     public var success: Bool
     public var responseId: Int?
 
-    init(success: Bool, responseId: Int? = nil) {
+    public init(success: Bool, responseId: Int? = nil) {
         self.success = success
         self.responseId = responseId
     }
@@ -268,7 +268,7 @@ public struct NearbyUsersResponse: Codable {
     public var success: Bool
     public var users: [UserInformation] // Reusing UserInformation public struct from earlier
 
-    init(success: Bool, users: [UserInformation]) {
+    public init(success: Bool, users: [UserInformation]) {
         self.success = success
         self.users = users
     }
@@ -279,7 +279,7 @@ public struct MakeResponseResponse: Codable {
     public var success: Bool
     public var message: String?
 
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }
@@ -296,7 +296,7 @@ public struct QuestionResponsesResponse: Codable {
         public var selected: Bool
     }
 
-    init(success: Bool, responses: [QuestionResponse]) {
+    public init(success: Bool, responses: [QuestionResponse]) {
         self.success = success
         self.responses = responses
     }
@@ -309,7 +309,7 @@ public struct QuestionsResponse: Codable {
 
     // Reusing Question public struct from earlier
 
-    init(success: Bool, questions: [Question]) {
+    public init(success: Bool, questions: [Question]) {
         self.success = success
         self.questions = questions
     }
@@ -320,7 +320,7 @@ public struct LogoutResponse: Codable {
     public var success: Bool
     public var message: String?
 
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }
@@ -331,7 +331,7 @@ public struct UpdateSettingsResponse: Codable {
     public var success: Bool
     public var message: String?
 
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }
@@ -342,7 +342,7 @@ public struct AddDisplayPictureResponse: Codable {
     public var success: Bool
     public var imageUrl: String?
 
-    init(success: Bool, imageUrl: String? = nil) {
+    public init(success: Bool, imageUrl: String? = nil) {
         self.success = success
         self.imageUrl = imageUrl
     }
@@ -353,7 +353,7 @@ public struct UploadPicResponse: Codable {
     public var success: Bool
     public var imageUrl: String?
 
-    init(success: Bool, imageUrl: String? = nil) {
+    public init(success: Bool, imageUrl: String? = nil) {
         self.success = success
         self.imageUrl = imageUrl
     }
@@ -365,7 +365,7 @@ public struct RegisterBasicInfoResponse: Codable {
     public var userId: String?
     public var message: String?
 
-    init(success: Bool, userId: String? = nil, message: String? = nil) {
+    public init(success: Bool, userId: String? = nil, message: String? = nil) {
         self.success = success
         self.userId = userId
         self.message = message
@@ -383,7 +383,7 @@ public struct PrefetchUserForResponse: Codable {
         public var profileImageUrl: String?
     }
 
-    init(success: Bool, users: [UserDetail]) {
+    public init(success: Bool, users: [UserDetail]) {
         self.success = success
         self.users = users
     }
@@ -394,7 +394,7 @@ public struct TriggerTwoPersonGreetResponse: Codable {
     public var success: Bool
     public var message: String?
 
-    init(success: Bool, message: String? = nil) {
+    public init(success: Bool, message: String? = nil) {
         self.success = success
         self.message = message
     }
