@@ -399,3 +399,12 @@ public struct TriggerTwoPersonGreetResponse: Codable {
         self.message = message
     }
 }
+
+public typealias Ettiquette = TermsOfService
+
+public struct TermsOfService: Codable, Equatable, Hashable {
+    public var text: String
+    public var appName: String
+    public var lastUpdated: String
+    public var contactInfo: String
+}

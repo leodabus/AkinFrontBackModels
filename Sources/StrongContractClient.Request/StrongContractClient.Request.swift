@@ -16,6 +16,12 @@ public extension StrongContractClient.Request where Payload == User.SignUp, Resp
     }
 }
 
+public extension StrongContractClient.Request where Payload == AccessTokenRequest, Response == TermsOfService {
+     var terms: Request {
+        Request(path: "getTerms", method: .get)
+    }
+}
+
 public extension StrongContractClient.Request where Payload == Int, Response == Question {
     static var prefetchQuestion: Request {
         Request(path: "question", method: .get)
@@ -88,12 +94,6 @@ public extension StrongContractClient.Request where Payload == AssertRequest, Re
 public extension StrongContractClient.Request where Payload == UpdateImportanceRequest, Response == StandardPostResponse {
      var updateImportance: Request {
         Request(path: "updateImportance", method: .post)
-    }
-}
-
-public extension StrongContractClient.Request where Payload == AccessTokenRequest, Response == String {
-     var terms: Request {
-        Request(path: "getTerms", method: .get)
     }
 }
 
