@@ -15,9 +15,18 @@ extension Greet {
         public struct User: Codable {
             public let id: String
 //            let accessToken: String
+            public init(id: String) {
+                self.id = id
+            }
         }
         public let user: User
         public let latitude: Double
         public let longitude: Double
+
+        public init(user: User, latitude: Double, longitude: Double) {
+            self.user = user
+            self.latitude = latitude
+            self.longitude = longitude
+        }
     }
 }
