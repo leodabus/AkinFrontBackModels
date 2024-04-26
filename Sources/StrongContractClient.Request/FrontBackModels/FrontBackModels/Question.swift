@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias QuestionAction = ((Question) -> Void)
+public typealias QuestionAction = ((Question) -> Void)
 
 public struct Question: Codable, Equatable, Hashable {
 
