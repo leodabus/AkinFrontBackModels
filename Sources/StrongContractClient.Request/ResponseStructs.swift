@@ -243,11 +243,21 @@ public struct BlockUserResponse: Codable {
 public struct LoginResponse: Codable {
     public var success: Bool
     public var userId: String?
+    public var email: String?
+    public var password: String?
     public var authToken: String?
 
-    public init(success: Bool, userId: String? = nil, authToken: String? = nil) {
+    public init(
+        success: Bool,
+        userId: String? = nil,
+        email: String? = nil,
+        password: String? = nil,
+        authToken: String? = nil
+    ) {
         self.success = success
         self.userId = userId
+        self.email = email
+        self.password = password
         self.authToken = authToken
     }
 }
