@@ -9,7 +9,7 @@
 import UserNotifications
 import CoreLocation
 
-typealias RequirementAction = (Requirement) -> Void
+public typealias RequirementAction = (Requirement) -> Void
 
 enum Requirement: Equatable, Codable {
 
