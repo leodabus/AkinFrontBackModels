@@ -42,7 +42,7 @@ public struct Settings: Codable {
         contexts.contains(.romance)
     }
     
-    mutating func add(greetingMethod: Greet.Method, shouldAdd: Bool) {
+    public mutating func add(greetingMethod: Greet.Method, shouldAdd: Bool) {
         if !shouldAdd {return}
         allowedGreetingMethods.append(greetingMethod)
     }
@@ -91,7 +91,7 @@ public struct Settings: Codable {
 }
 
 extension Array where Element == Greet.Method {
-    mutating func update(with greetingMethod: Greet.Method) {
+    public mutating func update(with greetingMethod: Greet.Method) {
         if contains(greetingMethod) {
             remove(greetingMethod: greetingMethod)
         } else {

@@ -24,13 +24,13 @@ extension Array where Element == Question.Response {
 }
 
 extension Array where Element == Greet.Method  {
-    mutating func remove(greetingMethod: Greet.Method) {
+    public mutating func remove(greetingMethod: Greet.Method) {
         removeAll { $0 == greetingMethod }
     }
 }
 
 extension Array where Element == Greet.User {
-    func index(of id: Int) -> Int? {
+    public func index(of id: Int) -> Int? {
         firstIndex { Int($0.id) == id }
     }
 }

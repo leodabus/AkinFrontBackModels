@@ -15,7 +15,7 @@ extension Greet {
         public var agreedTimeProposals: [Int] = []
         public var status: Greet.Update.Status
 
-        mutating func updateSettings(with otherUserSettings: Settings?) {
+        public mutating func updateSettings(with otherUserSettings: Settings?) {
             guard let otherUserSettings = otherUserSettings else { return }
             
             let commonProposedTimes = agreedTimeProposals.filter {

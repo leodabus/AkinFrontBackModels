@@ -74,7 +74,7 @@ extension Question {
             }
         }
         
-        mutating func set(_ myTheir: Selections.MyTheir, _  choice: Selections.MyTheir.Choice, for context: Context) {
+        public mutating func set(_ myTheir: Selections.MyTheir, _  choice: Selections.MyTheir.Choice, for context: Context) {
             switch myTheir {
             case .my: myChoice[context.rawValue] = choice
             case .their: theirChoices[context.rawValue] = choice
