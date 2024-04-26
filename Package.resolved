@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swift-server/async-http-client.git",
       "state" : {
-        "revision" : "fb308ee72f3d4c082a507033f94afa7395963ef3",
-        "version" : "1.21.0"
+        "revision" : "291438696abdd48d2a83b52465c176efbd94512b",
+        "version" : "1.20.1"
       }
     },
     {
@@ -78,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/scott-lydon/StrongContractClient.git",
       "state" : {
-        "revision" : "0d20c39b2986e639a24e85d33741895da343486c",
-        "version" : "2.1.0"
+        "revision" : "9ea8cd1f89a66a7568e074738383ae7be9092ff4",
+        "version" : "2.1.1"
       }
     },
     {
@@ -150,8 +150,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-nio.git",
       "state" : {
-        "revision" : "359c461e5561d22c6334828806cc25d759ca7aa6",
-        "version" : "2.65.0"
+        "revision" : "fc63f0cf4e55a4597407a9fc95b16a2bc44b4982",
+        "version" : "2.64.0"
       }
     },
     {
@@ -168,8 +168,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-nio-http2.git",
       "state" : {
-        "revision" : "c6afe04165c865faaa687b42c32ed76dfcc91076",
-        "version" : "1.31.0"
+        "revision" : "0904bf0feb5122b7e5c3f15db7df0eabe623dd87",
+        "version" : "1.30.0"
       }
     },
     {
@@ -213,8 +213,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vapor/vapor.git",
       "state" : {
-        "revision" : "526a000bb082a261566b6adea3c1a1ddbed98a19",
-        "version" : "4.93.0"
+        "revision" : "11cdb29614a5c7f8c5289f3c97b3398c3d89b395",
+        "version" : "4.92.5"
       }
     },
     {
