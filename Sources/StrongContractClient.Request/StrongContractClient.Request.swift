@@ -11,304 +11,294 @@ import StrongContractClient
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == User.SignUp, Response == RegisterResponse {
-    static var register: Request {
-        Request(path: "user/register", method: .post)
+    static var register: Self {
+        .init(path: "user/register", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == AccessTokenRequest, Response == TermsOfService {
-     static var terms: Request {
-        Request(path: "getTerms", method: .get)
+    static var terms: Self {
+        .init(path: "getTerms", method: .get)
     }
 }
 
 public extension StrongContractClient.Request where Payload == Int, Response == Question {
-    static var prefetchQuestion: Request {
-        Request(path: "question", method: .get)
+    static var prefetchQuestion: Self {
+        .init(path: "question", method: .get)
     }
 }
 
 public extension StrongContractClient.Request where Payload == TwoIDs, Response == TwoPersonGreetResponse {
-    static var triggerTwoPersonGreet: Request {
-        Request(path: "makeCompatible", method: .post)
+    static var triggerTwoPersonGreet: Self {
+        .init(path: "makeCompatible", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == Int, Response == StandardPostResponse {
-    static var setMetersWillingToTravel: Request {
-        Request(path: "metersWillingToTravel", method: .post)
+    static var setMetersWillingToTravel: Self {
+        .init(path: "metersWillingToTravel", method: .post)
     }
 }
 
-
 public extension StrongContractClient.Request where Payload == LogoutRequest, Response == StandardPostResponse {
-    static var logout: Request {
-        Request(path: "logout", method: .post)
+    static var logout: Self {
+        .init(path: "logout", method: .post)
     }
 }
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == ReportFlagsQuestion, Response == StandardPostResponse {
-    static var reportFlagsQuestion: Request {
-        Request(path: "reportFlagsQuestion", method: .post)
+    static var reportFlagsQuestion: Self {
+        .init(path: "reportFlagsQuestion", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == ReportFlagsResponseRequest, Response == ReportFlagsResponse {
-    static var reportFlagsQuestionResponse: Request {
-        Request(path: "reportFlagsQuestionResponse", method: .post)
+    static var reportFlagsQuestionResponse: Self {
+        .init(path: "reportFlagsQuestionResponse", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == ReportFlagsPicURLRequest, Response == ReportFlagsResponse {
-    static var reportFlagsPicURL: Request {
-        Request(path: "reportFlagPic", method: .post)
+    static var reportFlagsPicURL: Self {
+        .init(path: "reportFlagPic", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == GetUserInformationRequest, Response == Settings {
-    static var getUserInformation: Request {
-        Request(path: "getUserInformation", method: .get)
+    static var getUserInformation: Self {
+        .init(path: "getUserInformation", method: .get)
     }
 }
 
 public extension StrongContractClient.Request where Payload == RateRequest, Response == RateResponse {
-    static var rate: Request {
-        Request(path: "rateGreet", method: .post)
+    static var rate: Self {
+        .init(path: "rateGreet", method: .post)
     }
 }
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == UpdateLocationRequest, Response == StandardPostResponse {
-    static var updateLocation: Request {
-        Request(path: "updateUserLocation", method: .post)
+    static var updateLocation: Self {
+        .init(path: "updateUserLocation", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == AssertRequest, Response == StandardPostResponse {
-    static var assert: Request {
-        Request(path: "assert", method: .post)
+    static var assert: Self {
+        .init(path: "assert", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == UpdateImportanceRequest, Response == StandardPostResponse {
-     static var updateImportance: Request {
-        Request(path: "updateImportance", method: .post)
+    static var updateImportance: Self {
+        .init(path: "updateImportance", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == TrackEventsRequest, Response == StandardPostResponse {
-     static var trackEvents: Request {
-        Request(path: "trackEvents", method: .post)
+    static var trackEvents: Self {
+        .init(path: "trackEvents", method: .post)
     }
 }
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == UpdateEmailRequest, Response == StandardPostResponse {
-     static var updateEmail: Request {
-        Request(path: "updateEmail", method: .post)
+    static var updateEmail: Self {
+        .init(path: "updateEmail", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == UpdateCourtesyCallSettingRequest, Response == StandardPostResponse {
-     static var updateCourtesyCallSetting: Request {
-        Request(path: "allowsCourtesyCall", method: .post)
+    static var updateCourtesyCallSetting: Self {
+        .init(path: "allowsCourtesyCall", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == UpdatePasswordRequest, Response == StandardPostResponse {
-     static var updatePassword: Request {
-        Request(path: "updatePassByOldPass", method: .post)
+    static var updatePassword: Self {
+        .init(path: "updatePassByOldPass", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == SendMakeRequest, Response == StandardPostResponse {
-     static var sendMake: Request {
-        Request(path: "make", method: .post)
+    static var sendMake: Self {
+        .init(path: "make", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == Question, Response == StandardPostResponse {
-     static var addQuestion: Request {
-        Request(path: "addQuestion", method: .post)
+    static var addQuestion: Self {
+        .init(path: "addQuestion", method: .post)
     }
 }
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == ManualGreetRequest, Response == StandardPostResponse {
-     static var manualGreet: Request {
-        Request(path: "manualGreet", method: .post)
+    static var manualGreet: Self {
+        .init(path: "manualGreet", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == ResetPasswordRequest, Response == StandardPostResponse {
-     static var resetPassword: Request {
-        Request(path: "resetPassword", method: .post)
+    static var resetPassword: Self {
+        .init(path: "resetPassword", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == ChangeEmailRequest, Response == StandardPostResponse {
-     static var changeEmail: Request {
-        Request(path: "changeEmail", method: .post)
+    static var changeEmail: Self {
+        .init(path: "changeEmail", method: .post)
     }
 }
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == RegisterDeviceTokenErrorRequest, Response == StandardPostResponse {
-
-     static var registerDeviceTokenError: Request {
-        Request(path: "registerDeviceTokenError", method: .post)
+    static var registerDeviceTokenError: Self {
+        .init(path: "registerDeviceTokenError", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == RegisterDeviceTokenRequest, Response == StandardPostResponse {
-
-     static var registerDeviceToken: Request {
-        Request(path: "registerDeviceToken", method: .post)
+    static var registerDeviceToken: Self {
+        .init(path: "registerDeviceToken", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == HideMeRequest, Response == StandardPostResponse {
-
-     static var hideMe: Request {
-        Request(path: "HideFromNearByList", method: .post)
+    static var hideMe: Self {
+        .init(path: "HideFromNearByList", method: .post)
     }
 }
 
 // Conversion examples integrated with request structures
-
 public extension StrongContractClient.Request where Payload == RegisterPushKitDeviceTokenRequest, Response == StandardPostResponse {
-     static var registerPushKitDeviceToken: Request {
-        Request(path: "registerPushKitDeviceToken", method: .post)
+    static var registerPushKitDeviceToken: Self {
+        .init(path: "registerPushKitDeviceToken", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == BlockUserRequest, Response == StandardPostResponse {
-     static var blockUser: Request {
-        Request(path: "blockUser", method: .post)
+    static var blockUser: Self {
+        .init(path: "blockUser", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == BlockedUsersRequest, Response == [GeneralUser] {
-     static var getBlockedUsers: Request {
-        Request(path: "getBlockedUsersList", method: .get)
+    static var getBlockedUsers: Self {
+        .init(path: "getBlockedUsersList", method: .get)
     }
 }
 
 // Conversion examples integrated with request structures
-public extension StrongContractClient.Request where Payload == LoginRequest, Response == User {
-     static var login: Request {
-        Request(path: "login", method: .post)
+public extension StrongContractClient.Request where Payload == LoginRequest, Response == LoginResponse {
+    static var login: Self {
+        .init( path: "login",method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == AddResponseRequest, Response == StandardPostResponse {
-     static var addOption: Request {
-        Request(path: "addOption", method: .post)
+    static var addOption: Self {
+        .init(path: "addOption", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == NearbyUsersRequest, Response == Greet.User {
-     static var nearbyUsers: Request {
-        Request(path: "GetNearByUserList", method: .get)
+    static var nearbyUsers: Self {
+        .init(path: "GetNearByUserList", method: .get)
     }
 }
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == MakeUserResponseRequest, Response == StandardPostResponse {
-     static var makeUserResponse: Request {
-        Request(path: "addUserResponse", method: .post)
+    static var makeUserResponse: Self {
+        .init(path: "addUserResponse", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == GetResponsesRequest, Response == [Question.Response] {
-     static var getResponses: Request {
-        Request(path: "getOptions", method: .get)
+    static var getResponses: Self {
+        .init(path: "getOptions", method: .get)
     }
 }
 
 public extension StrongContractClient.Request where Payload == GetQuestionsRequest, Response == [Question] {
-     static var getQuestions: Request {
-        Request(path: "getQuestions", method: .get)
+    static var getQuestions: Self {
+        .init(path: "getQuestions", method: .get)
     }
 }
 
-
 public extension StrongContractClient.Request where Payload == Settings, Response == StandardPostResponse {
-     static var updateSettings: Request {
-        Request(path: "updateUserSettings", method: .post)
+    static var updateSettings: Self {
+        .init(path: "updateUserSettings", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == AddDisplayRequest, Response == StandardPostResponse {
-     static var addDisplay: Request {
-        Request(path: "addDisplayPicture", method: .post)
+    static var addDisplay: Self {
+        .init(path: "addDisplayPicture", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == UploadPicRequest, Response == StandardPostResponse {
-
-     static var uploadPic: Request {
-        Request(path: "addDisplayPicture", method: .post)
+    static var uploadPic: Self {
+        .init(path: "addDisplayPicture", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == UpdateMidGreetSettingsRequest, Response == StandardPostResponse {
-
-     static var updateMidGreetSettings: Request {
-        Request(path: "updateGreetSettings", method: .post)
+    static var updateMidGreetSettings: Self {
+        .init(path: "updateGreetSettings", method: .post)
     }
 }
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == UpdateScheduleRequest, Response == StandardPostResponse {
-     static var updateSchedule: Request {
-        Request(path: "updateSchedule", method: .post)
+    static var updateSchedule: Self {
+        .init(path: "updateSchedule", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == UpdateGreetRequest, Response == StandardPostResponse {
-     static var updateGreet: Request {
-        Request(path: "updateGreet", method: .post)
+    static var updateGreet: Self {
+        .init(path: "updateGreet", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == UpdateGreetSettingsRequest, Response == StandardPostResponse {
-     static var updateGreetSettings: Request {
-        Request(path: "updateGreetSettings", method: .post)
+    static var updateGreetSettings: Self {
+        .init(path: "updateGreetSettings", method: .post)
     }
 }
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == UpdateUserLocationRequest, Response == StandardPostResponse {
-
-     static var updateUserLocation: Request {
-        Request(path: "user/location/context", method: .post)
+    static var updateUserLocation: Self {
+        .init(path: "user/location/context", method: .post)
     }
 }
 
 public extension StrongContractClient.Request where Payload == SilentPushLocationUpdatesRequest, Response == StandardPostResponse {
-
-     static var silentPushLocationUpdates: Request {
-        Request(path: "shouldUpdateLocation", method: .post)
+    static var silentPushLocationUpdates: Self {
+        .init(path: "shouldUpdateLocation", method: .post)
     }
 }
 
 //// Conversion examples integrated with request structures
 //public extension StrongContractClient.Request where Payload == TrackEventsRequest, Response == StandardPostResponse {
-//     static var trackEvents: Request {
-//        Request(path: "trackEvents", method: .post)
+//    static var trackEvents: Self {
+//        .init(path: "trackEvents", method: .post)
 //    }
 //}
 //
 //public extension StrongContractClient.Request where Payload == Settings, Response == StandardPostResponse {
-//     static var updateSettings: Request {
-//        Request(path: "updateUserSettings", method: .post)
+//    static var updateSettings: Self {
+//        .init(path: "updateUserSettings", method: .post)
 //    }
 //}
 //
 //public extension StrongContractClient.Request where Payload == AddDisplayRequest, Response == StandardPostResponse {
-//     static var addDisplay: Request {
-//        Request(path: "addDisplayPicture", method: .post)
+//    static var addDisplay: Self {
+//        .init(path: "addDisplayPicture", method: .post)
 //    }
 //}
