@@ -118,7 +118,7 @@ public struct Greet: Codable {
         self.greetID = greetID
     }
 
-    var estimatedMeetTime: String {
+    public var estimatedMeetTime: String {
         guard let minutes = meetInXMinutes else { return "unknown" }
         return Date(timeFromNow: minutes)?.clockTime ?? "unknown"
     }
