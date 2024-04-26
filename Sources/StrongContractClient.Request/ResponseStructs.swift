@@ -408,3 +408,19 @@ public struct TermsOfService: Codable, Equatable, Hashable {
     public var lastUpdated: String
     public var contactInfo: String
 }
+
+
+
+import MapKit
+
+extension TravelMethod {
+
+    public var transportType: MKDirectionsTransportType {
+        switch self {
+        case .bike: return .walking
+        case .car: return .automobile
+        case .none: return .walking
+        case .walk: return .walking
+        }
+    }
+}
