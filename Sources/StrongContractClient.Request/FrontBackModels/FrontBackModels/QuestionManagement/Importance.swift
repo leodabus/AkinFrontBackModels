@@ -16,7 +16,7 @@ extension Question {
         case somewhat = 3
         case very = 9
         
-        init?(_ int: Int) {
+        public init?(_ int: Int) {
             switch int {
             case 1: self = .irrelevant
             case 3: self =  .somewhat
@@ -25,7 +25,7 @@ extension Question {
             }
         }
         
-        init?(_ hasSelections: Bool, _ oldImportance: Importance?) {
+        public init?(_ hasSelections: Bool, _ oldImportance: Importance?) {
             guard let old = oldImportance else {
                 if hasSelections {
                     self = .irrelevant
