@@ -13,11 +13,11 @@ extension Greet {
         // TODO: - Temporary implementation until we have a final User object ready
         // Should be replaced with the release build
         public struct User: Codable {
-            let id: String
+            public let id: String
 //            let accessToken: String
         }
-        let user: User
-        let latitude: Double
-        let longitude: Double
+        public let user: User
+        public let latitude: Double
+        public let longitude: Double
     }
 }
