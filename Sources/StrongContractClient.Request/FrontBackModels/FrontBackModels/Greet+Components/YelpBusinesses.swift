@@ -37,8 +37,8 @@ extension Yelp {
     public struct Business: Codable {
 
         public struct Category {
-            let alias: String
-            let title: String
+            public let alias: String
+            public let title: String
         }
         
         public var alias: String? = nil

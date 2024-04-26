@@ -33,8 +33,8 @@ extension Week.Day {
             case travelMethod
         }
 
-        let count: Int
-        let amPM: AMPM // Codable
+        public let count: Int
+        public let amPM: AMPM // Codable
 #if canImport(UIKit)
         public var btn: UIButton?
 #endif
