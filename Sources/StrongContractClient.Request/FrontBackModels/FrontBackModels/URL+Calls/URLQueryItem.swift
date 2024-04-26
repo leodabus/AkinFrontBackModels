@@ -320,7 +320,7 @@ extension URLQueryItem {
         URLQueryItem(.response, String(confirmationStatus.rawValue))
     }
 
-    init(_ key: QueryItemName, _ value: String?) {
+    public init(_ key: QueryItemName, _ value: String?) {
         self.init(name: key.rawValue, value: value)
     }
 

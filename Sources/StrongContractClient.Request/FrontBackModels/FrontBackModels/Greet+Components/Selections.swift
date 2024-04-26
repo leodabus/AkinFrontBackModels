@@ -13,7 +13,7 @@ extension Question.Response {
     public struct Selections: Codable {
         public var my: MyTheir.Choice, their: MyTheir.Choice
         
-        init(my: MyTheir.Choice = .empty, their: MyTheir.Choice = .empty) {
+        public init(my: MyTheir.Choice = .empty, their: MyTheir.Choice = .empty) {
             self.my = my
             self.their = their
         }

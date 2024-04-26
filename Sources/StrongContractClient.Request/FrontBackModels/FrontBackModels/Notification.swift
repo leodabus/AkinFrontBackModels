@@ -15,7 +15,7 @@ extension Greet {
         case greet(Greet)
         case silentLocationUpdate
         
-        init(localNotificationModel: Greet.Notification.LocalModel) {
+        public init(localNotificationModel: Greet.Notification.LocalModel) {
             self = .getRating(localNotificationModel)
         }
     }

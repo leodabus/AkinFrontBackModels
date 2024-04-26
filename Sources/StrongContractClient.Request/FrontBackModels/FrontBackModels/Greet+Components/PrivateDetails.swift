@@ -13,7 +13,7 @@ public struct PrivateDetails: Codable {
     public var romanceOn: Bool
     public var token: String
 
-    init(password: String, romanceOn: Bool, accessToken: String) {
+    public init(password: String, romanceOn: Bool, accessToken: String) {
         self.password = password
         self.romanceOn = romanceOn
         self.token = accessToken

@@ -19,7 +19,7 @@ extension Week {
         public var name: Name
         public var timeBlocks: [Hour]
 
-        init(name: Name, timeBlocks: [Hour] = []) {
+        public init(name: Name, timeBlocks: [Hour] = []) {
             self.name = name
             self.timeBlocks = timeBlocks
         }

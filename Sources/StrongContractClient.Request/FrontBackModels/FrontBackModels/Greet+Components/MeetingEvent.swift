@@ -16,7 +16,7 @@ extension Greet {
         public var halfwayPoint: CLLocationCoordinate2D
         public var business: Yelp.Business? = nil
 
-        init(halfway: CLLocationCoordinate2D) {
+        public init(halfway: CLLocationCoordinate2D) {
             self.halfwayPoint = halfway
         }
     }

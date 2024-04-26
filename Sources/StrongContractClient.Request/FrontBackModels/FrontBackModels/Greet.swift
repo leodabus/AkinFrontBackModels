@@ -112,7 +112,7 @@ public struct Greet: Codable {
         return arc4random_uniform(4) == 0
     }
     
-    init(otherUser: Greet.User, greetID: String) {
+    public init(otherUser: Greet.User, greetID: String) {
         self.otherUser = otherUser
         self.greetID = greetID
     }
