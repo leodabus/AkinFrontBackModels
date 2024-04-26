@@ -9,7 +9,7 @@
 import Foundation
 
 extension HTTPURLResponse {
-    public enum HTTPStatus: Int {
+    public enum HTTPStatus: Int, Codable {
         /// 1xx informational reponses
         case cont                           = 100
         case switchingProtocol              = 101

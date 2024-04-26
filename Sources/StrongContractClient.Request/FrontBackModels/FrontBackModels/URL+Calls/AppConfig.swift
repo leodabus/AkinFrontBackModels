@@ -8,7 +8,7 @@
 import Foundation
 
 // modular
-enum AppConfiguration {
+enum AppConfiguration: Codable {
     case Debug
     case TestFlight
     case AppStore

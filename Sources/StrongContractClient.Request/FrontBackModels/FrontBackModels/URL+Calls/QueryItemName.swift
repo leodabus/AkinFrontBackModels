@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum QueryItemName: String {
+enum QueryItemName: String, Codable {
     case access_token
     case allowsCourtesyCalls
     case alwaysInUse

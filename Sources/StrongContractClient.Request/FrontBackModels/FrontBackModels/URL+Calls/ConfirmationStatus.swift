@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ConfirmationStatus: Int {
+enum ConfirmationStatus: Int, Codable {
     case no = 0
     case yes = 1
     case undecided = 2
