@@ -73,7 +73,7 @@ public struct Greet: Codable {
     
     // MARK - updates
     
-    mutating func update(with new: Greet) -> Greet.Update? {
+    public mutating func update(with new: Greet) -> Greet.Update? {
         let rejectedTime = rejectedProposal(from: new)
         meetingEvent = new.meetingEvent
         otherUser = new.otherUser
@@ -107,7 +107,7 @@ public struct Greet: Codable {
         return nil
     }
     
-    mutating func mrPracticeDidReject() -> Bool? {
+    public mutating func mrPracticeDidReject() -> Bool? {
         if !isMrPractice {return nil}
         return arc4random_uniform(4) == 0
     }
