@@ -193,7 +193,7 @@ public extension StrongContractClient.Request where Payload == BlockedUsersReque
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request where Payload == LoginRequest, Response == LoginResponse {
     static var login: Self {
-        .init( path: "login",method: .post)
+        .init(path: "login",method: .post)
     }
 }
 
