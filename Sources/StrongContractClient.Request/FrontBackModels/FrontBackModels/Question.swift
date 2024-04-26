@@ -8,13 +8,13 @@
 
 import Foundation
 
-typealias QuestionAction = ((Question) -> Void)
+public typealias QuestionAction = ((Question) -> Void)
 
 public struct Question: Codable, Equatable, Hashable {
 
     // MARK - Types
     
-    public enum Category: String, CaseIterable {
+    public enum Category: String, CaseIterable, Codable {
         case not_answered, answered, all, created
     }
     

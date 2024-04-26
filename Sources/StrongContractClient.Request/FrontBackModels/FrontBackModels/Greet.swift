@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CommonExtensions
 
 public typealias CompatibilityContext = String
 public typealias CompatibilityScore = Double
@@ -115,5 +116,10 @@ public struct Greet: Codable {
     public init(otherUser: Greet.User, greetID: String) {
         self.otherUser = otherUser
         self.greetID = greetID
+    }
+
+    var estimatedMeetTime: String {
+        guard let minutes = meetInXMinutes else { return "unknown" }
+        return Date(timeFromNow: minutes)?.clockTime ?? "unknown"
     }
 }
