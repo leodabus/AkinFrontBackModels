@@ -196,7 +196,7 @@ extension URLRequest {
 //    }
 //}
 /// A struct to make the naming convention a bit more explicit for this simple type.
-typealias Row = Int
+public typealias Row = Int
 
 ///
 public struct TokenAndPayload<Payload: Codable>: Codable {

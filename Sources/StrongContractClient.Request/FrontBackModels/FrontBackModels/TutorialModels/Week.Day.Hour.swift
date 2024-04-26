@@ -10,10 +10,8 @@ import Foundation
 // Use conditional imports to import platform-specific frameworks
 #if canImport(UIKit)
 import UIKit
-typealias ImageType = UIImage
 #elseif canImport(AppKit)
 import AppKit
-typealias ImageType = NSImage
 #else
 // Define a placeholder type or import another graphic framework as needed
 #endif
