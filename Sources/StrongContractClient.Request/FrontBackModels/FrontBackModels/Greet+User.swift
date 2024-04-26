@@ -20,5 +20,16 @@ extension Greet {
         public var settings: Greet.Settings? = nil
         public var verified: Bool = false
         // var imageUpdatedTo: ImageAction? = nil
+
+        public init(id: Int, name: String, profileImages: [String], percentTravelled: Double? = nil, image: Data? = nil, minutesFromPoint: Int? = nil, settings: Greet.Settings? = nil, verified: Bool) {
+            self.id = id
+            self.name = name
+            self.profileImages = profileImages
+            self.percentTravelled = percentTravelled
+            self.image = image
+            self.minutesFromPoint = minutesFromPoint
+            self.settings = settings
+            self.verified = verified
+        }
     }
 }
