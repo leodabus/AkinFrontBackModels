@@ -15,17 +15,6 @@ public struct UpdateMidGreetSettingsRequest: Codable {
     }
 }
 
-public struct UpdateScheduleRequest: Codable {
-    // Assuming token and user ID are fetched internally in StrongContractClient, so no explicit properties are required here.
-}
-public struct UpdateGreetRequest: Codable {
-    // Similar assumption as above.
-}
-
-public struct UpdateGreetSettingsRequest: Codable {
-    // Similar assumption as above.
-}
-
 public struct AssertRequest: Codable {
     public var assertion: Bool
     public var message: String
@@ -283,10 +272,6 @@ public struct BlockUserRequest: Codable {
     }
 }
 
-public struct BlockedUsersRequest: Codable {
-    // No additional parameters needed if the access token and user ID are internally managed
-}
-
 public struct LoginRequest: Codable {
     public var email: String
     public var password: String
@@ -373,18 +358,6 @@ public struct GetQuestionsRequest: Codable {
     }
 }
 
-public struct AddDisplayRequest: Codable {
-    // No additional parameters needed if the access token and user ID are internally managed
-}
-
-public struct LogoutRequest: Codable {
-    // Assuming access token and user ID are managed internally, so no explicit properties are needed here.
-}
-
-public struct AccessTokenRequest: Codable {
-
-}
-
-public struct UploadPicRequest: Codable {
-    // Assuming access token and user ID are managed internally, so no explicit properties are needed here.
+public struct Empty: Codable {
+    public init() {}
 }

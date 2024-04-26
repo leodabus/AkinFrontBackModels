@@ -16,7 +16,7 @@ public extension StrongContractClient.Request where Payload == User.SignUp, Resp
     }
 }
 
-public extension StrongContractClient.Request where Payload == AccessTokenRequest, Response == TermsOfService {
+public extension StrongContractClient.Request where Payload == Empty, Response == TermsOfService {
     static var terms: Self {
         .init(path: "getTerms", method: .get)
     }
@@ -40,7 +40,7 @@ public extension StrongContractClient.Request where Payload == Int, Response == 
     }
 }
 
-public extension StrongContractClient.Request where Payload == LogoutRequest, Response == StandardPostResponse {
+public extension StrongContractClient.Request where Payload == Empty, Response == StandardPostResponse {
     static var logout: Self {
         .init(path: "logout", method: .post)
     }
@@ -184,7 +184,7 @@ public extension StrongContractClient.Request where Payload == BlockUserRequest,
     }
 }
 
-public extension StrongContractClient.Request where Payload == BlockedUsersRequest, Response == [GeneralUser] {
+public extension StrongContractClient.Request where Payload == Empty, Response == [GeneralUser] {
     static var getBlockedUsers: Self {
         .init(path: "getBlockedUsersList", method: .get)
     }
@@ -234,13 +234,13 @@ public extension StrongContractClient.Request where Payload == Settings, Respons
     }
 }
 
-public extension StrongContractClient.Request where Payload == AddDisplayRequest, Response == StandardPostResponse {
+public extension StrongContractClient.Request where Payload == Empty, Response == StandardPostResponse {
     static var addDisplay: Self {
         .init(path: "addDisplayPicture", method: .post)
     }
 }
 
-public extension StrongContractClient.Request where Payload == UploadPicRequest, Response == StandardPostResponse {
+public extension StrongContractClient.Request where Payload == Empty, Response == StandardPostResponse {
     static var uploadPic: Self {
         .init(path: "addDisplayPicture", method: .post)
     }
@@ -253,19 +253,19 @@ public extension StrongContractClient.Request where Payload == UpdateMidGreetSet
 }
 
 // Conversion examples integrated with request structures
-public extension StrongContractClient.Request where Payload == UpdateScheduleRequest, Response == StandardPostResponse {
+public extension StrongContractClient.Request where Payload == Empty, Response == StandardPostResponse {
     static var updateSchedule: Self {
         .init(path: "updateSchedule", method: .post)
     }
 }
 
-public extension StrongContractClient.Request where Payload == UpdateGreetRequest, Response == StandardPostResponse {
+public extension StrongContractClient.Request where Payload == Empty, Response == StandardPostResponse {
     static var updateGreet: Self {
         .init(path: "updateGreet", method: .post)
     }
 }
 
-public extension StrongContractClient.Request where Payload == UpdateGreetSettingsRequest, Response == StandardPostResponse {
+public extension StrongContractClient.Request where Payload == Empty, Response == StandardPostResponse {
     static var updateGreetSettings: Self {
         .init(path: "updateGreetSettings", method: .post)
     }
@@ -297,7 +297,7 @@ public extension StrongContractClient.Request where Payload == SilentPushLocatio
 //    }
 //}
 //
-//public extension StrongContractClient.Request where Payload == AddDisplayRequest, Response == StandardPostResponse {
+//public extension StrongContractClient.Request where Payload == Empty, Response == StandardPostResponse {
 //    static var addDisplay: Self {
 //        .init(path: "addDisplayPicture", method: .post)
 //    }
