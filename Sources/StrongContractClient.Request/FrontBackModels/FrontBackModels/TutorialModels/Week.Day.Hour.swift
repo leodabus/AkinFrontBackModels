@@ -38,7 +38,7 @@ extension Week.Day {
 #if canImport(UIKit)
         public var btn: UIButton?
 
-        init(count: Int, amPM: AMPM, btn: UIButton? = nil, travelMethod: TravelMethod) {
+        public init(count: Int, amPM: AMPM, btn: UIButton? = nil, travelMethod: TravelMethod) {
             self.count = count
             self.amPM = amPM
             self.btn = btn
