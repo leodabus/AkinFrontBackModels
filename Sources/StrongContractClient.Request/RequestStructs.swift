@@ -10,7 +10,7 @@ import Foundation
 public struct UpdateMidGreetSettingsRequest: Codable {
     public var midGreetSettings: Greet.Settings
 
-    init(midGreetSettings: Greet.Settings) {
+    public init(midGreetSettings: Greet.Settings) {
         self.midGreetSettings = midGreetSettings
     }
 }
@@ -21,7 +21,7 @@ public struct AssertRequest: Codable {
     public var file: String
     public var line: Int
 
-    init(assertion: Bool, message: String, file: String, line: Int) {
+    public init(assertion: Bool, message: String, file: String, line: Int) {
         self.assertion = assertion
         self.message = message
         self.file = file
@@ -33,7 +33,7 @@ public struct AssertRequest: Codable {
 public struct UpdateCourtesyCallSettingRequest: Codable {
     public var allows: Bool
 
-    init(allows: Bool) {
+    public init(allows: Bool) {
         self.allows = allows
     }
 }
@@ -43,7 +43,7 @@ public struct UpdatePasswordRequest: Codable {
     public var newPassword: String
     public var savedEmail: String
 
-    init(oldPassword: String, newPassword: String, savedEmail: String) {
+    public init(oldPassword: String, newPassword: String, savedEmail: String) {
         self.oldPassword = oldPassword
         self.newPassword = newPassword
         self.savedEmail = savedEmail
@@ -53,7 +53,7 @@ public struct UpdatePasswordRequest: Codable {
 public struct SendMakeRequest: Codable {
     public var deviceString: String
 
-    init(deviceString: String) {
+    public init(deviceString: String) {
         self.deviceString = deviceString
     }
 }
@@ -62,7 +62,7 @@ public struct AddQuestionRequest: Codable {
     public var questionText: String // Assuming 'Question' has a 'text' property
     // The date might be generated at the time of the request, so it's not included here.
 
-    init(questionText: String) {
+    public init(questionText: String) {
         self.questionText = questionText
     }
 }
@@ -70,7 +70,7 @@ public struct AddQuestionRequest: Codable {
 public struct ManualGreetRequest: Codable {
     public var otherID: Int
 
-    init(otherID: Int) {
+    public init(otherID: Int) {
         self.otherID = otherID
     }
 }
@@ -78,7 +78,7 @@ public struct ManualGreetRequest: Codable {
 public struct TrackEventsRequest: Codable {
     public var events: [Int: String]
 
-    init(events: [Int : String]) {
+    public init(events: [Int : String]) {
         self.events = events
     }
 }
@@ -87,7 +87,7 @@ public struct UpdateEmailRequest: Codable {
     public var newEmail: String
     public var password: String
 
-    init(newEmail: String, password: String) {
+    public init(newEmail: String, password: String) {
         self.newEmail = newEmail
         self.password = password
     }
@@ -98,7 +98,7 @@ public struct UpdateImportanceRequest: Codable {
     public var context: Context
     public var questionID: Int
 
-    init(importance: Question.Importance, context: Context, questionID: Int) {
+    public init(importance: Question.Importance, context: Context, questionID: Int) {
         self.importance = importance
         self.context = context
         self.questionID = questionID
@@ -108,7 +108,7 @@ public struct UpdateImportanceRequest: Codable {
 public struct GetUserInformationRequest: Codable {
     public var accessToken: String // Added accessToken to match the provided description
 
-    init(accessToken: String) {
+    public init(accessToken: String) {
         self.accessToken = accessToken
     }
 }
@@ -118,7 +118,7 @@ public struct ReportFlagsQuestion: Codable {
     public var flags: [Int]
     public var questionID: Int
 
-    init(flags: [Int], questionID: Int) {
+    public init(flags: [Int], questionID: Int) {
         self.flags = flags
         self.questionID = questionID
     }
@@ -129,7 +129,7 @@ public struct ReportFlagsQuestionRequest: Codable {
     let flags: [Int]
     let questionId: Int
 
-    init(flags: [Int], questionId: Int) {
+    public init(flags: [Int], questionId: Int) {
         self.flags = flags
         self.questionId = questionId
     }
@@ -141,7 +141,7 @@ public struct ReportFlagsResponseRequest: Codable {
     let responseId: Int
     let questionId: Int
 
-    init(flags: [Int], responseId: Int, questionId: Int) {
+    public init(flags: [Int], responseId: Int, questionId: Int) {
         self.flags = flags
         self.responseId = responseId
         self.questionId = questionId
@@ -154,7 +154,7 @@ public struct ReportFlagsPicURLRequest: Codable {
     let picURL: String
     let userId: Int
 
-    init(flags: [Int], picURL: String, userId: Int) {
+    public init(flags: [Int], picURL: String, userId: Int) {
         self.flags = flags
         self.picURL = picURL
         self.userId = userId
@@ -167,7 +167,7 @@ public struct RateRequest: Codable {
     let otherUserId: Int
     let rating: Double
 
-    init(greetId: String, otherUserId: Int, rating: Double) {
+    public init(greetId: String, otherUserId: Int, rating: Double) {
         self.greetId = greetId
         self.otherUserId = otherUserId
         self.rating = rating
@@ -179,7 +179,7 @@ public struct UpdateUserLocationRequest: Codable {
     let userId: String
     let contextId: String
 
-    init(userId: String, contextId: String) {
+    public init(userId: String, contextId: String) {
         self.userId = userId
         self.contextId = contextId
     }
@@ -189,7 +189,7 @@ public struct UpdateUserLocationRequest: Codable {
 public struct SilentPushLocationUpdatesRequest: Codable {
     let alwaysOn: Bool
 
-    init(alwaysOn: Bool) {
+    public init(alwaysOn: Bool) {
         self.alwaysOn = alwaysOn
     }
 }
@@ -201,7 +201,7 @@ public struct UpdateLocationRequest: Codable {
     let latitude: String
     let longitude: String
 
-    init(token: String?, userId: String?, latitude: String, longitude: String) {
+    public init(token: String?, userId: String?, latitude: String, longitude: String) {
         self.token = token
         self.userId = userId
         self.latitude = latitude
@@ -214,7 +214,7 @@ public struct UpdateLocationRequest: Codable {
 public struct ResetPasswordRequest: Codable {
     public var email: String
 
-    init(email: String) {
+    public init(email: String) {
         self.email = email
     }
 }
@@ -223,7 +223,7 @@ public struct ChangeEmailRequest: Codable {
     public var currentEmail: String
     public var newEmail: String
 
-    init(currentEmail: String, newEmail: String) {
+    public init(currentEmail: String, newEmail: String) {
         self.currentEmail = currentEmail
         self.newEmail = newEmail
     }
@@ -232,7 +232,7 @@ public struct ChangeEmailRequest: Codable {
 public struct RegisterDeviceTokenErrorRequest: Codable {
     public var error: String
 
-    init(error: String) {
+    public init(error: String) {
         self.error = error
     }
 }
@@ -240,7 +240,7 @@ public struct RegisterDeviceTokenErrorRequest: Codable {
 public struct RegisterDeviceTokenRequest: Codable {
     public var deviceToken: String
 
-    init(deviceToken: String) {
+    public init(deviceToken: String) {
         self.deviceToken = deviceToken
     }
 }
@@ -248,7 +248,7 @@ public struct RegisterDeviceTokenRequest: Codable {
 public struct HideMeRequest: Codable {
     public var hide: Bool
 
-    init(hide: Bool) {
+    public init(hide: Bool) {
         self.hide = hide
     }
 }
@@ -256,7 +256,7 @@ public struct HideMeRequest: Codable {
 public struct RegisterPushKitDeviceTokenRequest: Codable {
     public var pushKitDeviceToken: String
 
-    init(pushKitDeviceToken: String) {
+    public init(pushKitDeviceToken: String) {
         self.pushKitDeviceToken = pushKitDeviceToken
     }
 }
@@ -266,7 +266,7 @@ public struct BlockUserRequest: Codable {
     public var otherUser: Int
     public var shouldBlock: Bool? // Optional to accommodate both block user functions
 
-    init(otherUser: Int, shouldBlock: Bool? = nil) {
+    public init(otherUser: Int, shouldBlock: Bool? = nil) {
         self.otherUser = otherUser
         self.shouldBlock = shouldBlock
     }
@@ -276,7 +276,7 @@ public struct LoginRequest: Codable {
     public var email: String
     public var password: String
 
-    init(email: String, password: String) {
+    public init(email: String, password: String) {
         self.email = email
         self.password = password
     }
@@ -286,7 +286,7 @@ public struct AddResponseRequest: Codable {
     public var responseText: String
     public var questionID: String
 
-    init(responseText: String, questionID: String) {
+    public init(responseText: String, questionID: String) {
         self.responseText = responseText
         self.questionID = questionID
     }
@@ -296,7 +296,7 @@ public struct NearbyUsersRequest: Codable {
     public var latitude: String
     public var longitude: String
 
-    init(latitude: String, longitude: String) {
+    public init(latitude: String, longitude: String) {
         self.latitude = latitude
         self.longitude = longitude
     }
@@ -309,7 +309,7 @@ public struct MakeUserResponseRequest: Codable {
     public var questionID: Int
     public var context: Context.RawValue
 
-    init(
+    public init(
         myChoiceWeightMultiplier: Double? = nil,
         theirChoiceWeightMultiplier: Double? = nil,
         responseID: Int,
@@ -329,7 +329,7 @@ public struct GetResponsesRequest: Codable {
     public var context: Context.RawValue
     public var searchText: String?
 
-    init(questionID: Int, context: Context.RawValue, searchText: String? = nil) {
+    public init(questionID: Int, context: Context.RawValue, searchText: String? = nil) {
         self.questionID = questionID
         self.context = context
         self.searchText = searchText
@@ -343,7 +343,7 @@ public struct GetQuestionsRequest: Codable {
     public var context: Context.RawValue
     public var required: Bool
 
-    init(
+    public init(
         searchText: String? = nil,
         type: Question.Category.RawValue,
         page: Int? = nil,

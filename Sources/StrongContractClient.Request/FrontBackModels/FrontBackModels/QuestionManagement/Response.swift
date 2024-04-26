@@ -37,7 +37,7 @@ extension Question {
         public var theirChoices: [ContextID: Selections.MyTheir.Choice] = [:]
         public var popularity: [ContextID: PopularityScore] = [:]
         
-        init(
+        public init(
             text: String,
              rating: Int = 0,
              id: Int = NSUUID().hash,

@@ -24,7 +24,7 @@ extension Greet.Notification {
         public var timeMet: String
         public var notificationKey: LocalModel.Key
 
-        init(
+        public init(
             identifier: String,
             otherUserID: Int,
             profileURL: String?,

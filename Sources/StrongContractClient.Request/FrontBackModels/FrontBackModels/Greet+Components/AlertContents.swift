@@ -25,7 +25,7 @@ public struct Contents: Codable {
     ///   - confirmation: The confirmation button text.  For example: "Okay"
     ///   - doNothing: I think the  button to represent doing nothing...Not sure.
     ///   - alreadyConfirmed: I think this is a boolean payload...not sure.
-    init(
+    public init(
         title: String,
         message: String,
         confirmation: String,

@@ -30,7 +30,7 @@ extension Greet {
             }
         }
         
-        init(this: Status,
+        public init(this: Status,
              otherUser: Status?,
              withinRange: Bool,
              rejectedProposal: Int?,
