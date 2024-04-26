@@ -31,7 +31,7 @@ public struct User: Codable {
 
     // MARk - inits
 
-    init(
+    public init(
         img imgData: Data? = nil,
         imgLocation: String? = nil,
         name: String,

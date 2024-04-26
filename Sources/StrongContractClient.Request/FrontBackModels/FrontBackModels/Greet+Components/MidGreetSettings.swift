@@ -30,7 +30,7 @@ extension Greet {
             }
         }
         
-        init(status: Greet.Update.Status) {
+        public init(status: Greet.Update.Status) {
             self.status = status
         }
     }

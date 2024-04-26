@@ -51,7 +51,7 @@ public struct Question: Codable, Equatable, Hashable {
     // MARK - initializers
 
 
-    init(
+    public init(
         text: String,
         responses: [Response] = [],
         id: Int? = nil,

@@ -76,9 +76,9 @@ public struct Settings: Codable {
     
     // MAKR - inits
     
-    init() {}
+    public init() {}
     
-    init(email: String, profilePic: String, userID: Int) {
+    public init(email: String, profilePic: String, userID: Int) {
         self.emailPrimary = email
         self.displayPic = profilePic
         self.vibrate = true
