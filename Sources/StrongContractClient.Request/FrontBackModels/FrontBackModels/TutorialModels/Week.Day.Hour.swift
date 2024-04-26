@@ -37,6 +37,13 @@ extension Week.Day {
         public let amPM: AMPM // Codable
 #if canImport(UIKit)
         public var btn: UIButton?
+
+        init(count: Int, amPM: AMPM, btn: UIButton? = nil, travelMethod: TravelMethod) {
+            self.count = count
+            self.amPM = amPM
+            self.btn = btn
+            self.travelMethod = travelMethod
+        }
 #endif
         public var travelMethod: TravelMethod // Codable
     }
