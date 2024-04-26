@@ -11,7 +11,7 @@ import CoreLocation
 
 public typealias RequirementAction = (Requirement) -> Void
 
-enum Requirement: Equatable, Codable {
+public enum Requirement: Equatable, Codable {
 
     case birthday
     case location(Location)
