@@ -29,7 +29,7 @@ public struct Question: Codable, Equatable, Hashable {
     public var responses: [Response] = [] // Codable
     public var id: Int?
     public var type: String
-    public var creatorID: Int
+    public var creatorID: String
     public var importanceFor: [ContextID: Importance] = [:] // Codable
     public var contextPopularity: [ContextID: PopularityScore] = [:] // Codable
 
@@ -56,7 +56,7 @@ public struct Question: Codable, Equatable, Hashable {
         responses: [Response] = [],
         id: Int? = nil,
         type: String = "",
-        creatorID: Int,
+        creatorID: String,
         thisUser: Bool = false
     ) {
         self.text = text
