@@ -24,7 +24,7 @@ extension Question {
         public var rating: Int
         public var id: Int
         public var timeStamp: String
-        public var creatorID: Int
+        public var creatorID: String
         public var contextID: Int
         public var answer_id: Int
         public var userID: Int
@@ -42,7 +42,7 @@ extension Question {
              rating: Int = 0,
              id: Int = NSUUID().hash,
              timeStamp: String = "",
-             creatorID: Int = -1,
+             creatorID: String = "-1",
              contextID: Int = -1,
              answer_id: Int = -1,
              userID: Int = -1,
