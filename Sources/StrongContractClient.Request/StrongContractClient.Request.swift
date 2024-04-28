@@ -84,7 +84,7 @@ where Payload == ReportFlagsPicURLRequest,
 }
 
 public extension StrongContractClient.Request
-where Payload == GetUserInformationRequest,
+where Payload == Empty,
       Response == Settings {
     static var getUserInformation: Self {
         .init(path: "getUserInformation", method: .get)

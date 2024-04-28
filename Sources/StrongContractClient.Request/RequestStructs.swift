@@ -105,15 +105,6 @@ public struct UpdateImportanceRequest: Codable {
     }
 }
 
-public struct GetUserInformationRequest: Codable {
-    public var userId: String      // Added userID to match the provided description
-    public var accessToken: String // Added accessToken to match the provided description
-    public init(userId: String, accessToken: String) {
-        self.userId = userId
-        self.accessToken = accessToken
-    }
-}
-
 // Define the argument public structs
 public struct ReportFlagsQuestion: Codable {
     public var flags: [Int]
