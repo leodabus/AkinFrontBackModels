@@ -1,13 +1,13 @@
 {
-  "originHash" : "dc5c865cdf2ed8c478a9344bde115145ec5399a73727d5d0f2a788d30c6bc420",
+  "originHash" : "baf820317828ce2db95d8b3c1f71bfbbc0df77dad65d7d131fbd1fe1f0b497a3",
   "pins" : [
     {
       "identity" : "async-http-client",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swift-server/async-http-client.git",
       "state" : {
-        "revision" : "291438696abdd48d2a83b52465c176efbd94512b",
-        "version" : "1.20.1"
+        "revision" : "fb308ee72f3d4c082a507033f94afa7395963ef3",
+        "version" : "1.21.0"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ElevatedUnderdogs/Callable.git",
       "state" : {
-        "revision" : "92ee233f6a65f2e96fddf7e894577c28e00ddda5",
-        "version" : "1.4.0"
+        "revision" : "0540b62dfa5c28879d76f1ae2532b7bb8a50ddda",
+        "version" : "1.5.0"
       }
     },
     {
@@ -78,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/scott-lydon/StrongContractClient.git",
       "state" : {
-        "revision" : "9ea8cd1f89a66a7568e074738383ae7be9092ff4",
-        "version" : "2.1.1"
+        "revision" : "1e31012f24a8ed4b7f0b22939d3429458051b7cf",
+        "version" : "3.0.0"
       }
     },
     {
@@ -150,8 +150,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-nio.git",
       "state" : {
-        "revision" : "fc63f0cf4e55a4597407a9fc95b16a2bc44b4982",
-        "version" : "2.64.0"
+        "revision" : "359c461e5561d22c6334828806cc25d759ca7aa6",
+        "version" : "2.65.0"
       }
     },
     {
@@ -168,8 +168,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-nio-http2.git",
       "state" : {
-        "revision" : "0904bf0feb5122b7e5c3f15db7df0eabe623dd87",
-        "version" : "1.30.0"
+        "revision" : "c6afe04165c865faaa687b42c32ed76dfcc91076",
+        "version" : "1.31.0"
       }
     },
     {
@@ -213,8 +213,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vapor/vapor.git",
       "state" : {
-        "revision" : "11cdb29614a5c7f8c5289f3c97b3398c3d89b395",
-        "version" : "4.92.5"
+        "revision" : "e5cb0abdadff95ef996fafd6268f2f5f8cba6325",
+        "version" : "4.94.1"
       }
     },
     {
