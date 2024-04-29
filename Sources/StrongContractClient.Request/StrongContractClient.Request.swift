@@ -258,6 +258,14 @@ where Payload == LoginRequest,
 }
 
 public extension StrongContractClient.Request
+where Payload == LoginRequest,
+      Response == AkinFrontBackModels.User {
+    static var login2: Self {
+        .init(path: "login",method: .post)
+    }
+}
+
+public extension StrongContractClient.Request
 where Payload == AddResponseRequest,
         Response == StandardPostResponse {
     static var addOption: Self {
