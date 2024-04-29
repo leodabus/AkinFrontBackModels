@@ -407,6 +407,12 @@ public struct TermsOfService: Codable, Equatable, Hashable {
     public var appName: String
     public var lastUpdated: String
     public var contactInfo: String
+    public init(text: String, appName: String, lastUpdated: String, contactInfo: String) {
+        self.text = text
+        self.appName = appName
+        self.lastUpdated = lastUpdated
+        self.contactInfo = contactInfo
+    }
 }
 
 
