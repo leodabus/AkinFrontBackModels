@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension URLComponents {
+public extension URLComponents {
 
     /// "http://127.0.0.1:8080/api/"
     static var debug: Self {
@@ -31,17 +31,17 @@ extension URLComponents {
         EnvConfig.isDebug ? debug : notDebug
     }
 
-    public func with(queryItems: URLQueryItem...) -> Self {
+    func with(queryItems: URLQueryItem...) -> Self {
         with(array: queryItems)
     }
 
-    public func with(array: [URLQueryItem]) -> Self {
+    func with(array: [URLQueryItem]) -> Self {
         var buffer = self
         buffer.queryItems = buffer.queryItems ?? [] + array
         return buffer
     }
 
-    public func with(path: String) -> Self {
+    func with(path: String) -> Self {
         var buffer = self
         buffer.path = "/api/" + path
         return buffer
