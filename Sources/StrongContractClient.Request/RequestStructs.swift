@@ -300,7 +300,7 @@ public struct AddResponseRequest: Codable {
     public var questionID: String
 
     public init(response: Question.Response, questionID: String) {
-        self.responseText = responseText
+        self.response = response
         self.questionID = questionID
     }
 }
