@@ -18,11 +18,6 @@ extension Dictionary where Key == String, Value == Any {
     }
 
     public func value<T>(for key: String) -> T? {
-        if let value = self[key] as? T {
-            return value
-        } else {
-            print("Warning: parsing failed for key: \(key)")
-            return nil
-        }
+        self[key] as? T
     }
 }

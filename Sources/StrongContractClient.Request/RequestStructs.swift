@@ -349,7 +349,3 @@ public struct GetQuestionsRequest: Codable {
         self.required = required
     }
 }
-
-public struct Empty: Codable {
-    public init() {}
-}
