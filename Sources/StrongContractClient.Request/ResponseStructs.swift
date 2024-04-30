@@ -173,7 +173,7 @@ public struct UpdateEmailResponse: Codable {
 //    }
 //}
 
-public enum ManualGreetResponse: String {
+public enum ManualGreetResponse: String, Codable, Equatable, Hashable {
     case unsupportedURL
     case otherUserHasNoDeviceToken
     case otherUserHasInvalidDeviceToken

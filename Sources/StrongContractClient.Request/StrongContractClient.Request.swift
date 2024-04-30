@@ -82,7 +82,7 @@ where Payload == TwoIDs,
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request
 where Payload == ManualGreetRequest,
-      Response == StandardPostResponse {
+      Response == ManualGreetResponse {
 
     /// When a user taps on a nearby user, they can attempt to initiate a manual Greet.
     /// Or a meetup triggered by one user tapping on another nearby user in a list.
