@@ -9,6 +9,31 @@ import Foundation
 import CoreLocation
 import StrongContractClient
 
+public extension StrongContractClient.Request
+where Payload == LoginRequest,
+      Response == User {
+    static var login: Self {
+        .init(path: "login",method: .post)
+    }
+}
+
+public extension StrongContractClient.Request
+where Payload == Empty,
+      Response == Settings {
+    static var fillSettings: Self {
+        .init(path: "fillSettings", method: .get)
+    }
+}
+
+
+public extension StrongContractClient.Request
+where Payload == String, // image id
+      Response == Data { // image data
+    static var profileImage: Self {
+        .init(path: "profileImage", method: .get)
+    }
+}
+
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request
 where Payload == User.SignUp,
@@ -320,17 +345,6 @@ where Payload == Empty,
     /// Returns a list of users that are blocked by this user.
     static var getBlockedUsers: Self {
         .init(path: "getBlockedUsersList", method: .get)
-    }
-}
-
-// Conversion examples integrated with request structures
-public extension StrongContractClient.Request
-where Payload == LoginRequest,
-      Response == LoginResponse {
-
-    /// Used to login.
-    static var login: Self {
-        .init(path: "login",method: .post)
     }
 }
 
