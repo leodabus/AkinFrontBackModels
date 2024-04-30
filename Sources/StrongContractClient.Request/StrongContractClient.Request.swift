@@ -222,8 +222,10 @@ where Payload == UpdateEmailRequest,
     }
 }
 
+public typealias AllowsCourtesyCall = Bool
+
 public extension StrongContractClient.Request
-where Payload == UpdateCourtesyCallSettingRequest,
+where Payload == AllowsCourtesyCall,
       Response == StandardPostResponse {
 
     /// For the two person greet, sometimes a push notification might not be loud enough or prominent enough
@@ -287,7 +289,7 @@ where Payload == ChangeEmailRequest,
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request
-where Payload == RegisterDeviceTokenErrorRequest,
+where Payload == Empty,
       Response == StandardPostResponse {
 
     /// Notifies the server of an error registering the device token.
@@ -358,7 +360,7 @@ where Payload == LoginRequest,
 
 public extension StrongContractClient.Request
 where Payload == AddResponseRequest,
-        Response == StandardPostResponse {
+      Response == Question.Response {
 
     /// To deprecate `add(response: Question.Response, questionID: String)`
     /// Add a Response to a question.
@@ -434,7 +436,7 @@ where Payload == Settings,
 }
 
 public extension StrongContractClient.Request
-where Payload == Empty,
+where Payload == Data,
       Response == StandardPostResponse {
 
     /// Add a display image.
@@ -443,8 +445,21 @@ where Payload == Empty,
     }
 }
 
+
 public extension StrongContractClient.Request
-where Payload == UpdateMidGreetSettingsRequest,
+where Payload == Greet,
+/// Returns a Greet that is updated by the other user information.
+      Response == Greet {
+
+    /// Send other user updates to the Greet. For example, if the user exceeded the range of the meetup location.
+    /// Look to the Greet Unit tests to get a sense of which combination of events create which outcomes.
+    static var updateGreet: Self {
+        .init(path: "updateGreet", method: .post)
+    }
+}
+
+public extension StrongContractClient.Request
+where Payload == Greet.Settings,
       Response == StandardPostResponse {
 
     /// Deprecates: `URLRequest.update(midGreetSettings: self.greet.thisSettings)?.post.task()`
@@ -452,17 +467,6 @@ where Payload == UpdateMidGreetSettingsRequest,
     /// This sends the user's intention to conclude the greet either because the users met up, or because this user wants to reject the meetup
     static var updateMidGreetSettings: Self {
         .init(path: "updateGreetSettings", method: .post)
-    }
-}
-
-public extension StrongContractClient.Request
-where Payload == Empty,
-      Response == StandardPostResponse {
-
-    /// Send other user updates to the Greet. For example, if the user exceeded the range of the meetup location.
-    /// Look to the Greet Unit tests to get a sense of which combination of events create which outcomes.
-    static var updateGreet: Self {
-        .init(path: "updateGreet", method: .post)
     }
 }
 

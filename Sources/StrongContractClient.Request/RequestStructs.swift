@@ -7,13 +7,14 @@
 
 import Foundation
 
-public struct UpdateMidGreetSettingsRequest: Codable {
-    public var midGreetSettings: Greet.Settings
-
-    public init(midGreetSettings: Greet.Settings) {
-        self.midGreetSettings = midGreetSettings
-    }
-}
+public typealias UpdateMidGreetSettingsRequest = Greet.Settings
+//public struct UpdateMidGreetSettingsRequest: Codable {
+//    public var midGreetSettings: Greet.Settings
+//
+//    public init(midGreetSettings: Greet.Settings) {
+//        self.midGreetSettings = midGreetSettings
+//    }
+//}
 
 public struct AssertRequest: Codable {
     public var assertion: Bool
@@ -21,7 +22,12 @@ public struct AssertRequest: Codable {
     public var file: String
     public var line: Int
 
-    public init(assertion: Bool, message: String, file: String, line: Int) {
+    public init(
+        assertion: Bool = false,
+        message: String,
+        file: String = #file,
+        line: Int = #line
+    ) {
         self.assertion = assertion
         self.message = message
         self.file = file
@@ -29,14 +35,15 @@ public struct AssertRequest: Codable {
     }
 }
 
+typealias UpdateCourtesyCallSettingRequest = Bool
 // Argument public structs
-public struct UpdateCourtesyCallSettingRequest: Codable {
-    public var allows: Bool
-
-    public init(allows: Bool) {
-        self.allows = allows
-    }
-}
+//public struct UpdateCourtesyCallSettingRequest: Codable {
+//    public var allows: Bool
+//
+//    public init(allows: Bool) {
+//        self.allows = allows
+//    }
+//}
 
 public struct UpdatePasswordRequest: Codable {
     public var oldPassword: String
@@ -50,38 +57,42 @@ public struct UpdatePasswordRequest: Codable {
     }
 }
 
-public struct SendMakeRequest: Codable {
-    public var deviceString: String
+public typealias SendMakeRequest = String
+//public struct SendMakeRequest: Codable {
+//    public var deviceString: String
+//
+//    public init(deviceString: String) {
+//        self.deviceString = deviceString
+//    }
+//}
 
-    public init(deviceString: String) {
-        self.deviceString = deviceString
-    }
-}
+public typealias AddQuestionRequest = String
+//public struct AddQuestionRequest: Codable {
+//    public var questionText: String // Assuming 'Question' has a 'text' property
+//    // The date might be generated at the time of the request, so it's not included here.
+//
+//    public init(questionText: String) {
+//        self.questionText = questionText
+//    }
+//}
 
-public struct AddQuestionRequest: Codable {
-    public var questionText: String // Assuming 'Question' has a 'text' property
-    // The date might be generated at the time of the request, so it's not included here.
+public typealias ManualGreetRequest = Int
+//public struct ManualGreetRequest: Codable {
+//    public var otherID: Int
+//
+//    public init(otherID: Int) {
+//        self.otherID = otherID
+//    }
+//}
 
-    public init(questionText: String) {
-        self.questionText = questionText
-    }
-}
-
-public struct ManualGreetRequest: Codable {
-    public var otherID: Int
-
-    public init(otherID: Int) {
-        self.otherID = otherID
-    }
-}
-
-public struct TrackEventsRequest: Codable {
-    public var events: [Int: String]
-
-    public init(events: [Int : String]) {
-        self.events = events
-    }
-}
+public typealias TrackEventsRequest = [Int: String]
+//public struct TrackEventsRequest: Codable {
+//    public var events: [Int: String]
+//
+//    public init(events: [Int : String]) {
+//        self.events = events
+//    }
+//}
 
 public struct UpdateEmailRequest: Codable {
     public var newEmail: String
@@ -94,13 +105,11 @@ public struct UpdateEmailRequest: Codable {
 }
 
 public struct UpdateImportanceRequest: Codable {
-    public var importance: Question.Importance
-    public var context: Context
+    public var importances: [ContextID: Question.Importance]
     public var questionID: Int
 
-    public init(importance: Question.Importance, context: Context, questionID: Int) {
-        self.importance = importance
-        self.context = context
+    public init(importances: [ContextID: Question.Importance], questionID: Int) {
+        self.importances = importances
         self.questionID = questionID
     }
 }
@@ -166,25 +175,33 @@ public struct RateRequest: Codable {
     }
 }
 
+import CoreLocation
 // Request public structure for updating user location with user ID and context ID
 public struct UpdateUserLocationRequest: Codable {
     let userId: String
     let contextId: String
+    let coordinate: CLLocationCoordinate2D
 
-    public init(userId: String, contextId: String) {
+    public init(
+        userId: String,
+        contextId: String,
+        coordinate: CLLocationCoordinate2D
+    ) {
         self.userId = userId
         self.contextId = contextId
+        self.coordinate = coordinate
     }
 }
 
+public typealias SilentPushLocationUpdatesRequest = Bool
 // Request public structure for silent push location updates
-public struct SilentPushLocationUpdatesRequest: Codable {
-    let alwaysOn: Bool
-
-    public init(alwaysOn: Bool) {
-        self.alwaysOn = alwaysOn
-    }
-}
+//public struct SilentPushLocationUpdatesRequest: Codable {
+//    let alwaysOn: Bool
+//
+//    public init(alwaysOn: Bool) {
+//        self.alwaysOn = alwaysOn
+//    }
+//}
 
 // Request public structure for updating location with token, userID, latitude, and longitude
 public struct UpdateLocationRequest: Codable {
@@ -201,15 +218,15 @@ public struct UpdateLocationRequest: Codable {
     }
 }
 
-
+public typealias ResetPasswordRequest = String
 // Define Argument public structs
-public struct ResetPasswordRequest: Codable {
-    public var email: String
-
-    public init(email: String) {
-        self.email = email
-    }
-}
+//public struct ResetPasswordRequest: Codable {
+//    public var email: String
+//
+//    public init(email: String) {
+//        self.email = email
+//    }
+//}
 
 public struct ChangeEmailRequest: Codable {
     public var currentEmail: String
@@ -221,37 +238,41 @@ public struct ChangeEmailRequest: Codable {
     }
 }
 
-public struct RegisterDeviceTokenErrorRequest: Codable {
-    public var error: String
+// public typealias RegisterDeviceTokenErrorRequest = String
+//public struct RegisterDeviceTokenErrorRequest: Codable {
+//    public var error: String
+//
+//    public init(error: String) {
+//        self.error = error
+//    }
+//}
 
-    public init(error: String) {
-        self.error = error
-    }
-}
+public typealias RegisterDeviceTokenRequest = String
+//public struct RegisterDeviceTokenRequest: Codable {
+//    public var deviceToken: String
+//
+//    public init(deviceToken: String) {
+//        self.deviceToken = deviceToken
+//    }
+//}
 
-public struct RegisterDeviceTokenRequest: Codable {
-    public var deviceToken: String
+public typealias HideMeRequest = Bool
+//public struct HideMeRequest: Codable {
+//    public var hide: Bool
+//
+//    public init(hide: Bool) {
+//        self.hide = hide
+//    }
+//}
 
-    public init(deviceToken: String) {
-        self.deviceToken = deviceToken
-    }
-}
-
-public struct HideMeRequest: Codable {
-    public var hide: Bool
-
-    public init(hide: Bool) {
-        self.hide = hide
-    }
-}
-
-public struct RegisterPushKitDeviceTokenRequest: Codable {
-    public var pushKitDeviceToken: String
-
-    public init(pushKitDeviceToken: String) {
-        self.pushKitDeviceToken = pushKitDeviceToken
-    }
-}
+public typealias RegisterPushKitDeviceTokenRequest = String
+//public struct RegisterPushKitDeviceTokenRequest: Codable {
+//    public var pushKitDeviceToken: String
+//
+//    public init(pushKitDeviceToken: String) {
+//        self.pushKitDeviceToken = pushKitDeviceToken
+//    }
+//}
 
 // Define Argument public structs
 public struct BlockUserRequest: Codable {
@@ -275,10 +296,10 @@ public struct LoginRequest: Codable {
 }
 
 public struct AddResponseRequest: Codable {
-    public var responseText: String
+    public var response: Question.Response
     public var questionID: String
 
-    public init(responseText: String, questionID: String) {
+    public init(response: Question.Response, questionID: String) {
         self.responseText = responseText
         self.questionID = questionID
     }
