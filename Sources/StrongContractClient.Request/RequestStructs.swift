@@ -153,12 +153,10 @@ public struct ReportFlagsResponseRequest: Codable {
 public struct ReportFlagsPicURLRequest: Codable {
     let flags: [Int]
     let picURL: String
-    let userId: Int
 
-    public init(flags: [Int], picURL: String, userId: Int) {
+    public init(flags: [Int], picURL: String) {
         self.flags = flags
         self.picURL = picURL
-        self.userId = userId
     }
 }
 
@@ -178,16 +176,13 @@ public struct RateRequest: Codable {
 import CoreLocation
 // Request public structure for updating user location with user ID and context ID
 public struct UpdateUserLocationRequest: Codable {
-    let userId: String
     let contextId: String
     let coordinate: CLLocationCoordinate2D
 
     public init(
-        userId: String,
         contextId: String,
         coordinate: CLLocationCoordinate2D
     ) {
-        self.userId = userId
         self.contextId = contextId
         self.coordinate = coordinate
     }
@@ -206,13 +201,11 @@ public typealias SilentPushLocationUpdatesRequest = Bool
 // Request public structure for updating location with token, userID, latitude, and longitude
 public struct UpdateLocationRequest: Codable {
     let token: String?
-    let userId: String?
     let latitude: String
     let longitude: String
 
-    public init(token: String?, userId: String?, latitude: String, longitude: String) {
+    public init(token: String?, latitude: String, longitude: String) {
         self.token = token
-        self.userId = userId
         self.latitude = latitude
         self.longitude = longitude
     }
