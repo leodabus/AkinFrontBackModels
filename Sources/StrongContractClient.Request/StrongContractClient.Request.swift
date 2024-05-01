@@ -371,7 +371,7 @@ where Payload == AddResponseRequest,
 
 public extension StrongContractClient.Request
 where Payload == NearbyUsersRequest,
-      Response == Greet.User {
+      Response == [Greet.User] {
 
     /// To deprecate:  `static var nearbyUsers: URL {`
     /// Get a list of nearby users.
@@ -497,7 +497,7 @@ where Payload == SilentPushLocationUpdatesRequest,
       Response == StandardPostResponse {
 
     /// Disables/enables silent push notification updates.
-    static var silentPushLocationUpdates: Self {
+    static var shouldUpdateLocation: Self {
         .init(path: "shouldUpdateLocation", method: .post)
     }
 }
