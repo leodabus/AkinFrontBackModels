@@ -8,13 +8,6 @@
 import Foundation
 
 public typealias UpdateMidGreetSettingsRequest = Greet.Settings
-//public struct UpdateMidGreetSettingsRequest: Codable {
-//    public var midGreetSettings: Greet.Settings
-//
-//    public init(midGreetSettings: Greet.Settings) {
-//        self.midGreetSettings = midGreetSettings
-//    }
-//}
 
 public struct AssertRequest: Codable {
     public var assertion: Bool
@@ -36,14 +29,6 @@ public struct AssertRequest: Codable {
 }
 
 typealias UpdateCourtesyCallSettingRequest = Bool
-// Argument public structs
-//public struct UpdateCourtesyCallSettingRequest: Codable {
-//    public var allows: Bool
-//
-//    public init(allows: Bool) {
-//        self.allows = allows
-//    }
-//}
 
 public struct UpdatePasswordRequest: Codable {
     public var oldPassword: String
@@ -58,41 +43,9 @@ public struct UpdatePasswordRequest: Codable {
 }
 
 public typealias SendMakeRequest = String
-//public struct SendMakeRequest: Codable {
-//    public var deviceString: String
-//
-//    public init(deviceString: String) {
-//        self.deviceString = deviceString
-//    }
-//}
-
 public typealias AddQuestionRequest = String
-//public struct AddQuestionRequest: Codable {
-//    public var questionText: String // Assuming 'Question' has a 'text' property
-//    // The date might be generated at the time of the request, so it's not included here.
-//
-//    public init(questionText: String) {
-//        self.questionText = questionText
-//    }
-//}
-
 public typealias ManualGreetRequest = Int
-//public struct ManualGreetRequest: Codable {
-//    public var otherID: Int
-//
-//    public init(otherID: Int) {
-//        self.otherID = otherID
-//    }
-//}
-
 public typealias TrackEventsRequest = [Int: String]
-//public struct TrackEventsRequest: Codable {
-//    public var events: [Int: String]
-//
-//    public init(events: [Int : String]) {
-//        self.events = events
-//    }
-//}
 
 public struct UpdateEmailRequest: Codable {
     public var newEmail: String
@@ -189,14 +142,6 @@ public struct UpdateUserLocationRequest: Codable {
 }
 
 public typealias SilentPushLocationUpdatesRequest = Bool
-// Request public structure for silent push location updates
-//public struct SilentPushLocationUpdatesRequest: Codable {
-//    let alwaysOn: Bool
-//
-//    public init(alwaysOn: Bool) {
-//        self.alwaysOn = alwaysOn
-//    }
-//}
 
 // Request public structure for updating location with token, userID, latitude, and longitude
 public struct UpdateLocationRequest: Codable {
@@ -212,14 +157,6 @@ public struct UpdateLocationRequest: Codable {
 }
 
 public typealias ResetPasswordRequest = String
-// Define Argument public structs
-//public struct ResetPasswordRequest: Codable {
-//    public var email: String
-//
-//    public init(email: String) {
-//        self.email = email
-//    }
-//}
 
 public struct ChangeEmailRequest: Codable {
     public var currentEmail: String
@@ -231,41 +168,11 @@ public struct ChangeEmailRequest: Codable {
     }
 }
 
-// public typealias RegisterDeviceTokenErrorRequest = String
-//public struct RegisterDeviceTokenErrorRequest: Codable {
-//    public var error: String
-//
-//    public init(error: String) {
-//        self.error = error
-//    }
-//}
-
 public typealias RegisterDeviceTokenRequest = String
-//public struct RegisterDeviceTokenRequest: Codable {
-//    public var deviceToken: String
-//
-//    public init(deviceToken: String) {
-//        self.deviceToken = deviceToken
-//    }
-//}
 
 public typealias HideMeRequest = Bool
-//public struct HideMeRequest: Codable {
-//    public var hide: Bool
-//
-//    public init(hide: Bool) {
-//        self.hide = hide
-//    }
-//}
 
 public typealias RegisterPushKitDeviceTokenRequest = String
-//public struct RegisterPushKitDeviceTokenRequest: Codable {
-//    public var pushKitDeviceToken: String
-//
-//    public init(pushKitDeviceToken: String) {
-//        self.pushKitDeviceToken = pushKitDeviceToken
-//    }
-//}
 
 // Define Argument public structs
 public struct BlockUserRequest: Codable {

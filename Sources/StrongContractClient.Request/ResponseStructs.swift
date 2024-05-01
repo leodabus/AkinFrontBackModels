@@ -103,7 +103,6 @@ public struct RateResponse: Codable {
     }
 }
 
-// No specific response model needed for `updateSchedule`, `updateGreet`, `updateGreetSettings` as they might just return a success status
 
 // Response model for `updateUserLocation(userId:contextId:)`, `silentPushLocationUpdates(alwaysOn:)`, `updateLocation(token:userID:lat:lon:)` API calls
 public struct LocationUpdateResponse: Codable {
@@ -116,7 +115,6 @@ public struct LocationUpdateResponse: Codable {
     }
 }
 
-// Assume no response body for `assert(_:message:file:line:)` or handle as needed
 
 // Response model for `update(importance:for:questionID:)` API call
 public struct UpdateImportanceResponse: Codable {
@@ -150,28 +148,6 @@ public struct UpdateEmailResponse: Codable {
         self.message = message
     }
 }
-
-// Response model for `add(question:)` API call
-//public struct AddQuestionResponse: Codable {
-//    public var success: Bool
-//    public var questionId: Int?
-//
-//    public init(success: Bool, questionId: Int? = nil) {
-//        self.success = success
-//        self.questionId = questionId
-//    }
-//}
-
-// Response model for `manualGreet(otherID:)` API call
-//public struct ManualGreetResponse: Codable {
-//    public var success: Bool
-//    public var greetId: Int?
-//
-//    public init(success: Bool, greetId: Int? = nil) {
-//        self.success = success
-//        self.greetId = greetId
-//    }
-//}
 
 public enum ManualGreetResponse: String, Codable, Equatable, Hashable {
     case unsupportedURL
