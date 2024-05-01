@@ -308,22 +308,22 @@ public struct NearbyUsersRequest: Codable {
     }
 }
 
-public struct MakeUserResponseRequest: Codable {
-    public var myChoiceWeightMultiplier: Double?
-    public var theirChoiceWeightMultiplier: Double?
+public struct MakeUserChoiceRequest: Codable {
+    public var myTheir: Question.Response.Selections.MyTheir?
+    public var choice: Question.Response.Selections.MyTheir.Choice?
     public var responseID: Int
     public var questionID: Int
-    public var context: Context.RawValue
+    public var context: Context
 
     public init(
-        myChoiceWeightMultiplier: Double? = nil,
-        theirChoiceWeightMultiplier: Double? = nil,
+        myTheir: Question.Response.Selections.MyTheir? = nil,
+        choice: Question.Response.Selections.MyTheir.Choice? = nil,
         responseID: Int,
         questionID: Int,
-        context: Context.RawValue
+        context: Context
     ) {
-        self.myChoiceWeightMultiplier = myChoiceWeightMultiplier
-        self.theirChoiceWeightMultiplier = theirChoiceWeightMultiplier
+        self.myTheir = myTheir
+        self.choice = choice
         self.responseID = responseID
         self.questionID = questionID
         self.context = context

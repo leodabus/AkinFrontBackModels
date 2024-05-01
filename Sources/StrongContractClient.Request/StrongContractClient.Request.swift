@@ -382,7 +382,7 @@ where Payload == NearbyUsersRequest,
 
 // Conversion examples integrated with request structures
 public extension StrongContractClient.Request
-where Payload == MakeUserResponseRequest,
+where Payload == MakeUserChoiceRequest,
       Response == StandardPostResponse {
 
     /**
