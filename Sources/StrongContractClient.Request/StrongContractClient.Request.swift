@@ -13,7 +13,7 @@ public extension StrongContractClient.Request
 where Payload == LoginRequest,
       Response == User {
     static var login: Self {
-        .init(path: "login",method: .post)
+        .init(method: .post)
     }
 }
 
@@ -21,7 +21,7 @@ public extension StrongContractClient.Request
 where Payload == Empty,
       Response == Settings {
     static var fillSettings: Self {
-        .init(path: "fillSettings", method: .get)
+        .init(method: .get)
     }
 }
 
@@ -30,7 +30,7 @@ public extension StrongContractClient.Request
 where Payload == String, // image id
       Response == Data { // image data
     static var profileImage: Self {
-        .init(path: "profileImage", method: .get)
+        .init(method: .get)
     }
 }
 
@@ -41,7 +41,7 @@ where Payload == User.SignUp,
 
     /// Registers a new user
     static var register: Self {
-        .init(path: "user/register", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -51,7 +51,7 @@ where Payload == Empty,
 
     /// Gets the terms and conditions of using the app
     static var terms: Self {
-        .init(path: "getTerms", method: .get)
+        .init(method: .get)
     }
 }
 
@@ -61,7 +61,7 @@ where Payload == Int,
 
     /// Gets a question based on the index in a list, for the purpose of smooth scrolling.
     static var prefetchQuestion: Self {
-        .init(path: "question", method: .get)
+        .init(method: .get)
     }
 }
 
@@ -75,7 +75,7 @@ where Payload == TwoIDs,
     /// 3. Client side converts the push notification (on both user's client devices) to a Greet type.
     /// 4. Client side presents the option to meet the other user in a double blind fashion.
     static var triggerTwoPersonGreet: Self {
-        .init(path: "makeCompatible", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -87,7 +87,7 @@ where Payload == ManualGreetRequest,
     /// When a user taps on a nearby user, they can attempt to initiate a manual Greet.
     /// Or a meetup triggered by one user tapping on another nearby user in a list.
     static var manualGreet: Self {
-        .init(path: "manualGreet", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -97,7 +97,7 @@ where Payload == Int,
 
     /// This updates the meters a user is willing to travel for a greet/in-person meetup
     static var setMetersWillingToTravel: Self {
-        .init(path: "metersWillingToTravel", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -107,7 +107,7 @@ where Payload == Empty,
 
     /// logs out the current user
     static var logout: Self {
-        .init(path: "logout", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -118,7 +118,7 @@ where Payload == ReportFlagsQuestion,
 
     /// If a user believes a `Question` violates the terms or is otherwise dangerous, this sends that opinion.
     static var reportFlagsQuestion: Self {
-        .init(path: "reportFlagsQuestion", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -128,7 +128,7 @@ where Payload == ReportFlagsResponseRequest,
 
     /// If a user believes a `Response` violates the terms or is otherwise dangerous, this sends that opinion.
     static var reportFlagsQuestionResponse: Self {
-        .init(path: "reportFlagsQuestionResponse", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -137,8 +137,8 @@ where Payload == ReportFlagsPicURLRequest,
       Response == ReportFlagsResponse {
 
     /// If a user believes an image violates the terms or is otherwise dangerous, this sends that opinion.
-    static var reportFlagsPicURL: Self {
-        .init(path: "reportFlagPic", method: .post)
+    static var reportFlagsPic: Self {
+        .init(method: .post)
     }
 }
 
@@ -148,7 +148,7 @@ where Payload == Empty,
 
     /// Gets the user's Settings information.
     static var getUserInformation: Self {
-        .init(path: "getUserInformation", method: .get)
+        .init(method: .get)
     }
 }
 
@@ -158,8 +158,8 @@ where Payload == RateRequest,
 
     /// After a Greet/two-person-meetup concludes (either one opts to end the meetup or both users met up and concluded).
     /// Then each user may send in their rating of how well the greet went.
-    static var rate: Self {
-        .init(path: "rateGreet", method: .post)
+    static var rateGreet: Self {
+        .init(method: .post)
     }
 }
 
@@ -171,7 +171,7 @@ where Payload == UpdateLocationRequest,
     /// In order for the system to determine whether two compatible users are close enough to meet up,
     /// the system must know each's approximate location.
     static var updateLocation: Self {
-        .init(path: "updateUserLocation", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -181,7 +181,7 @@ where Payload == AssertRequest,
 
     /// I believe this was added to update the server side with issues.
     static var assert: Self {
-        .init(path: "assert", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -196,7 +196,7 @@ where Payload == UpdateImportanceRequest,
     /// another. And so you may rate the importance of one as `Question.Importance` as `.very`important whereas another
     /// might be rated as `.trivial`.
     static var updateImportance: Self {
-        .init(path: "updateImportance", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -207,7 +207,7 @@ where Payload == TrackEventsRequest,
     /// Used to track user activity for the purpose of `UX`.  And to understand how users are interacting and using the app.
     /// See `class Tracking {`.  you can add events, and then update the server side by pinging this `Request`
     static var trackEvents: Self {
-        .init(path: "trackEvents", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -218,7 +218,7 @@ where Payload == UpdateEmailRequest,
 
     /// For a user to update/change their email address.
     static var updateEmail: Self {
-        .init(path: "updateEmail", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -232,7 +232,7 @@ where Payload == AllowsCourtesyCall,
     /// To avoid missing opportunities, this request is provided for people to opt in or out of a courtesy call when a
     /// Meetup is initiaited.
     static var updateCourtesyCallSetting: Self {
-        .init(path: "allowsCourtesyCall", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -242,7 +242,7 @@ where Payload == UpdatePasswordRequest,
 
     /// updates this users' password.
     static var updatePassword: Self {
-        .init(path: "updatePassByOldPass", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -252,7 +252,7 @@ where Payload == SendMakeRequest,
 
     /// Sends the phone information for documentation to learn about user research.
     static var sendMake: Self {
-        .init(path: "make", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -268,7 +268,7 @@ where Payload == Question,
     ///   - payload: The payload is the newly added question with a placeholder identifier
     ///   - response: The response is the question with the correct identifier.
     static var addQuestion: Self {
-        .init(path: "addQuestion", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -278,7 +278,7 @@ where Payload == ResetPasswordRequest,
 
     /// Used to reset the password.
     static var resetPassword: Self {
-        .init(path: "resetPassword", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -288,7 +288,7 @@ where Payload == ChangeEmailRequest,
 
     /// Used to reset the email.
     static var changeEmail: Self {
-        .init(path: "changeEmail", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -299,7 +299,7 @@ where Payload == Empty,
 
     /// Notifies the server of an error registering the device token.
     static var registerDeviceTokenError: Self {
-        .init(path: "registerDeviceTokenError", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -309,7 +309,7 @@ where Payload == RegisterDeviceTokenRequest,
 
     /// Sends the device token to the server.
     static var registerDeviceToken: Self {
-        .init(path: "registerDeviceToken", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -319,8 +319,8 @@ where Payload == HideMeRequest,
 
     /// Disables greet.  Makes it so that this user doesn't show up as a greet
     /// option when there are more than one potential meetup option.
-    static var hideMe: Self {
-        .init(path: "HideFromNearByList", method: .post)
+    static var hideFromNearByList: Self {
+        .init(method: .post)
     }
 }
 
@@ -331,7 +331,7 @@ where Payload == RegisterPushKitDeviceTokenRequest,
 
     /// Registers push kit device token.
     static var registerPushKitDeviceToken: Self {
-        .init(path: "registerPushKitDeviceToken", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -341,7 +341,7 @@ where Payload == BlockUserRequest,
 
     /// Blocks a user from being considered for meetups with this user.
     static var blockUser: Self {
-        .init(path: "blockUser", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -351,15 +351,7 @@ where Payload == Empty,
 
     /// Returns a list of users that are blocked by this user.
     static var getBlockedUsers: Self {
-        .init(path: "getBlockedUsersList", method: .get)
-    }
-}
-
-public extension StrongContractClient.Request
-where Payload == LoginRequest,
-      Response == AkinFrontBackModels.User {
-    static var login2: Self {
-        .init(path: "login",method: .post)
+        .init(method: .get)
     }
 }
 
@@ -369,8 +361,8 @@ where Payload == AddResponseRequest,
 
     /// To deprecate `add(response: Question.Response, questionID: String)`
     /// Add a Response to a question.
-    static var addOption: Self {
-        .init(path: "addOption", method: .post)
+    static var addResponse: Self {
+        .init(method: .post)
     }
 }
 
@@ -381,7 +373,7 @@ where Payload == NearbyUsersRequest,
     /// To deprecate:  `static var nearbyUsers: URL {`
     /// Get a list of nearby users.
     static var nearbyUsers: Self {
-        .init(path: "GetNearByUserList", method: .get)
+        .init(method: .get)
     }
 }
 
@@ -405,8 +397,8 @@ where Payload == MakeUserChoiceRequest,
         If someone smokes but they want to quit and meet people that don't smoke, they might choose the option: "Yes"
         And for the other person, they might choose "No" because they want to meet people that don't smoke.
      */
-    static var makeUserResponse: Self {
-        .init(path: "addUserResponse", method: .post)
+    static var makeChoice: Self {
+        .init(method: .post)
     }
 }
 
@@ -416,7 +408,7 @@ where Payload == GetResponsesRequest,
 
     /// Gets responses that have been added to a question.
     static var getResponses: Self {
-        .init(path: "getResponses", method: .get)
+        .init(method: .get)
     }
 }
 
@@ -426,7 +418,7 @@ where Payload == GetQuestionsRequest,
 
     /// Gets questions for the match making questionnaire.
     static var getQuestions: Self {
-        .init(path: "getQuestions", method: .get)
+        .init(method: .get)
     }
 }
 
@@ -434,9 +426,9 @@ public extension StrongContractClient.Request
 where Payload == Settings,
       Response == StandardPostResponse {
 
-    ///  update the settings
-    static var updateSettings: Self {
-        .init(path: "updateUserSettings", method: .post)
+    ///  update this user's settings, different from midGreet settings.
+    static var updateUserSettings: Self {
+        .init(method: .post)
     }
 }
 
@@ -445,21 +437,23 @@ where Payload == Data,
       Response == StandardPostResponse {
 
     /// Add a display image.
-    static var addDisplay: Self {
-        .init(path: "addDisplayPicture", method: .post)
+    static var addDisplayPic: Self {
+        .init(method: .post)
     }
 }
 
 
 public extension StrongContractClient.Request
 where Payload == Greet,
-/// Returns a Greet that is updated by the other user information.
       Response == Greet {
 
     /// Send other user updates to the Greet. For example, if the user exceeded the range of the meetup location.
     /// Look to the Greet Unit tests to get a sense of which combination of events create which outcomes.
+    /// - Parameters:
+    ///   - payload: Sends the current greet (Meet up object)  updated by the user information.
+    ///   - response: Returns a Greet that is updated by the other user information.
     static var updateGreet: Self {
-        .init(path: "updateGreet", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -471,7 +465,7 @@ where Payload == Greet.Settings,
     /// There are multiple phases and permutations that users go through during the meetup process.
     /// This sends the user's intention to conclude the greet either because the users met up, or because this user wants to reject the meetup
     static var updateMidGreetSettings: Self {
-        .init(path: "updateGreetSettings", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -482,7 +476,7 @@ where Payload == [Week.Day],
 
     /// This is used to update when people are available to meet up with others.
     static var updateSchedule: Self {
-        .init(path: "updateSchedule", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -493,7 +487,7 @@ where Payload == UpdateUserLocationRequest,
 
     /// Sends an updated user location.
     static var updateUserLocation: Self {
-        .init(path: "user/location/context", method: .post)
+        .init(method: .post)
     }
 }
 
@@ -503,6 +497,6 @@ where Payload == SilentPushLocationUpdatesRequest,
 
     /// Disables/enables silent push notification updates.
     static var shouldUpdateLocation: Self {
-        .init(path: "shouldUpdateLocation", method: .post)
+        .init(method: .post)
     }
 }
