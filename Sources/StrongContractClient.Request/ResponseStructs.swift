@@ -157,25 +157,6 @@ public enum ManualGreetResponse: String, Codable, Equatable, Hashable {
     case sendingAlertError
     case success
     case unkown
-
-    init(_ json: [String: Any]) {
-        if let success = json["success"] as? Bool, success {
-            self = .success
-            return
-        } else if let errorCase = json["case"] as? Int {
-            switch errorCase {
-            case 0: self = .otherUserHasNoDeviceToken
-            case 1: self = .otherUserHasInvalidDeviceToken
-            case 2: self = .sendingAlertError
-            case 3: self = .otherUserOffline
-            case 4: self = .unsupportedURL
-            default:
-                self = .unkown
-            }
-        } else {
-            self = .unkown
-        }
-    }
 }
 
 // Response model for `resetPassword(email:)` API call
