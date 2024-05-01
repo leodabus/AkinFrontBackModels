@@ -258,10 +258,15 @@ where Payload == SendMakeRequest,
 
 public extension StrongContractClient.Request
 where Payload == Question,
-      Response == StandardPostResponse {
+      Response == Question {
 
     /// Any user can add questions to the shared questionnaire.
     /// This adds a question.
+    /// The -Response is of type Question becuase the question id is determined by the server side.
+    ///
+    /// - Parameters:
+    ///   - payload: The payload is the newly added question with a placeholder identifier
+    ///   - response: The response is the question with the correct identifier.
     static var addQuestion: Self {
         .init(path: "addQuestion", method: .post)
     }
