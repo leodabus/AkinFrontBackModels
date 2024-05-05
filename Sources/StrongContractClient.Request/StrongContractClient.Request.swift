@@ -11,26 +11,26 @@ import StrongContractClient
 
 
 public typealias LoginRequest = Request<LoginPayload, User>
-public extension LoginRequest {
+extension LoginRequest {
 
-    static var login: Self {
+    public static var login: Self {
         .init(method: .post)
     }
 }
 
 public typealias FillSettingsRequest = Request<Empty, Settings>
-public extension FillSettingsRequest {
+extension FillSettingsRequest {
 
-    static var fillSettings: Self {
+    public static var fillSettings: Self {
         .init(method: .get)
     }
 }
 
 /// Payload  = Image ID, and Image Data. 
 public typealias ProfileImageRequest = Request<String, Data>
-public extension ProfileImageRequest { // image data
+extension ProfileImageRequest { // image data
 
-    static var profileImage: Self {
+    public static var profileImage: Self {
         .init(method: .get)
     }
 }
@@ -39,7 +39,7 @@ public typealias Register = Request<User.SignUp, RegisterResponse>
 extension Register {
 
     /// Registers a new user
-    static var register: Self {
+    public static var register: Self {
         .init(method: .post)
     }
 }
@@ -47,7 +47,7 @@ extension Register {
 public typealias TermsRequest = Request<Empty, TermsOfService>
 extension TermsRequest {
     /// Gets the terms and conditions of using the app
-    static var terms: Self {
+    public static var terms: Self {
         .init(method: .get)
     }
 }
@@ -55,7 +55,7 @@ extension TermsRequest {
 public typealias QuestionRequest = Request<Int, Question>
 extension QuestionRequest {
     /// Gets a question based on the index in a list, for the purpose of smooth scrolling.
-    static var prefetchQuestion: Self {
+    public static var prefetchQuestion: Self {
         .init(method: .get)
     }
 }
@@ -67,7 +67,7 @@ extension TwoPersonGreetRequest {
     /// 2. Sends a push notification to the client side.
     /// 3. Client side converts the push notification (on both user's client devices) to a Greet type.
     /// 4. Client side presents the option to meet the other user in a double blind fashion.
-    static var triggerTwoPersonGreet: Self {
+    public static var triggerTwoPersonGreet: Self {
         .init(method: .post)
     }
 }
@@ -77,7 +77,7 @@ public typealias ManualGreetRequest = Request<GreetID, ManualGreetResponse>
 extension ManualGreetRequest {
     /// When a user taps on a nearby user, they can attempt to initiate a manual Greet.
     /// Or a meetup triggered by one user tapping on another nearby user in a list.
-    static var manualGreet: Self {
+    public static var manualGreet: Self {
         .init(method: .post)
     }
 }
@@ -85,7 +85,7 @@ extension ManualGreetRequest {
 public typealias MetersWillingToTravelRequest = Request<Int, StandardPostResponse>
 extension MetersWillingToTravelRequest {
     /// This updates the meters a user is willing to travel for a greet/in-person meetup
-    static var setMetersWillingToTravel: Self {
+    public static var setMetersWillingToTravel: Self {
         .init(method: .post)
     }
 }
@@ -93,7 +93,7 @@ extension MetersWillingToTravelRequest {
 public typealias LogoutRequest = Request<Empty, StandardPostResponse>
 extension LogoutRequest {
     /// Logs out the current user
-    static var logout: Self {
+    public static var logout: Self {
         .init(method: .post)
     }
 }
@@ -102,7 +102,7 @@ extension LogoutRequest {
 public typealias ReportQuestionRequest = Request<ReportFlagsQuestion, StandardPostResponse>
 extension ReportQuestionRequest {
     /// If a user believes a `Question` violates the terms or is otherwise dangerous, this sends that opinion.
-    static var reportFlagsQuestion: Self {
+    public static var reportFlagsQuestion: Self {
         .init(method: .post)
     }
 }
@@ -110,7 +110,7 @@ extension ReportQuestionRequest {
 public typealias ReportResponseRequest = Request<ResponseFlags, ReportFlagsResponse>
 extension ReportResponseRequest {
     /// If a user believes a `Response` violates the terms or is otherwise dangerous, this sends that opinion.
-    static var reportFlagsQuestionResponse: Self {
+    public static var reportFlagsQuestionResponse: Self {
         .init(method: .post)
     }
 }
@@ -118,7 +118,7 @@ extension ReportResponseRequest {
 public typealias ReportPicRequest = Request<PicFlags, ReportFlagsResponse>
 extension ReportPicRequest {
     /// If a user believes an image violates the terms or is otherwise dangerous, this sends that opinion.
-    static var reportFlagsPic: Self {
+    public static var reportFlagsPic: Self {
         .init(method: .post)
     }
 }
@@ -126,7 +126,7 @@ extension ReportPicRequest {
 public typealias UserSettingsRequest = Request<Empty, Settings>
 extension UserSettingsRequest {
     /// Gets the user's Settings information.
-    static var getUserInformation: Self {
+    public static var getUserInformation: Self {
         .init(method: .get)
     }
 }
@@ -135,7 +135,7 @@ public typealias GreetRatingRequest = Request<Rating, RateResponse>
 extension GreetRatingRequest {
     /// After a Greet/two-person-meetup concludes (either one opts to end the meetup or both users met up and concluded),
     /// then each user may send in their rating of how well the greet went.
-    static var rateGreet: Self {
+    public static var rateGreet: Self {
         .init(method: .post)
     }
 }
@@ -144,7 +144,7 @@ public typealias LocationUpdateRequest = Request<CLLocationCoordinate2D, Standar
 extension LocationUpdateRequest {
     /// In order for the system to determine whether two compatible users are close enough to meet up,
     /// the system must know each's approximate location.
-    static var updateLocation: Self {
+    public static var updateLocation: Self {
         .init(method: .post)
     }
 }
@@ -152,7 +152,7 @@ extension LocationUpdateRequest {
 public typealias AssertRequest = Request<Assertion, StandardPostResponse>
 extension AssertRequest {
     /// I believe this was added to update the server side with issues.
-    static var assert: Self {
+    public static var assert: Self {
         .init(method: .post)
     }
 }
@@ -165,7 +165,7 @@ extension UpdateImportanceRequest {
     /// might be less important for matchmaking than "What is your moral philosophy?" for one user and the inverse for
     /// another. And so you may rate the importance of one as `Question.Importance` as `.very` important whereas another
     /// might be rated as `.trivial`.
-    static var updateImportance: Self {
+    public static var updateImportance: Self {
         .init(method: .post)
     }
 }
@@ -174,7 +174,7 @@ public typealias TrackEventsRequest = Request<Events, StandardPostResponse>
 extension TrackEventsRequest {
     /// Used to track user activity for the purpose of `UX`. And to understand how users are interacting and using the app.
     /// See `class Tracking {`. You can add events, and then update the server side by pinging this `Request`
-    static var trackEvents: Self {
+    public static var trackEvents: Self {
         .init(method: .post)
     }
 }
@@ -183,7 +183,7 @@ extension TrackEventsRequest {
 public typealias UpdateEmailRequest = Request<CredentialUpdate, StandardPostResponse>
 extension UpdateEmailRequest {
     /// For a user to update/change their email address.
-    static var updateEmail: Self {
+    public static var updateEmail: Self {
         .init(method: .post)
     }
 }
@@ -194,7 +194,7 @@ extension CourtesyCallSettingRequest {
     /// For the two person greet, sometimes a push notification might not be loud enough or prominent enough.
     /// To avoid missing opportunities, this request is provided for people to opt in or out of a courtesy call when a
     /// meetup is initiated.
-    static var updateCourtesyCallSetting: Self {
+    public static var updateCourtesyCallSetting: Self {
         .init(method: .post)
     }
 }
@@ -202,7 +202,7 @@ extension CourtesyCallSettingRequest {
 public typealias UpdatePasswordRequest = Request<PasswordUpdate, StandardPostResponse>
 extension UpdatePasswordRequest {
     /// Updates this user's password.
-    static var updatePassword: Self {
+    public static var updatePassword: Self {
         .init(method: .post)
     }
 }
@@ -210,7 +210,7 @@ extension UpdatePasswordRequest {
 public typealias SendMakeRequest = Request<DeviceDescription, StandardPostResponse>
 extension SendMakeRequest {
     /// Sends the phone information for documentation to learn about user research.
-    static var sendMake: Self {
+    public static var sendMake: Self {
         .init(method: .post)
     }
 }
@@ -224,7 +224,7 @@ extension AddQuestion {
     /// - Parameters:
     ///   - payload: The payload is the newly added question with a placeholder identifier.
     ///   - response: The response is the question with the correct identifier.
-    static var addQuestion: Self {
+    public static var addQuestion: Self {
         .init(method: .post)
     }
 }
@@ -232,7 +232,7 @@ extension AddQuestion {
 public typealias ResetPasswordRequest = Request<ResetPassword, StandardPostResponse>
 extension ResetPasswordRequest {
     /// Used to reset the password.
-    static var resetPassword: Self {
+    public static var resetPassword: Self {
         .init(method: .post)
     }
 }
@@ -241,7 +241,7 @@ extension ResetPasswordRequest {
 public typealias ChangeEmailRequest = Request<EmailChange, StandardPostResponse>
 extension ChangeEmailRequest {
     /// Used to reset the email.
-    static var changeEmail: Self {
+    public static var changeEmail: Self {
         .init(method: .post)
     }
 }
@@ -249,7 +249,7 @@ extension ChangeEmailRequest {
 public typealias RegisterDeviceTokenErrorRequest = Request<Empty, StandardPostResponse>
 extension RegisterDeviceTokenErrorRequest {
     /// Notifies the server of an error registering the device token.
-    static var registerDeviceTokenError: Self {
+    public static var registerDeviceTokenError: Self {
         .init(method: .post)
     }
 }
@@ -257,7 +257,7 @@ extension RegisterDeviceTokenErrorRequest {
 public typealias RegisterDeviceTokenRequest = Request<DeviceToken, StandardPostResponse>
 extension RegisterDeviceTokenRequest {
     /// Sends the device token to the server.
-    static var registerDeviceToken: Self {
+    public static var registerDeviceToken: Self {
         .init(method: .post)
     }
 }
@@ -266,7 +266,7 @@ public typealias HideFromNearByListRequest = Request<HideMe, StandardPostRespons
 extension HideFromNearByListRequest {
     /// Disables greet. Makes it so that this user doesn't show up as a greet
     /// option when there are more than one potential meetup options.
-    static var hideFromNearByList: Self {
+    public static var hideFromNearByList: Self {
         .init(method: .post)
     }
 }
@@ -274,7 +274,7 @@ extension HideFromNearByListRequest {
 public typealias RegisterPushKitDeviceTokenRequest = Request<PushkitDeviceToken, StandardPostResponse>
 extension RegisterPushKitDeviceTokenRequest {
     /// Registers push kit device token.
-    static var registerPushKitDeviceToken: Self {
+    public static var registerPushKitDeviceToken: Self {
         .init(method: .post)
     }
 }
@@ -282,7 +282,7 @@ extension RegisterPushKitDeviceTokenRequest {
 public typealias BlockUserRequest = Request<BlockUser, StandardPostResponse>
 extension BlockUserRequest {
     /// Blocks a user from being considered for meetups with this user.
-    static var blockUser: Self {
+    public static var blockUser: Self {
         .init(method: .post)
     }
 }
@@ -290,7 +290,7 @@ extension BlockUserRequest {
 public typealias GetBlockedUsersRequest = Request<Empty, [GeneralUser]>
 extension GetBlockedUsersRequest {
     /// Returns a list of users that are blocked by this user.
-    static var getBlockedUsers: Self {
+    public static var getBlockedUsers: Self {
         .init(method: .get)
     }
 }
@@ -299,7 +299,7 @@ public typealias AddResponseRequest = Request<AddResponse, Question.Response>
 extension AddResponseRequest {
     /// To deprecate `add(response: Question.Response, questionID: String)`
     /// Add a Response to a question.
-    static var addResponse: Self {
+    public static var addResponse: Self {
         .init(method: .post)
     }
 }
@@ -308,7 +308,7 @@ public typealias NearbyUsersRequest = Request<CLLocationCoordinate2D, [Greet.Use
 extension NearbyUsersRequest {
     /// To deprecate:  `static var nearbyUsers: URL {`
     /// Get a list of nearby users.
-    static var nearbyUsers: Self {
+    public static var nearbyUsers: Self {
         .init(method: .get)
     }
 }
@@ -318,7 +318,7 @@ extension MakeChoiceRequest {
     /**
      **Deprecates**:
      ```
-     static func make(
+     public static func make(
          my: Question.Response.Selections.MyTheir.Choice?,
          their: Question.Response.Selections.MyTheir.Choice?,
          forResponseID: Int,
@@ -330,7 +330,7 @@ extension MakeChoiceRequest {
         If someone smokes but they want to quit and meet people that don't smoke, they might choose the option: "Yes"
         And for the other person, they might choose "No" because they want to meet people that don't smoke.
      */
-    static var makeChoice: Self {
+    public static var makeChoice: Self {
         .init(method: .post)
     }
 }
@@ -338,7 +338,7 @@ extension MakeChoiceRequest {
 public typealias GetResponsesRequest = Request<ResponsesSpecifications, [Question.Response]>
 extension GetResponsesRequest {
     /// Gets responses that have been added to a question.
-    static var getResponses: Self {
+    public static var getResponses: Self {
         .init(method: .get)
     }
 }
@@ -346,7 +346,7 @@ extension GetResponsesRequest {
 public typealias GetQuestionsRequest = Request<QuestionsSpecifications, [Question]>
 extension GetQuestionsRequest {
     /// Gets questions for the matchmaking questionnaire.
-    static var getQuestions: Self {
+    public static var getQuestions: Self {
         .init(method: .get)
     }
 }
@@ -354,7 +354,7 @@ extension GetQuestionsRequest {
 public typealias UpdateUserSettingsRequest = Request<Settings, StandardPostResponse>
 extension UpdateUserSettingsRequest {
     /// Update this user's settings, different from midGreet settings.
-    static var updateUserSettings: Self {
+    public static var updateUserSettings: Self {
         .init(method: .post)
     }
 }
@@ -362,7 +362,7 @@ extension UpdateUserSettingsRequest {
 public typealias AddDisplayPicRequest = Request<Data, StandardPostResponse>
 extension AddDisplayPicRequest {
     /// Add a display image.
-    static var addDisplayPic: Self {
+    public static var addDisplayPic: Self {
         .init(method: .post)
     }
 }
@@ -374,7 +374,7 @@ extension UpdateGreetRequest {
     /// - Parameters:
     ///   - payload: Sends the current greet (Meet up object) updated by the user information.
     ///   - response: Returns a Greet that is updated by the other user information.
-    static var updateGreet: Self {
+    public static var updateGreet: Self {
         .init(method: .post)
     }
 }
@@ -384,7 +384,7 @@ extension UpdateMidGreetSettings {
     /// Deprecates: `URLRequest.update(midGreetSettings: self.greet.thisSettings)?.post.task()`
     /// There are multiple phases and permutations that users go through during the meetup process.
     /// This sends the user's intention to conclude the greet either because the users met up, or because this user wants to reject the meetup.
-    static var updateMidGreetSettings: Self {
+    public static var updateMidGreetSettings: Self {
         .init(method: .post)
     }
 }
@@ -392,7 +392,7 @@ extension UpdateMidGreetSettings {
 public typealias UpdateScheduleRequest = Request<[Week.Day], StandardPostResponse>
 extension UpdateScheduleRequest {
     /// This is used to update when people are available to meet up with others.
-    static var updateSchedule: Self {
+    public static var updateSchedule: Self {
         .init(method: .post)
     }
 }
@@ -400,7 +400,7 @@ extension UpdateScheduleRequest {
 public typealias UpdateUserLocationRequest = Request<UserLocationUpdate, StandardPostResponse>
 extension UpdateUserLocationRequest {
     /// Sends an updated user location.
-    static var updateUserLocation: Self {
+    public static var updateUserLocation: Self {
         .init(method: .post)
     }
 }
@@ -409,7 +409,7 @@ extension UpdateUserLocationRequest {
 public typealias SilentPushLocationUpdatesRequest = Request<ShouldEnableSilentPushNoticeUpdates, StandardPostResponse>
 extension SilentPushLocationUpdatesRequest {
     /// Disables/enables silent push notification updates.
-    static var shouldUpdateLocation: Self {
+    public static var shouldUpdateLocation: Self {
         .init(method: .post)
     }
 }
