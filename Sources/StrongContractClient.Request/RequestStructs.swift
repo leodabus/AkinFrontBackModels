@@ -9,7 +9,7 @@ import Foundation
 
 public typealias UpdateMidGreetSettingsRequest = Greet.Settings
 
-public struct AssertRequest: Codable {
+public struct Assertion: Codable {
     public var assertion: Bool
     public var message: String
     public var file: String
@@ -30,7 +30,7 @@ public struct AssertRequest: Codable {
 
 typealias UpdateCourtesyCallSettingRequest = Bool
 
-public struct UpdatePasswordRequest: Codable {
+public struct PasswordUpdate: Codable {
     public var oldPassword: String
     public var newPassword: String
     public var savedEmail: String
@@ -42,12 +42,12 @@ public struct UpdatePasswordRequest: Codable {
     }
 }
 
-public typealias SendMakeRequest = String
+public typealias DeviceDescription = String
 public typealias AddQuestionRequest = String
-public typealias ManualGreetRequest = Int
-public typealias TrackEventsRequest = [Int: String]
+public typealias GreetID = Int
+public typealias Events = [Int: String]
 
-public struct UpdateEmailRequest: Codable {
+public struct CredentialUpdate: Codable {
     public var newEmail: String
     public var password: String
 
@@ -57,7 +57,7 @@ public struct UpdateEmailRequest: Codable {
     }
 }
 
-public struct UpdateImportanceRequest: Codable {
+public struct ImportancesUpdate: Codable {
     public var importances: [ContextID: Question.Importance]
     public var questionID: Int
 
@@ -90,7 +90,7 @@ public struct ReportFlagsQuestionRequest: Codable {
 }
 
 // Request public structure for `reportFlags` with response ID and question ID
-public struct ReportFlagsResponseRequest: Codable {
+public struct ResponseFlags: Codable {
     let flags: [Int]
     let responseId: Int
     let questionId: Int
@@ -103,7 +103,7 @@ public struct ReportFlagsResponseRequest: Codable {
 }
 
 // Request public structure for `reportFlags` with pic URL and userID
-public struct ReportFlagsPicURLRequest: Codable {
+public struct PicFlags: Codable {
     let flags: [Int]
     let picURL: String
 
@@ -114,7 +114,7 @@ public struct ReportFlagsPicURLRequest: Codable {
 }
 
 // Request public structure for rating a greet
-public struct RateRequest: Codable {
+public struct Rating: Codable {
     let greetId: String
     let otherUserId: Int
     let rating: Double
@@ -128,7 +128,7 @@ public struct RateRequest: Codable {
 
 import CoreLocation
 // Request public structure for updating user location with user ID and context ID
-public struct UpdateUserLocationRequest: Codable {
+public struct UserLocationUpdate: Codable {
     let contextId: String
     let coordinate: CLLocationCoordinate2D
 
@@ -141,24 +141,11 @@ public struct UpdateUserLocationRequest: Codable {
     }
 }
 
-public typealias SilentPushLocationUpdatesRequest = Bool
+public typealias ShouldEnableSilentPushNoticeUpdates = Bool
 
-// Request public structure for updating location with token, userID, latitude, and longitude
-public struct UpdateLocationRequest: Codable {
-    let token: String?
-    let latitude: String
-    let longitude: String
+public typealias ResetPassword = String
 
-    public init(token: String?, latitude: String, longitude: String) {
-        self.token = token
-        self.latitude = latitude
-        self.longitude = longitude
-    }
-}
-
-public typealias ResetPasswordRequest = String
-
-public struct ChangeEmailRequest: Codable {
+public struct EmailChange: Codable {
     public var currentEmail: String
     public var newEmail: String
 
@@ -168,14 +155,14 @@ public struct ChangeEmailRequest: Codable {
     }
 }
 
-public typealias RegisterDeviceTokenRequest = String
+public typealias DeviceToken = String
 
-public typealias HideMeRequest = Bool
+public typealias HideMe = Bool
 
-public typealias RegisterPushKitDeviceTokenRequest = String
+public typealias PushkitDeviceToken = String
 
 // Define Argument public structs
-public struct BlockUserRequest: Codable {
+public struct BlockUser: Codable {
     public var otherUser: Int
     public var shouldBlock: Bool? // Optional to accommodate both block user functions
 
@@ -185,7 +172,7 @@ public struct BlockUserRequest: Codable {
     }
 }
 
-public struct LoginRequest: Codable {
+public struct LoginPayload: Codable {
     public var email: String
     public var password: String
 
@@ -195,7 +182,7 @@ public struct LoginRequest: Codable {
     }
 }
 
-public struct AddResponseRequest: Codable {
+public struct AddResponse: Codable {
     public var response: Question.Response
     public var questionID: String
 
@@ -205,17 +192,7 @@ public struct AddResponseRequest: Codable {
     }
 }
 
-public struct NearbyUsersRequest: Codable {
-    public var latitude: String
-    public var longitude: String
-
-    public init(latitude: String, longitude: String) {
-        self.latitude = latitude
-        self.longitude = longitude
-    }
-}
-
-public struct MakeUserChoiceRequest: Codable {
+public struct AnswerChoice: Codable {
     public var myTheir: Question.Response.Selections.MyTheir?
     public var choice: Question.Response.Selections.MyTheir.Choice?
     public var responseID: Int
@@ -237,7 +214,7 @@ public struct MakeUserChoiceRequest: Codable {
     }
 }
 
-public struct GetResponsesRequest: Codable {
+public struct ResponsesSpecifications: Codable {
     public var questionID: Int
     public var context: Context.RawValue
     public var searchText: String?
@@ -249,7 +226,7 @@ public struct GetResponsesRequest: Codable {
     }
 }
 
-public struct GetQuestionsRequest: Codable {
+public struct QuestionsSpecifications: Codable {
     public var searchText: String?
     public var type: Question.Category.RawValue
     public var page: Int?
