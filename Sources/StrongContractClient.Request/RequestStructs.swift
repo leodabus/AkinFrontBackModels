@@ -143,19 +143,6 @@ public struct UserLocationUpdate: Codable {
 
 public typealias ShouldEnableSilentPushNoticeUpdates = Bool
 
-//// Request public structure for updating location with token, userID, latitude, and longitude
-//public struct UpdateLocationRequest: Codable {
-//    let token: String?
-//    let latitude: String
-//    let longitude: String
-//
-//    public init(token: String?, latitude: String, longitude: String) {
-//        self.token = token
-//        self.latitude = latitude
-//        self.longitude = longitude
-//    }
-//}
-
 public typealias ResetPassword = String
 
 public struct EmailChange: Codable {
@@ -204,16 +191,6 @@ public struct AddResponse: Codable {
         self.questionID = questionID
     }
 }
-
-//public struct NearbyUsersRequest: Codable {
-//    public var latitude: String
-//    public var longitude: String
-//
-//    public init(latitude: String, longitude: String) {
-//        self.latitude = latitude
-//        self.longitude = longitude
-//    }
-//}
 
 public struct AnswerChoice: Codable {
     public var myTheir: Question.Response.Selections.MyTheir?

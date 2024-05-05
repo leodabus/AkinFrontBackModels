@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 // Response model for `register(basicInfo:)` API call
 public struct RegisterResponse: Codable {
     public var success: Bool
