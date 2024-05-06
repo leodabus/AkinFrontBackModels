@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CommonExtensions
 
 public typealias CompatibilityContext = String
 public typealias CompatibilityScore = Double
@@ -121,5 +120,21 @@ public struct Greet: Codable {
     public var estimatedMeetTime: String {
         guard let minutes = meetInXMinutes else { return "unknown" }
         return Date(timeFromNow: minutes)?.clockTime ?? "unknown"
+    }
+}
+
+typealias Minutes = Int
+fileprivate extension Date {
+    init?(timeFromNow: Minutes) {
+        guard let date = Calendar.current.date(byAdding: .minute, value: timeFromNow, to: Date()) else { return nil}
+        self = date
+    }
+    var clockTime: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = .init(identifier: .gregorian)
+        dateFormatter.locale = .init(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "h:mm a"
+        dateFormatter.timeZone = .current
+        return dateFormatter.string(from: self)
     }
 }
