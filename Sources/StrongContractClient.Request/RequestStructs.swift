@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  RequestStructs.swift
+//
 //
 //  Created by Scott Lydon on 4/7/24.
 //
-
-import Foundation
 
 public typealias UpdateMidGreetSettingsRequest = Greet.Settings
 
@@ -80,8 +78,8 @@ public struct ReportFlagsQuestion: Codable {
 
 // Request public structure for `reportFlags` with question ID
 public struct ReportFlagsQuestionRequest: Codable {
-    let flags: [Int]
-    let questionId: Int
+    public let flags: [Int]
+    public let questionId: Int
 
     public init(flags: [Int], questionId: Int) {
         self.flags = flags
@@ -91,9 +89,9 @@ public struct ReportFlagsQuestionRequest: Codable {
 
 // Request public structure for `reportFlags` with response ID and question ID
 public struct ResponseFlags: Codable {
-    let flags: [Int]
-    let responseId: Int
-    let questionId: Int
+    public let flags: [Int]
+    public let responseId: Int
+    public let questionId: Int
 
     public init(flags: [Int], responseId: Int, questionId: Int) {
         self.flags = flags
@@ -104,8 +102,8 @@ public struct ResponseFlags: Codable {
 
 // Request public structure for `reportFlags` with pic URL and userID
 public struct PicFlags: Codable {
-    let flags: [Int]
-    let picURL: String
+    public let flags: [Int]
+    public let picURL: String
 
     public init(flags: [Int], picURL: String) {
         self.flags = flags
@@ -115,9 +113,9 @@ public struct PicFlags: Codable {
 
 // Request public structure for rating a greet
 public struct Rating: Codable {
-    let greetId: String
-    let otherUserId: Int
-    let rating: Double
+    public let greetId: String
+    public let otherUserId: Int
+    public let rating: Double
 
     public init(greetId: String, otherUserId: Int, rating: Double) {
         self.greetId = greetId
@@ -129,8 +127,8 @@ public struct Rating: Codable {
 import CoreLocation
 // Request public structure for updating user location with user ID and context ID
 public struct UserLocationUpdate: Codable {
-    let contextId: String
-    let coordinate: CLLocationCoordinate2D
+    public let contextId: String
+    public let coordinate: CLLocationCoordinate2D
 
     public init(
         contextId: String,
