@@ -60,8 +60,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vapor/routing-kit.git",
       "state" : {
-        "revision" : "2a92a7eac411a82fb3a03731be5e76773ebe1b3e",
-        "version" : "4.9.0"
+        "revision" : "8c9a227476555c55837e569be71944e02a056b72",
+        "version" : "4.9.1"
       }
     },
     {
@@ -69,8 +69,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/scott-lydon/StrongContractClient.git",
       "state" : {
-        "revision" : "fbd608de3416a61a2e9c0a3ef13f16318a9ae7b5",
-        "version" : "5.0.2"
+        "revision" : "59bcc4191925db5e87185e57b8db7317e4a7f6bd",
+        "version" : "5.1.0"
       }
     },
     {
@@ -204,8 +204,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vapor/vapor.git",
       "state" : {
-        "revision" : "c524f6047c7569d826975497f02e3e32e6136c8a",
-        "version" : "4.95.0"
+        "revision" : "af86ea4402c65dfbe70ac1bb9fd1d3fd9501a3f6",
+        "version" : "4.96.0"
       }
     },
     {
