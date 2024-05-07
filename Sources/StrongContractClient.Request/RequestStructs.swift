@@ -8,10 +8,10 @@
 public typealias UpdateMidGreetSettingsRequest = Greet.Settings
 
 public struct Assertion: Codable {
-    public var assertion: Bool
-    public var message: String
-    public var file: String
-    public var line: Int
+    public let assertion: Bool
+    public let message: String
+    public let file: String
+    public let line: Int
 
     public init(
         assertion: Bool = false,
@@ -29,12 +29,10 @@ public struct Assertion: Codable {
 typealias UpdateCourtesyCallSettingRequest = Bool
 
 public struct PasswordUpdate: Codable {
-    public let oldPassword: String
-    public let newPassword: String
-
+    public let oldPassword, newPassword: String
     public init(oldPassword: String, newPassword: String) {
-        self.oldPassword = oldPassword
-        self.newPassword = newPassword
+        self.oldPassword = oldPassword.sha512hexa
+        self.newPassword = newPassword.sha512hexa
     }
 }
 
@@ -44,18 +42,16 @@ public typealias GreetID = Int
 public typealias Events = [Int: String]
 
 public struct CredentialUpdate: Codable {
-    public var newEmail: String
-    public var password: String
-
+    public let newEmail, password: String
     public init(newEmail: String, password: String) {
         self.newEmail = newEmail
-        self.password = password
+        self.password = password.sha512hexa
     }
 }
 
 public struct ImportancesUpdate: Codable {
-    public var importances: [ContextID: Question.Importance]
-    public var questionID: Int
+    public let importances: [ContextID: Question.Importance]
+    public let questionID: Int
 
     public init(importances: [ContextID: Question.Importance], questionID: Int) {
         self.importances = importances
@@ -65,8 +61,8 @@ public struct ImportancesUpdate: Codable {
 
 // Define the argument public structs
 public struct ReportFlagsQuestion: Codable {
-    public var flags: [Int]
-    public var questionID: Int
+    public let flags: [Int]
+    public let questionID: Int
 
     public init(flags: [Int], questionID: Int) {
         self.flags = flags
@@ -142,8 +138,8 @@ public typealias ShouldEnableSilentPushNoticeUpdates = Bool
 public typealias ResetPassword = String
 
 public struct EmailChange: Codable {
-    public var currentEmail: String
-    public var newEmail: String
+    public let currentEmail: String
+    public let newEmail: String
 
     public init(currentEmail: String, newEmail: String) {
         self.currentEmail = currentEmail
@@ -159,8 +155,8 @@ public typealias PushkitDeviceToken = String
 
 // Define Argument public structs
 public struct BlockUser: Codable {
-    public var otherUser: Int
-    public var shouldBlock: Bool? // Optional to accommodate both block user functions
+    public let otherUser: Int
+    public let shouldBlock: Bool? // Optional to accommodate both block user functions
 
     public init(otherUser: Int, shouldBlock: Bool? = nil) {
         self.otherUser = otherUser
@@ -169,18 +165,16 @@ public struct BlockUser: Codable {
 }
 
 public struct LoginPayload: Codable {
-    public var email: String
-    public var password: String
-
+    public let email, password: String
     public init(email: String, password: String) {
-        self.email = email
-        self.password = password
+        self.email = email.sha256hexa
+        self.password = password.sha512hexa
     }
 }
 
 public struct AddResponse: Codable {
-    public var response: Question.Response
-    public var questionID: String
+    public let response: Question.Response
+    public let questionID: String
 
     public init(response: Question.Response, questionID: String) {
         self.response = response
@@ -189,11 +183,11 @@ public struct AddResponse: Codable {
 }
 
 public struct AnswerChoice: Codable {
-    public var myTheir: Question.Response.Selections.MyTheir?
-    public var choice: Question.Response.Selections.MyTheir.Choice?
-    public var responseID: Int
-    public var questionID: Int
-    public var context: Context
+    public let myTheir: Question.Response.Selections.MyTheir?
+    public let choice: Question.Response.Selections.MyTheir.Choice?
+    public let responseID: Int
+    public let questionID: Int
+    public let context: Context
 
     public init(
         myTheir: Question.Response.Selections.MyTheir? = nil,
@@ -211,9 +205,9 @@ public struct AnswerChoice: Codable {
 }
 
 public struct ResponsesSpecifications: Codable {
-    public var questionID: Int
-    public var context: Context.RawValue
-    public var searchText: String?
+    public let questionID: Int
+    public let context: Context.RawValue
+    public let searchText: String?
 
     public init(questionID: Int, context: Context.RawValue, searchText: String? = nil) {
         self.questionID = questionID
@@ -223,11 +217,11 @@ public struct ResponsesSpecifications: Codable {
 }
 
 public struct QuestionsSpecifications: Codable {
-    public var searchText: String?
-    public var type: Question.Category.RawValue
-    public var page: Int?
-    public var context: Context.RawValue
-    public var required: Bool
+    public let searchText: String?
+    public let type: Question.Category.RawValue
+    public let page: Int?
+    public let context: Context.RawValue
+    public let required: Bool
 
     public init(
         searchText: String? = nil,

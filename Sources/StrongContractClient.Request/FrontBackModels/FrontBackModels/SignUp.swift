@@ -19,7 +19,7 @@ extension User {
 
         public init(email: String? = "", password: String? = "" , firstName: String? = "" , lastName: String? = "") {
             self.email = email ?? ""
-            self.password = password ?? ""
+            self.password = password?.sha512hexa ?? ""
             self.firstName = firstName ?? ""
             self.lastName = lastName ?? ""
             self.findErrors()
