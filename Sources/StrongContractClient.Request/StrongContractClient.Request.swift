@@ -203,7 +203,7 @@ public typealias UpdatePasswordRequest = Request<PasswordUpdate, StandardPostRes
 extension UpdatePasswordRequest {
     /// Updates this user's password.
     public static var updatePassword: Self {
-        .init(method: .post)
+        .init(method: .put)
     }
 }
 
@@ -401,7 +401,7 @@ public typealias UpdateUserLocationRequest = Request<UserLocationUpdate, Standar
 extension UpdateUserLocationRequest {
     /// Sends an updated user location.
     public static var updateUserLocation: Self {
-        .init(method: .post)
+        .init(method: .put)
     }
 }
 

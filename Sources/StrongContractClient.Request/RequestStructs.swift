@@ -29,14 +29,12 @@ public struct Assertion: Codable {
 typealias UpdateCourtesyCallSettingRequest = Bool
 
 public struct PasswordUpdate: Codable {
-    public var oldPassword: String
-    public var newPassword: String
-    public var savedEmail: String
+    public let oldPassword: String
+    public let newPassword: String
 
-    public init(oldPassword: String, newPassword: String, savedEmail: String) {
+    public init(oldPassword: String, newPassword: String) {
         self.oldPassword = oldPassword
         self.newPassword = newPassword
-        self.savedEmail = savedEmail
     }
 }
 
