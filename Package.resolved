@@ -1,5 +1,5 @@
 {
-  "originHash" : "59d4912e71265764a55bb630f2828e822456a42fe8a5cb3419f43db68ba5b5c2",
+  "originHash" : "a5ee18dc2a060ee041d02a5aad3279e1d374725d7b055a35a69033636abb04bd",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -60,8 +60,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/leodabus/StrongContractClient.git",
       "state" : {
-        "revision" : "5b7ad2363d71f0eb5806aa51b8e10fdcdba5e5c2",
-        "version" : "6.0.1"
+        "revision" : "8c35895c034a1694a9f9a5d8b965a5abb2338605",
+        "version" : "6.0.2"
       }
     },
     {
