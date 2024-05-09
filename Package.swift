@@ -8,7 +8,7 @@ let package = Package(
     name: "AkinFrontBackModels",
     platforms: [
         .iOS(.v13), // Existing iOS minimum platform version.
-        .macOS(.v10_15) // Specify minimum macOS platform version.
+        .macOS(.v13) // Specify minimum macOS platform version.
     ],
     products: [
         .library(
