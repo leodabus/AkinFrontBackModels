@@ -1,5 +1,5 @@
 {
-  "originHash" : "68cd63962b0db8c66efd5202f2f0bec117d218afdb1fb1efcb8d6cd6a330f0a4",
+  "originHash" : "59d4912e71265764a55bb630f2828e822456a42fe8a5cb3419f43db68ba5b5c2",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/leodabus/Callable.git",
       "state" : {
-        "revision" : "c478379c060f9a730a83a300d18436e9794987c3",
-        "version" : "2.0.1"
+        "revision" : "feedcb17db415f17ffcc6f45d6f6fdde59510242",
+        "version" : "2.0.3"
       }
     },
     {
@@ -60,8 +60,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/leodabus/StrongContractClient.git",
       "state" : {
-        "revision" : "208f4bad8bd7cb0d57600750f27c8cf497a9c8b2",
-        "version" : "6.0.0"
+        "revision" : "5b7ad2363d71f0eb5806aa51b8e10fdcdba5e5c2",
+        "version" : "6.0.1"
       }
     },
     {
