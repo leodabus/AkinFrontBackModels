@@ -119,15 +119,14 @@ public struct Rating: Codable {
     }
 }
 
-import CoreLocation
 // Request public structure for updating user location with user ID and context ID
 public struct UserLocationUpdate: Codable {
     public let contextId: String
-    public let coordinate: CLLocationCoordinate2D
+    public let coordinate: Location
 
     public init(
         contextId: String,
-        coordinate: CLLocationCoordinate2D
+        coordinate: Location
     ) {
         self.contextId = contextId
         self.coordinate = coordinate
