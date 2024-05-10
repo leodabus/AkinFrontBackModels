@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CoreLocation
 import StrongContractClient
 
 
@@ -140,7 +139,7 @@ extension GreetRatingRequest {
     }
 }
 
-public typealias LocationUpdateRequest = Request<CLLocationCoordinate2D, StandardPostResponse>
+public typealias LocationUpdateRequest = Request<Location, StandardPostResponse>
 extension LocationUpdateRequest {
     /// In order for the system to determine whether two compatible users are close enough to meet up,
     /// the system must know each's approximate location.
@@ -304,7 +303,7 @@ extension AddResponseRequest {
     }
 }
 
-public typealias NearbyUsersRequest = Request<CLLocationCoordinate2D, [Greet.User]>
+public typealias NearbyUsersRequest = Request<Location, [Greet.User]>
 extension NearbyUsersRequest {
     /// To deprecate:  `static var nearbyUsers: URL {`
     /// Get a list of nearby users.

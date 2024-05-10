@@ -1,5 +1,5 @@
 {
-  "originHash" : "d760f566e73082d07fd77e8d36eb66b5489ac7e8e0e7d0a67881bb4ca1ed6648",
+  "originHash" : "5923ad560e91ee29d8562db1cd94c2737b9edb181afe27f333717b7f9e892436",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -25,7 +25,7 @@
       "location" : "https://github.com/ElevatedUnderdogs/Callable.git",
       "state" : {
         "revision" : "bbb7630d631e7e0432d97cada1eca69bd5216a06",
-        "version" : "2.0.0"
+        "version" : "1.5.1"
       }
     },
     {
@@ -69,8 +69,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/scott-lydon/StrongContractClient.git",
       "state" : {
-        "revision" : "2b58da1d63955c2a6da299fd91ee7ab4071943d6",
-        "version" : "6.0.0"
+        "revision" : "771d624d14487c0053493f17d0dbe7b4106db7c2",
+        "version" : "6.0.1"
       }
     },
     {

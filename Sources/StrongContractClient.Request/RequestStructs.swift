@@ -38,7 +38,8 @@ public struct PasswordUpdate: Codable {
 
 public typealias DeviceDescription = String
 public typealias AddQuestionRequest = String
-public typealias GreetID = Int
+// GreetID type has been changed to String to allow storage of Fluent Models identifiers (UUID string)
+public typealias GreetID = String
 public typealias Events = [Int: String]
 
 public struct CredentialUpdate: Codable {
@@ -118,15 +119,14 @@ public struct Rating: Codable {
     }
 }
 
-import CoreLocation
 // Request public structure for updating user location with user ID and context ID
 public struct UserLocationUpdate: Codable {
     public let contextId: String
-    public let coordinate: CLLocationCoordinate2D
+    public let coordinate: Location
 
     public init(
         contextId: String,
-        coordinate: CLLocationCoordinate2D
+        coordinate: Location
     ) {
         self.contextId = contextId
         self.coordinate = coordinate
